@@ -48,6 +48,31 @@ section>* {
     flex-basis: calc(100% - 25px);
 }
 
+.menu-header {
+    font-weight: 500;
+    font-size: 24px;
+    color: #FF00FF;
+    margin: 20px auto;
+    text-decoration: underline;
+}
+
+.menu>a {
+    display:block;
+    /* display:block; */
+    text-decoration: none; 
+    width: 200px;
+    height: 35px;
+    color: #000;
+    font-size: 16px;
+    background-image: url(../images/menu1.png);
+    line-height: 35px;
+    margin: 5px auto;
+    margin-bottom: 5px;
+}
+.menu>a:hover {
+    background-image: url(../images/menu2.png);
+}
+
 /* aside update */
 .update {
     flex-basis: 25px;
