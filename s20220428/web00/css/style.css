@@ -129,7 +129,7 @@ section>* {
 .footer {
     flex-basis: 1000px;
     height: 20px;
-    background-color: lightgoldenrodyellow;
+    /* background-color: lightgoldenrodyellow; */
     font-family: '標楷體';
     color: #000000;
     text-align: center;
