@@ -6,6 +6,10 @@
 * [選單]block
 * [嵌入框架]iframe
 
+### 進度
+
+* [多裝置配置]Media Query
+
 ### 練習
 
 1. [web01_期中測驗]無html

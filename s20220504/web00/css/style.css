@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    font-family: '標楷體';
+    overflow: hidden;
+}
+
+/* body .main */
+.main {
+    display: flex;
+    /* flex-direction: row; */
+    width: 1024px;
+    padding: 0 12px;
+    margin: 10px auto;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+/* 畫線border */
+body>*:not(aside, section),
+aside>*,
+section>* {
+    border: 1px solid lightgray;
+}
+
+/* .top , .menu , .update ,  .marquee ,.content ,.footer{
+    border: 1px solid lightgray;
+} */
+
+/* .top */
+.top {
+    flex-basis: 1000px;
+    height: 65px;
+    /* background: lightblue; */
+    /* border: 1px solid lightgray; */
+}
+
+/* aside */
+.aside {
+    flex-basis: 215px;
+    height: calc(768px - 65px - 20px);
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightpink; */
+}
+
+/* aside header .menu */
+.menu {
+    /* 100% => height: calc(768px - 65px - 20px); */
+    flex-basis: calc(100% - 25px);
+}
+
+.menu-header {
+    font-weight: 500;
+    font-size: 24px;
+    color: #FF00FF;
+    margin: 20px auto;
+    text-decoration: underline;
+    /* text-decoration-color: black;
+    text-underline-offset: 5px; */
+  
+    /* padding:20px; */
+}
+
+/* .menu a  */
+/* .menu , a */
+
+/* 在.menu的下一層a */
+.menu>a {
+    /* display: inline-block; */
+    display: block;
+    margin: 10px auto;
+    /* margin-bottom: 10px; */
+    /* block 斷行 可以調width height*/
+    /* inline blcok 不斷行 可以調width height */
+    text-decoration: none;
+    width: 200px;
+    height: 35px;
+    padding-top: 10px;
+    /* line-height: 35px; */
+    color: #000000;
+    font-size: 16px;
+    /* background-image: url("../images/menu1.png");
+    background-repeat: no-repeat; */
+    background: url("../images/menu1.png") no-repeat ;
+}
+
+
+#menuBtn{
+    text-decoration: underline;
+}
+
+.menu>a:hover{
+    /* background: url("../images/menu2.png") no-repeat; */
+    background: url("../images/menu2.png") no-repeat;
+}
+
+/* aside update */
+.update {
+    flex-basis: 25px;
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* section */
+.section {
+    flex-basis: calc(1000px - 215px);
+    /* flex-basis: 770px; */
+    /* height 沒有給他 會抓aside */
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightgreen; */
+}
+
+.marquee {
+    flex-basis: 29px;
+    padding: 0 calc((100% - 770px - 2px) / 2);
+    font-family: '標楷體';
+    font-size: 24px;
+    color: #0000FF;
+}
+
+.content {
+    flex-basis: calc(100% - 29px);
+}
+
+.content>iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* footer */
+.footer {
+    flex-basis: 1000px;
+    height: 20px;
+    /* background-color: lightgoldenrodyellow; */
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+}
