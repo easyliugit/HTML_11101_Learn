@@ -60,6 +60,7 @@ body>*:not(aside ,article) ,aside>* ,article>* {
 .marquee {
     width: 100%;
     flex-basis: 29px;
+    max-height: 29px;
     font-size: 24px;
     color: #0000FF;
 }
