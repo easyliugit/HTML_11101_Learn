@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .container {
+            width: 960px;
+            /* height: 500px; */
+            background-color: lightgray;
+            /* container 包東西 由內容把高度撐高 */
+            /* clear-fix 把高度撐高 */
+            
+        }
+
+        .container::after{
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        .col {
+            width: 300px;
+            /* height: 200px; */
+            /* background-color: lightblue; */
+            background-color: white;
+            float: left;
+            margin: 10px;
+        }
+        .col>h3{
+            margin: 10px;
+            text-align: center;
+        }
+
+        .col>p{
+            padding: 20px;
+        }
+
+        .col img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <img src="https://picsum.photos/id/1006/250/150" alt="">
+            <h3>title1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate accusamus repellendus debitis natus.
+                Omnis corrupti distinctio incidunt enim quisquam voluptatem, sunt ipsum recusandae consequatur tempora.
+                Tempore ratione autem nesciunt fugit.</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/id/1006/250/150" alt="">
+            <h3>title2</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate accusamus repellendus debitis natus.
+                Omnis corrupti distinctio incidunt enim quisquam voluptatem, sunt ipsum recusandae consequatur tempora.
+                Tempore ratione autem nesciunt fugit.</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/id/1006/250/150" alt="">
+            <h3>title3</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate accusamus repellendus debitis natus.
+                Omnis corrupti distinctio incidunt enim quisquam voluptatem, sunt ipsum recusandae consequatur tempora.
+                Tempore ratione autem nesciunt fugit.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
