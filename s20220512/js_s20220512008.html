@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    
+    <script>
+
+        // 練習四
+        // 1.輸入存錢數量  1000
+        // 2.買東西的錢多少 500
+        // 3.找零多少...
+        // 如果不夠 無法扣款
+
+        // 最後顯示 存款剩多少
+
+        // 1.輸入存錢數量  1000            
+            //save
+            let save = parseInt(prompt('input save',0));
+
+            console.log("本次存入 = " + save);
+            
+        // 2.買東西的錢多少 500
+            //buy
+            let buy = parseInt(prompt('input buy',0));
+            
+        // 3.存款餘額...
+            if (save>buy) {
+                 result = save - buy ;
+                 save = result;
+                 console.log("購買商品金額 = " + buy);
+            }else{
+                 console.log("花太多了");    
+            }   
+
+            console.log("存款餘額", save);
+
+            // save => php =>user data
+            
+            //好寶寶function
+
+            //使用者餘額
+            //卡片的id
+            //server 存卡片的資料
+
+            //money
+        // 如果不夠 無法扣款
+
+        // 最後顯示 存款剩多少
+            //result
+
+
+        // 練習三
+        // 輸入兩個數字
+        // 判斷數字大小
+        // 誰大 或者 等於 您輸入錯誤
+
+        // num1 , num2
+        // num1 > num2 .....
+        // num2 > num1 ....
+        // num1 = num2 .....
+        // num1 or num2 error .....
+        
+        // num1 , num2
+        // let num1 = parseInt(prompt('input num1',0));
+        // let num2 = parseInt(prompt('input num2',0));
+        // num1 > num2 .....
+        // num2 > num1 ....
+        // num1 = num2 .....
+        // num1 or num2 error .....
+      
+
+        // if (num1>num2) {
+        //     console.log("num1 > num2");
+        // }else if(num2>num1){
+        //     console.log("num2 > num1");
+        // }else if(num2 == num1){
+        //     console.log("num2 = num1");
+        // }else{
+        //     console.log("error");
+        // }
+
+
+        // console.log("num1 = " + num1);
+        // console.log("num2 = " + num2);
+
+
+
+        // 第一種轉型
+        // result = parseInt(num1) + parseInt(num2);
+
+        // 第二種轉型
+        // result = Number(num1) + Number(num2);
+        
+        // console.log(name);
+        // console.log(result);
+
+        
+        
+        // 練習二
+        // let num1 = prompt('input num1',0);
+        // let num2 = prompt('input num2',0);
+
+        // 第一種轉型
+        // result = parseInt(num1) + parseInt(num2);
+
+        // 第二種轉型
+        // result = Number(num1) + Number(num2);
+        
+        // console.log(name);
+        // console.log(result);
+
+        
+
+        // js 字串轉數字
+        // 字串 vs int 不同的
+        // 轉型
+        
+
+
+        // let name = "kai";
+        // 練習一
+        // let name = prompt('input your name',"your name");
+        // console.log(name);
+        // console.log("Hi " + name);
+        
+        // php 
+        // $name 
+        // 字串相加 "hello " . $name
+        
+        // js
+        // name
+        // 字串相加 "HI " + name
+
+        // 練習一
+        // prompt 輸入name
+        // console.log hello name ~~
+
+        // 練習二
+        // 輸入兩個數字
+        // 相加
+
+        // 練習三
+        // 輸入兩個數字
+        // 判斷數字大小
+        // 誰大 或者 等於 您輸入錯誤
+
+        // 練習四
+        // 1.輸入存錢數量  1000
+        // 2.買東西的錢多少 500
+        // 3.找零多少...
+        // 如果不夠 無法扣款
+
+        // 最後顯示 存款剩多少
+
+        // 練習五 HW 2022.05.12
+        // 1.存款多少
+        // 2.後續動作 1.領錢 2.轉帳 
+        
+        // 領錢時
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 可以領 領多少 存款剩多少
+        // 不可以領 餘額不足
+
+        // 轉帳
+        // 轉帳的帳號
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 轉出多少 轉給誰 存款剩多少
+        // 不可以轉 餘額不足
+
+
+        
+    </script>
+    
+    
+    
+    
+    
+</body>
+</html>
