@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <script>
+     
+
+        // let save = parseInt(prompt('input save',0));
+
+        // console.log("本次存入 = " + save);
+        // let buy = parseInt(prompt('input buy',0));
+        // if (save>buy) {
+        //      result = save - buy ;
+        //      save = result;
+        //      console.log("購買商品金額 = " + buy);
+        // }else{
+        //      console.log("花太多了");    
+        // }   
+
+        // console.log("存款餘額", save);
+
+        // 練習五 HW 2022.05.12
+        // 1.存款多少
+        // 2.後續動作 1.領錢 2.轉帳 
+
+        // 領錢時
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 可以領 領多少 存款剩多少
+        // 不可以領 餘額不足
+
+        // 轉帳
+        // 轉帳的帳號
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 轉出多少 轉給誰 存款剩多少
+        // 不可以轉 餘額不足
+
+        // 練習五 HW 2022.05.12
+        // 1.存款多少
+        let save = parseInt(prompt('目前存款金額 ?', 0));
+        console.log('存款 =>' + save);
+
+        // 2.後續動作 1.領錢 2.轉帳 
+        let action = parseInt(prompt('後續動作 1.領錢 2.轉帳 3.存錢 ?', 0));
+        console.log('動作 =>' + action);
+
+        switch (action) {
+            case 1:
+                console.log("領錢中");
+                let getMoney = parseInt(prompt('領多少錢 ?', 0));
+                console.log('領錢金額 =>' + getMoney);
+                if (save >= getMoney) {
+                    console.log("成功領錢!");
+                    save = save - getMoney;
+                } else {
+                    console.log("餘額不足,本次無法領錢!");
+                }
+                console.log('最終存款 =>' + save);
+
+                break;
+
+            case 2:
+                console.log("轉帳中");
+
+                let transferID = prompt("轉入帳號 ?", 0);
+                console.log('轉入帳號 =>' + transferID);
+
+                let transferMoney = parseInt(prompt("轉多少錢 ?", 0))
+                console.log('轉帳金額 =>' + transferMoney);
+
+                if (save >= transferMoney) {
+                    console.log("成功轉帳!");
+                    save = save - transferMoney;
+                } else {
+                    console.log("餘額不足,本次無法轉帳!");
+                }
+                console.log('最終存款 =>' + save);
+                break;
+
+            case 3:
+                console.log("存錢中");
+                let saveMoney = parseInt(prompt('存多少錢 ?', 0));
+                console.log('存錢金額 =>' + saveMoney);
+                if (saveMoney >= 0) {
+                    console.log("成功存錢!");
+                    save = save + saveMoney;
+                } else {
+                    console.log("金額錯誤");
+                }
+                console.log('最終存款 =>' + save);
+
+                break;
+
+            default:
+                break;
+        }
+
+        alert('最終存款 =>' + save);
+
+        // 2.1 領錢時
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 可以領 領多少 存款剩多少
+        // 不可以領 餘額不足
+
+        // 2.2 轉帳
+        // 轉帳的帳號
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 轉出多少 轉給誰 存款剩多少
+        // 不可以轉 餘額不足
+
+        // 練習六
+        // 最終結果顯示alert
+
+        // 練習七
+        // 動作三 存錢
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

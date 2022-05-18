@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    
+    <script>
+
+        function action1() {
+            let returnString = "1.領錢\n";
+            let buy = parseInt(prompt('領錢金額',0));
+                if (save>buy) {
+                    let result = 0;
+                    result = save - buy ;
+                    save = result;
+                console.log("本次領款 = " + buy);
+                returnString = "本次領款 = " + buy + "\n";
+                }else{
+                console.log("餘額不足");       
+                returnString = returnString + "餘額不足\n";
+                }
+            return returnString;
+
+        }
+
+        function action2(){
+            let returnString = "2.轉帳\n";
+            let transferID = parseInt(prompt('轉帳帳號',0));
+                console.log('轉帳帳號 = ' + transferID);                
+                returnString = returnString + '轉帳帳號 = ' + transferID + "\n" ;
+                let transfer = parseInt(prompt('轉帳金額',0));                
+                if (save>transfer) {
+                    let result = 0;
+                    result = save - transfer ;
+                    save = result;
+                console.log("本次轉帳 = " + transfer);
+                returnString = returnString + "本次轉帳 = " + transfer + "\n";
+                }else{
+                console.log("餘額不足\n");       
+                }
+            return returnString;
+        }
+
+        // 練習五 HW 2022.05.12
+        // 1.存款多少
+        // 2.後續動作 1.領錢 2.轉帳 
+        
+        // 領錢時
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 可以領 領多少 存款剩多少
+        // 不可以領 餘額不足
+
+        // 轉帳
+        // 轉帳的帳號
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 轉出多少 轉給誰 存款剩多少
+        // 不可以轉 餘額不足
+
+
+        // 1.存款多少
+            let save = parseInt(prompt('input save',0));
+            console.log("本次存入 = " + save);
+        // 2.後續動作 1.領錢 2.轉帳 
+            let action = parseInt(prompt('1.領錢 2.轉帳 ',0));
+            console.log("後續動作 = " + action);
+        // 領錢時
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 可以領 領多少 存款剩多少
+        // 不可以領 餘額不足
+
+        // 轉帳
+        // 轉帳的帳號
+        // 輸入 領錢金額
+        // 判斷是否足夠領取
+        // 轉出多少 轉給誰 存款剩多少
+        // 不可以轉 餘額不足
+
+
+        let getActionString = "";
+        switch (action) {
+            case 1:
+                // 領錢
+                console.log('準備領錢');
+                getActionString = action1();
+                break;
+
+            case 2:
+                console.log('準備轉帳');
+                getActionString = action2();
+                break;
+        
+            default:
+                break;
+        }
+
+        console.log("存款餘額", save);
+        getActionString = getActionString + "最後餘額為 " + save + "\n";
+        alert (getActionString);
+
+        // 2.買東西的錢多少 500
+            //buy
+
+
+            // save => php =>user data
+            
+            //好寶寶function
+
+            //使用者餘額
+            //卡片的id
+            //server 存卡片的資料
+
+            //money
+        // 如果不夠 無法扣款
+
+        // 最後顯示 存款剩多少
+            //result
+
+        
+    </script>
+    
+    
+    
+    
+    
+</body>
+</html>

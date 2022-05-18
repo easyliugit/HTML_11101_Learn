@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 無跳脫字元
+        let myStringNoChange = "string123";
+        myStringNoChange = myStringNoChange + myStringNoChange + myStringNoChange
+        alert(myStringNoChange);
+        console.log('myStringNoChange', myStringNoChange);
+
+        // 有跳脫字元 \n 換行
+        let myStringChange = "string123" + "\n";
+        myStringChange = myStringChange + myStringChange + myStringChange
+        alert(myStringChange);
+        console.log('myStringChange', myStringChange);
+
+        // string 
+        let name = prompt("What's your name?");
+        // 數字1旁邊 esc下面 `
+        console.log(`hello ${name} 午安`);
+        helloString = `hello ${name} 午安`;
+        console.log(helloString);
+
+
+
+    </script>
+   
+</body>
+</html>
