@@ -1,0 +1,119 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 練習</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin-top: 30px;
+            font-size: medium;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 70%;
+            text-align: center;
+            border: 1px solid lightblue;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 70px;
+        }
+
+        tr,
+        td {
+            border: 1px solid lightblue;
+        }
+
+        th {
+            border: 1px solid lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="get" id="myForm">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <h2>飲料點餐</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <th>品名</th>
+                    <th>單價</th>
+                    <th>數量</th>
+                    <th>總價</th>
+                </tr>
+                <tr>
+                    <td>花茶</td>
+                    <td>
+                        <input type="number" name="item1" id="item1" value="100">
+                    </td>
+                    <td>
+                        <input type="number" name="item1Num" id="item1Num">
+                    </td>
+                    <td>
+                        <input type="number" name="item1Price" id="item1Price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>咖啡</td>
+                    <td>
+                        <input type="number" name="item2" id="item2" value="200">
+                    </td>
+                    <td>
+                        <input type="number" name="item2Num" id="item2Num">
+                    </td>
+                    <td>
+                        <input type="number" name="item2Price" id="item2Price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>黃金水</td>
+                    <td>
+                        <input type="number" name="item3" id="item3" value="500">
+                    </td>
+                    <td>
+                        <input type="number" name="item3Num" id="item3Num">
+                    </td>
+                    <td>
+                        <input type="number" name="item3Price" id="item3Price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        總價
+                    </td>
+                    <td colspan="2">
+                        <p id=result>
+                            0
+                        </p>
+                    </td>
+                    <td>
+                        <button type="submit" id="sumbit">多少錢</button>
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

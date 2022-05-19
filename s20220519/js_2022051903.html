@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <p id="result">
+         12345       
+    </p>
+
+    <button type="button" id="myBtn"> obj btn </button>
+
+    <script>
+        //object => PHP Associative Arrays ['key'] key string
+        //array  => PHP index Arrays ['key'] index int 0 1 2
+
+        // array 
+        let myArr = [1,3,5,7,9];
+        console.log(myArr);
+
+
+        //obj
+       let student1 = {
+            name: "amy",
+            age: "18",
+            location: "taipei",
+       };
+
+        console.log('student1', student1);
+
+        const result = document.getElementById('result');
+        const myBtn = document.getElementById('myBtn');
+        myBtn.addEventListener('click',function(){
+                result.innerText = `Hello ${student1.name} age: ${student1.age} from ${student1.location}`;
+        });
+
+
+        // let x = "testxxx"
+        // x = x + "123" ;
+        // console.log(x);
+
+        // let y = 'textyyy';
+        // y += "456";
+        // console.log(y);
+
+
+
+        // let vs var
+        // 1.
+        // let new es6 2015 
+        // var old
+
+        // 2.Block Scope
+        // console.log(x);
+        
+        // {
+        //     //let 要宣告
+        //     // let x = "test"
+
+        //     //var 不用先宣告
+        //     var x = "test";
+        //     console.log(x);
+        // }
+        
+        // console.log(x);
+
+        
+        // 不要全域變數 global variable
+
+
+        
+
+        // test
+
+        //多行註解 常用 說明
+        // ctrl + / 一次多行
+
+        // const fontSizeDiv = document.getElementById('demo'); 
+
+        
+        // js type
+        // typeof
+
+    </script>
+</body>
+
+</html>

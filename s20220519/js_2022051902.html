@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            color:red;
+        }
+
+        .myClass{
+            color: red;
+        }
+        .blueClass {
+            color: blue;
+        }
+
+        .queryClass {
+            color:yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="test">
+
+    </div>
+
+    <!-- <div class="myClass">
+        Hello myClass1
+    </div>
+    <div class="myClass">
+        Hello myClass2
+    </div>
+    <div id="query">
+        query id test
+    </div> -->
+
+    <input type="text" name="num1" id="num1" placeholder="num1 ?" required>
+
+    <span> + </span>
+
+    <input type="text" name="num2" id="num2" placeholder="num2 ?" required>
+    
+    <div class="queryClass">
+        query id test
+    </div>
+
+    <div class="queryClass">
+        query id test
+    </div>
+    <br><br>
+    <!-- <button id="myBtn"> button</button> -->
+
+    <button type="button" class="btn btn-primary" id="myBtn">bs btn</button>
+    <br><br>
+    <div id="result">
+        123456
+    </div>
+
+
+    
+
+
+    <script>
+        //練習五
+        // num1 + num2 result 顯示結果
+        // 成功999
+
+        // 練習四
+        // input num1 抓出來
+        // input num2 抓出來
+
+        // 練習三 button touch queryClass red
+        //  練習成功 666 
+        // div 切換成功666
+        const myBtn = document.getElementById('myBtn');
+        const result = document.getElementById('result');
+
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+
+        // const queryAllClass = document.querySelectorAll('.queryClass');
+        const queryAllClass = document.getElementsByClassName('queryClass');
+        
+        // 元件.觸發事件('click點擊事件',動作要做啥.)
+        myBtn.addEventListener('click',function(){
+                // alert('myBtn ok')    ;
+
+            // for in 的部分 會把全部的部分
+            // key 產生資料 不只 0 1 還有其他的元素            
+            // css query all
+
+            // css queryAllClass Array.isArray(queryAllClass) =>false
+
+            //  queryAllClass.forEach((idx,div)=>{
+            //     idx.style.color = "red";
+            //  });
+           
+            for (const key in queryAllClass) {
+                // queryAllClass[0].style.color = "red";
+                // queryAllClass[key].style.color = "red";
+                console.log(key);
+                // 非數字的key擋掉
+                if(!isNaN(key)){
+                    // console.log(key);
+                    queryAllClass[key].style.color = "red";
+                }
+                // queryAllClass123[key].style.color = "red";
+            }
+            // let num1 = parseInt(num1Input.value);
+            // let num2 = parseInt(num2Input.value);
+            // console.log(num1 + num2);
+            // sum = num1 + num2;
+            // result.innerText = `結果為 ${sum}`;
+            result.innerText = `切換成功`;
+        });
+
+
+        // const myClass = document.getElementsByClassName('myClass');
+        // console.log(myClass[0].innerText);
+        // myClass[1].style.color = "blue";
+
+        // const query = document.querySelector("#query");
+        // query.style.color = "green";
+
+        
+        // 全部class更換
+        // 1.for
+            // for (let i = 0; i < queryAllClass.length; i++) {
+            //     queryAllClass[i].style.color = "blue";
+            // }
+
+        // 2.for in
+        //    for (const key in queryAllClass) {
+        //         queryAllClass[key].style.color = "blue";
+        //    }
+
+        
+        // getElementById 抓單個id
+        // getElementsByClassName 全部的class
+        // querySelector 抓單個id 要#id
+        // querySelectorAll 抓class 要.class
+
+
+        
+        
+
+
+        // const testDiv = document.getElementById('test');
+        // testDiv.innerText = "add test txt";
+        // testDiv.innerHTML = "<h1>Hello Javascript</h1>";
+
+        // 練習二 class myClass color red -> blue 
+
+        // let student1 = "amy",
+        //     student2 = "bob",  
+        //     student3 = "cat";
+
+        
+        // 1.let 宣告變數
+        let x = 10 ;
+
+        // 2.const 宣告常數 
+        const y = 20 ;
+
+        x = 300;
+        // y = 300; const 不可以改變
+
+        // 3.var 宣告變數 var
+        var z = 100;
+    </script>
+</html>
