@@ -1,0 +1,281 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+/* body{
+    
+} */
+#table{
+    display: flex;
+    flex-wrap: wrap;
+    width:1100px;
+    height: 1300px;
+    background-color: beige;
+    margin: auto;
+    padding: 50px;
+    justify-content: center;
+    align-content: flex-start;
+}
+.title{
+    flex-basis: 100%;
+    height: 100px;
+    border: 1px solid lightgray;
+    font-size: 60px;
+    text-align: center;
+    line-height: 170%;
+}
+.menu1{
+    flex-basis: 35%;
+    height: 50px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+    line-height: 170%;
+}
+.menu2{
+    flex-basis: 15%;
+    height: 50px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+    line-height: 170%;
+}
+.menu3{
+    flex-basis: 25%;
+    height: 50px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+    line-height: 170%;
+}
+.menu4{
+    flex-basis: 25%;
+    height: 50px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+    line-height: 170%;
+}
+.pro1{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-basis: 35%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: left;
+    line-height:260%;
+}
+#mainmeal{
+    font-size: 30px;
+}
+#mealbtn{
+    font-size: 30px;
+}
+.pri1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.num1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+#NUM1{
+    width: 50%;
+    font-size: 30px;
+}
+.cost1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.pro2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-basis: 35%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: left;
+    line-height:260%;
+}
+#sidemeal{
+    font-size: 30px;
+}
+#sidebtn{
+    font-size: 30px;
+}
+.pri2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.num2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+#NUM2{
+    width: 50%;
+    font-size: 30px;
+}
+.cost2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.pro3{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-basis: 35%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: left;
+    line-height:260%;
+}
+#drink{
+    font-size: 30px;
+}
+#drinkbtn{
+    font-size: 30px;
+}
+.pri3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.num3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+#NUM3{
+    width: 50%;
+    font-size: 30px;
+}
+.cost3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.pro4{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-basis: 35%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: left;
+    line-height:260%;
+}
+#dessert{
+    font-size: 30px;
+}
+#dessertbtn{
+    font-size: 30px;
+}
+.pri4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+.num4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+#NUM4{
+    width: 50%;
+    font-size: 30px;
+}
+.cost4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
+#priTotal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 75%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;}
+.toBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    height: 150px;
+    border: 1px solid lightgray;
+    font-size: 30px;
+    text-align: center;
+}
