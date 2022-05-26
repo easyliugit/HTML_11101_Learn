@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_if_20220526003</title>
+</head>
+<body>
+    <script>
+        // where ? true : false;
+        let love = "在家";
+        let str = "";
+
+        // 原本if
+        if (love == "在家") {
+            str = "恭喜你可以睡到7:59";
+        }else{
+            str = "希望大家都平安";
+        }
+        // console.log("1 : " + str);
+        //三元運算子 
+        str = (love == "在家") ? "恭喜你可以睡到7:59" : "希望大家都平安";   
+        console.log("Hello str => " + str);
+
+
+
+
+        // 三元運算子
+        // str = love == "在家" ? "恭喜你可以睡到7:59" : "希望大家都平安";
+        // console.log("2 : " + str);
+
+
+    </script>
+</body>
+</html>
