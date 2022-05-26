@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if判斷式</title>
 </head>
+
 <body>
 
     <script>
@@ -145,88 +147,105 @@
         let idResult = "";
         let conditionNum = "";
         // let idStr = id.search("F");
-        
+
         // 3 4 5
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "3";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "A";
             }
         }
 
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "4";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "A";
-            }        
-        }
-        
-        if(idResult.length==0){
-            conditionNum = "5";
-            idStr = id.search(conditionNum);
-            if(idStr > 0){
-                    idResult = "A";
-            }        
+            }
         }
 
-        
+        if (idResult.length == 0) {
+            conditionNum = "5";
+            idStr = id.search(conditionNum);
+            if (idStr > 0) {
+                idResult = "A";
+            }
+        }
+
+
         //search position 位置
         // 存在
         // 0 1 2 3
         // 不存在
         // -1
-        
+
         // 6 7 8
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "4";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "B";
             }
         }
 
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "5";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "B";
-            }        
+            }
         }
-        
-        if(idResult.length==0){
+
+        if (idResult.length == 0) {
             conditionNum = "6";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
-                    idResult = "B";
-            }        
+            if (idStr > 0) {
+                idResult = "B";
+            }
         }
 
         // 9 0
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "9";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "C";
-            }        
+            }
         }
-        
-        if(idResult.length==0){
+
+        if (idResult.length == 0) {
             conditionNum = "0";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "C";
-            }        
+            }
         }
 
         //結果
-        console.log('id',id);
-        console.log('member',member);
-        console.log('idResult',idResult);
-        console.log('idStr',idStr);
-        console.log('conditionNum',conditionNum);
+        console.log('id', id);
+        console.log('member', member);
+        console.log('idResult', idResult);
+        console.log('idStr', idStr);
+        console.log('conditionNum', conditionNum);
+
+
+        //idResult & isMember ?
+        // A && member => 1折
+        // B && member => 5折
+        // C && member => 7折
+        // 其他 => 95折
+        if (idResult == "A" && isMember) {
+            console.log('恭喜 得到 1 折');
+        } else if (idResult == "B" && isMember) {
+            console.log('恭喜 得到 5 折');
+        } else if (idResult == "C" && isMember) {
+            console.log('恭喜 得到 7 折');
+        } else {
+            console.log('快加入會員喔 本日 95 折');
+        }
 
     </script>
 </body>
-</html> 
+
+</html>
