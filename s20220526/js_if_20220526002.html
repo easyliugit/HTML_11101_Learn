@@ -44,9 +44,10 @@
         //     if(奧客 不讓你領)
         // }
         // 如果 1.我買這組大樂透中獎了 "且" 2.超過1000萬
-        let myLottery = true;
-        let money = 2000;
-        let type = 'USD';
+        // let myLottery = true;
+        // let money = 20000;
+        // // let type = 'USD';
+        // let type = 'Luna';
 
         // if (myLottery) {
         //     if (money > 1000) {
@@ -82,15 +83,15 @@
         // luna = null
         // 下市了 = undefined
 
-        if (myLottery && money > 1000 && type != 'Luna') {
-            console.log('myLottery', myLottery);
-            console.log('money', money);
-            console.log('type', type);
-            console.log('練習二 ok');
-        }else{
-            // Luna幣 GG
-            console.log('繼續工作');
-        }
+        // if (myLottery && money > 1000 && type != 'Luna') {
+        //     console.log('myLottery', myLottery);
+        //     console.log('money', money);
+        //     console.log('type', type);
+        //     console.log('練習二 ok');
+        // }else{
+        //     // Luna幣 GG
+        //     console.log('繼續工作');
+        // }
 
 
         //if else 非黑即白 黑 白
@@ -103,21 +104,21 @@
 
         //第四選擇 第五選擇 ... 第100選擇 else if
 
-        if (myLottery && money > 1000 && type != 'Luna') {
-            console.log('myLottery', myLottery);
-            console.log('money', money);
-            console.log('type', type);
-            console.log('練習二 ok');
-        }else if(myLottery && money > 10000 && type == 'Luna'){
-            console.log('myLottery', myLottery);
-            console.log('money', money);
-            console.log('type', type);
-            console.log('或許有一天luna 10000美元 重返榮耀');
-        }
-        else{
-            // Luna幣 GG
-            console.log('繼續工作');
-        }
+        // if (myLottery && money > 1000 && type != 'Luna') {
+        //     console.log('myLottery', myLottery);
+        //     console.log('money', money);
+        //     console.log('type', type);
+        //     console.log('練習二 ok');
+        // }else if(myLottery && money > 10000 && type == 'Luna'){
+        //     console.log('myLottery', myLottery);
+        //     console.log('money', money);
+        //     console.log('type', type);
+        //     console.log('或許有一天luna 10000美元 重返榮耀');
+        // }
+        // else{
+        //     // Luna幣 GG
+        //     console.log('繼續工作');
+        // }
 
         //流程圖 if else 
 
@@ -131,9 +132,100 @@
         // 沒有會員
         // 4.95折
 
+        // let 身份證字號的變數 string
+        // let 會員身分 boolen
 
+        // 1.get 身分證字號 -> 
+        // 有 345 / 678 / 90?
+        // 2.看有沒有會員
 
+        let id = "F678";
+        let member = true;
+        let idStr = "";
+        let idResult = "";
+        let conditionNum = "";
+        // let idStr = id.search("F");
+        
+        // 3 4 5
+        if(idResult.length==0){
+            conditionNum = "3";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "A";
+            }
+        }
 
+        if(idResult.length==0){
+            conditionNum = "4";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "A";
+            }        
+        }
+        
+        if(idResult.length==0){
+            conditionNum = "5";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                    idResult = "A";
+            }        
+        }
+
+        
+        //search position 位置
+        // 存在
+        // 0 1 2 3
+        // 不存在
+        // -1
+        
+        // 6 7 8
+        if(idResult.length==0){
+            conditionNum = "4";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "B";
+            }
+        }
+
+        if(idResult.length==0){
+            conditionNum = "5";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "B";
+            }        
+        }
+        
+        if(idResult.length==0){
+            conditionNum = "6";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                    idResult = "B";
+            }        
+        }
+
+        // 9 0
+        if(idResult.length==0){
+            conditionNum = "9";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "C";
+            }        
+        }
+        
+        if(idResult.length==0){
+            conditionNum = "0";
+            idStr = id.search(conditionNum);
+            if(idStr > 0){
+                idResult = "C";
+            }        
+        }
+
+        //結果
+        console.log('id',id);
+        console.log('member',member);
+        console.log('idResult',idResult);
+        console.log('idStr',idStr);
+        console.log('conditionNum',conditionNum);
 
     </script>
 </body>
