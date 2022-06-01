@@ -78,21 +78,116 @@
 
 
         // 方法二 * 30
-        let input = 5;
-        let inputJ = 30;
-        for(let i = 0 ; i < input ; i++){
-            // 1.蓋大樓
+        // let input = 5;
+        // let inputJ = 30;
+        // for(let i = 0 ; i < input ; i++){
+        //     // 1.蓋大樓
+        //     // document.write(i);
+        //     // 2.畫inputJ數量的星星
+        //     for(let j = 0 ; j < inputJ ; j++){
+        //         // document.write(j);
+        //         document.write('*');
+        //     }
+        //     document.write('<br>');
+
+        // }
+
+        // 練習四
+        //for loop 星星練習4
+        // input = 5
+        //     *
+        //    ***
+        //   *****
+        //  *******
+        // *********
+
+        // 1.蓋大樓
+        // let input = 5;
+        // for (let i = 1; i <= input; i++) {
+        //     // console.log(i);
+        //     document.write(i);
+        //     // 真實寫入星星的地方
+
+        //     // 空格
+        //     for (let j = 1; j <= (input - i); j++) {
+        //         // console.log(j);
+        //         // document.write('j');
+        //         document.write('&nbsp;&nbsp;');
+        //     }
+        //     // 空格 end
+
+        //     // 星星
+        //     for (let k = 1; k <= (2 * i - 1); k++) {
+        //         // document.write(k);
+        //         document.write('*');
+        //     }
+
+        //     // 星星 end
+        //     document.write('<br>');
+        // }
+
+
+        //for loop 星星練習5
+        // input = 5
+        //     *
+        //    ***
+        //   *****
+        //  *******
+        // *********
+        //  *******
+        //   *****
+        //    ***
+        //     *
+
+
+        //上半部
+        // 1.蓋大樓
+        let input = 6;
+        for (let i = 1; i <= input; i++) {
+            // console.log(i);
             // document.write(i);
-            // 2.畫input數量的星星
-            for(let j = 0 ; j < inputJ ; j++){
-                // document.write(j);
+            // 真實寫入星星的地方
+
+            // 空格
+            for (let j = 1; j <= (input - i); j++) {
+                // console.log(j);
+                // document.write('j');
+                document.write('&nbsp;&nbsp;');
+            }
+            // 空格 end
+
+            // 星星
+            for (let k = 1; k <= (2 * i - 1); k++) {
+                // document.write(k);
                 document.write('*');
             }
-            document.write('<br>');
 
+            // 星星 end
+            document.write('<br>');
         }
 
-        
+        // 下半部
+        // 1.蓋大樓 只要蓋四樓 5 4 3 2
+        for (i = input; i > 1; i--) {
+            // document.write(i);
+            // 空格
+            for (j = 0; j <= (input - i); j++) {
+                // document.write(j);
+                document.write('&nbsp;&nbsp;');
+            }
+            // 空格 end
+
+            // 列印*
+            for (k = (((i - 1) * 2) - 1); k > 0; k--) {
+                // document.write(k);
+                document.write('*');
+            }
+
+            // 列印* end
+            document.write('<br>')
+
+
+        }
 
     </script>
 </body>
