@@ -25,7 +25,7 @@
         // 10結束
         // 一次加1
 
-        // 方法一
+        // 說明一
         // let sum = 0;
         // for (let i = 1; i <= 10; i++) {
         //     // console.log('old sum =>' +sum); // 0
@@ -34,18 +34,60 @@
         //     console.log('sum = sum + i ; => ' + sum);
         // }
 
-        // 方法二
-        let sum = 0;
-        for(let i = 1 ; i <= 10 ; i++){
-            console.log('i =>' + i);
-            console.log('sum => ' + sum);
-            console.log(`${sum} + ${i}`);
-            sum = sum + i ;
-            console.log(`resule sum => ${sum}`);
+        // 說明二 
+        // let sum = 0;
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log('i =>' + i);
+        //     console.log('sum => ' + sum);
+        //     console.log(`${sum} + ${i}`);
+        //     sum = sum + i;
+        //     console.log(`resule sum => ${sum}`);
 
+        // }
+        // console.log(`resule sum => ${sum}`);
+
+        // 練習二
+        // 2-1 * 在10行
+        // 2-2  印出 10個 * 在同一行
+        // console.log('*');
+
+        // 2-1 * 在10行
+        // for (let i = 0; i < 10; i++) {
+        //     // console.log(i);
+        //     console.log('*');
+        // }
+
+        // 2-2  印出 10個 * 在同一行
+        // ***********
+        // sum = '';
+        // for (let i = 0; i < 10; i++) {
+        //     // console.log(i
+        //     sum = sum + '*';
+        //     // console.log(sum);
+        // }
+        // console.log(sum);
+
+
+        // 畫星星 練習一
+        // 輸入一個數 會顯示如下圖 
+        // input = 5 時
+        // * 動作1
+        // ** 動作2
+        // ***
+        // ****
+        // *****
+
+
+        sum = '';
+        input = 5;
+        for(let i = 0 ; i < input ; i++){
+            // sum = sum + '*';
+            sum += '*';
+            // console.log(`${i+1} => ${sum}`);
+            document.write(`${i+11} => ${sum} <br>`)
+            // document.write(`${i} => ${sum} <br>`)
+            // document.write(`${sum} <br>`)
         }
-            console.log(`resule sum => ${sum}`);
-
 
 
 
