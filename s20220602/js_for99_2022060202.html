@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p class="red">Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <br><br><br>
+    <hr>
+
+
+    <script>
+        console.log('for 99');
+        // 練習99乘法表 console顯示
+        // 練習一 conosole.log 練習 99乘法表
+        // 1*1=1 ..... 1*9=9
+        // 2*1=1 ..... 2*9=18
+        // 9*9=9 ..... 9*9=81
+
+        // 練習二 補0   google js 補0 //padStart
+        // 01*01=01 ..... 01*09=09
+        // 09*09=09 ..... 09*09=81
+
+        // 1.蓋大樓
+        // 2.畫星星
+        let test = 5;
+        // console.log(test.padStart(2,"0")); //發現fun ?? error
+        // string
+
+        // 數字 變成 字串
+        // 1.number -> string
+        // 2.string 補0
+
+        let testStr = test.toString();
+        console.log('testStr => ' + testStr);
+        let testStrChange = testStr.padStart(2, "0");
+        console.log('補0 testStrChange =>' + testStrChange);
+
+        let str = " " + "3";
+        console.log(str.length);
+
+
+        // 1.外圈
+        // 2.內層
+        for (let i = 1; i <= 9; i++) {
+            // console.log(i);
+
+            // 第二個 紅色
+            if (i == 2) {
+                document.write('<p class="red">');
+            } else if( i % 2 == 1){
+                document.write('<p class="blue">');
+            }else {
+                document.write('<p>');
+            }
+
+            for (let j = 1; j <= 9; j++) {
+                //    console.log(j); 
+                // 1*1=1 ..... 1*9=9
+                //    console.log(`${i} * ${j} = ${i * j}`);
+
+                // 補0
+                // 1.number -> string
+                // 2. string -> padStart
+
+                // 1.number -> string
+                let iStr = i.toString();
+                let jStr = j.toString();
+                let ijStr = (i * j).toString();
+                // console.log(ijStr);
+                // console.log(typeof(ijStr));
+                // console.log(jStr);
+
+                // 2. string -> padStart
+                let iStrChange = iStr.padStart(2, "0");
+                let jStrChange = jStr.padStart(2, "0");
+                let ijStrChange = ijStr.padStart(2, "0");
+                // ijStrChange = "&nbsp;"+ str;
+                // let ijStrChange = ijStr;
+                // 補空格 因為padStart 不能用空格
+                // console.log(ijStr.length);
+                if (ijStr.length == 1) {
+                    ijStrChange = "&nbsp;&nbsp;" + ijStr;
+                }
+                // ijStrChange = '&nbsp;2';
+
+
+                // document.write(`${i} * ${j} = ${i * j}
+                document.write(`${iStrChange} * ${jStrChange} = ${ijStrChange}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                 `);
+            }
+            document.write('</p>');
+            // document.write('<br>');
+
+            // 練習三
+            // 2*1 .... 2*9  文字紅色 if
+
+            // 練習四 基數行 文字藍色
+            // 1*1 .... 1*9  
+            // 3*1 .... 3*9  
+            // 9*1 .... 9*9  
+
+            // 練習五 table 99
+            // 1*1 .... 1*9  
+            // 3*1 .... 3*9  
+            // 9*1 .... 9*9  
+        }
+
+    </script>
+</body>
+
+</html>
