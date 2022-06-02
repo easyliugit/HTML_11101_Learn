@@ -44,22 +44,22 @@
         // }
 
         //  步驟二
-        // input = 5;
-        // tmp = input;
-        // for (let i = 0; i < input; i++) {
-        //     // console.log('old tmp => ' + tmp);
-        //     tmp--; //tmp = tmp - 1;
-        //     // console.log('new tmp => ' + tmp);
-        //     // 1.蓋大樓
-        //     // document.write(i);
-        //     // 2.雙層回圈
-        //     for (let j = 0; j <= input ; j++) {
-        //         // document.write(j);
-        //         document.write('*');
-        //     }
-        //     // 2. end
-        //     document.write("<br>");
-        // }
+        input = 5;
+        tmp = input;
+        for (let i = 0; i < input; i++) {
+            // console.log('old tmp => ' + tmp);
+            tmp--; //tmp = tmp - 1;
+            // console.log('new tmp => ' + tmp);
+            // 1.蓋大樓
+            // document.write(i);
+            // 2.雙層回圈
+            for (let j = 0; j <= input ; j++) {
+                // document.write(j);
+                document.write('*');
+            }
+            // 2. end
+            document.write("<br>");
+        }
 
         //for loop 星星練習3
         // input = 5
@@ -142,51 +142,79 @@
 
         //上半部
         // 1.蓋大樓
-        let input = 6;
-        for (let i = 1; i <= input; i++) {
-            // console.log(i);
-            // document.write(i);
-            // 真實寫入星星的地方
+        // let input = 6;
+        // for (let i = 1; i <= input; i++) {
+        //     // console.log(i);
+        //     // document.write(i);
+        //     // 真實寫入星星的地方
 
-            // 空格
-            for (let j = 1; j <= (input - i); j++) {
-                // console.log(j);
-                // document.write('j');
-                document.write('&nbsp;&nbsp;');
+        //     // 空格
+        //     for (let j = 1; j <= (input - i); j++) {
+        //         // console.log(j);
+        //         // document.write('j');
+        //         document.write('&nbsp;&nbsp;');
+        //     }
+        //     // 空格 end
+
+        //     // 星星
+        //     for (let k = 1; k <= (2 * i - 1); k++) {
+        //         // document.write(k);
+        //         document.write('*');
+        //     }
+
+        //     // 星星 end
+        //     document.write('<br>');
+        // }
+
+        // // 下半部
+        // // 1.蓋大樓 只要蓋四樓 5 4 3 2
+        // for (i = input; i > 1; i--) {
+        //     // document.write(i);
+        //     // 空格
+        //     for (j = 0; j <= (input - i); j++) {
+        //         // document.write(j);
+        //         document.write('&nbsp;&nbsp;');
+        //     }
+        //     // 空格 end
+
+        //     // 列印*
+        //     for (k = (((i - 1) * 2) - 1); k > 0; k--) {
+        //         // document.write(k);
+        //         document.write('*');
+        //     }
+
+        //     // 列印* end
+        //     document.write('<br>')
+
+
+        // }
+
+        // 畫星星 HW 20220601
+        // 輸入一個數 會顯示如下圖 
+        // input = 5 時
+        // 1*****
+        // 2****
+        // 3***
+        // 4** 
+        // 5* 
+        // i-- input 多 => 少
+
+        // 方法一 內層 j--
+        // let input = 5;        
+        // for (let i = 0; i < input; i++) {
+        //     for (let j = input; i < j; j--) {
+        //         document.write(j);
+        //     }
+        //     document.write('<br>');
+        // }
+
+        // 方法二 外層 i--
+        let input = 5;
+        for (var i = 5; i > 0; i--) {
+            for (var j = 1; j <= i; j++) {
+                document.write("*");
             }
-            // 空格 end
-
-            // 星星
-            for (let k = 1; k <= (2 * i - 1); k++) {
-                // document.write(k);
-                document.write('*');
-            }
-
-            // 星星 end
-            document.write('<br>');
-        }
-
-        // 下半部
-        // 1.蓋大樓 只要蓋四樓 5 4 3 2
-        for (i = input; i > 1; i--) {
-            // document.write(i);
-            // 空格
-            for (j = 0; j <= (input - i); j++) {
-                // document.write(j);
-                document.write('&nbsp;&nbsp;');
-            }
-            // 空格 end
-
-            // 列印*
-            for (k = (((i - 1) * 2) - 1); k > 0; k--) {
-                // document.write(k);
-                document.write('*');
-            }
-
-            // 列印* end
-            document.write('<br>')
-
-
+            document.write("<br>") ;
         }
 
     </script>
