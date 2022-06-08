@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    大胃王挑戰賽<br><br>
+
+
+
+
+    <script>
+
+        //while
+
+        // 大胃王挑戰賽 紀錄吃的時間 吃的盤數 剩下的錢
+        // 練習一
+        // 30元 壽司
+        // 每五分鐘 吃一盤
+        // 總共帶3000
+        // 0：00 吃了1盤  2970
+        // 5：00 吃了2盤  2940
+        // 90:00 吃了?盤  ?
+        // 最多只可以吃90分鐘
+
+        // 練習二
+        // 00-30分鐘 五分鐘吃一盤
+        // 31-60分鐘 六分鐘吃一盤
+        // 61-90分鐘 七分鐘吃一盤
+
+        let money = 3000;
+        let i = 1;
+        let food = 30;
+        let name = "kai";
+        let min = 0;
+
+        // document.write(`00：00 吃了1盤  2970<br>`);
+        // document.write(`05：00 吃了2盤  2940<br>`);
+        document.write(`總共帶${money}<br>`);
+
+        //要有錢 才可以吃   
+        while (money > food) {
+            money = money - food;
+            //money -= food;
+            document.write(`${name}--${min}：00 吃了${i}盤 餘額=> ${money}<br>`);
+
+            if (min < 30) {
+                min = min + 5;
+            } else if (min < 60) {
+                min = min + 6;
+            } else {
+                min = min + 7;
+            }
+
+
+            if (min > 90) {
+                document.write('<hr>');
+                document.write('你已成為傳說 老闆要下班了<br>');
+
+                break;
+            }
+
+            i++;
+        }
+
+
+
+
+
+
+
+      // 練習三
+      // 超過挑戰時間90分鐘
+      // 你已成為傳說
+
+    </script>
+</body>
+
+</html>
+
+
+      // 練習二
+      // 00-30分鐘 五分鐘吃一盤
+      // 31-60分鐘 六分鐘吃一盤
+      // 61-90分鐘 七分鐘吃一盤
+
+
+      // 練習三
+      // 超過挑戰時間90分鐘
+      // 你已成為傳說
+
+    </script>
+</body>
+
+</html>
