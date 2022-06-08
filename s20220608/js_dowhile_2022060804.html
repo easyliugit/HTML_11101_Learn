@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 練習一 1 - 10顯示
+        // do while
+        // 至少做一次
+        // let i = 0;
+        // do {
+        //     console.log(i);
+        //     i++;
+        // } while (i< 10);
+
+        //for
+        // for (let index = 0; index < array.length; index++) {
+        //     const element = array[index];
+
+        // }
+
+        // // while
+        // let i = 0;
+        // while (condition) {
+
+        //     i++;
+        // }
+
+
+        // 練習二
+        // do while
+        // 小明來兒童樂園
+        // 每項遊樂設施100元
+        // input 10項 總共花了多少?
+        // let input = 10 ;
+        // let i = 1;
+        // let sum = 0;
+        // do {
+        //     sum = i * 100 ;
+        //     document.write(`第${i}次 花100 目前累積金額${sum}<br>`);     
+        //     i++;
+        // } while (i <= input);
+
+
+        // 練習三
+        // do while
+        // 小明來兒童樂園
+        // 每項遊樂設施10元
+        // input 10項 總共花了多少?
+        // 前三項 低銷300
+        // 1 300
+        // 2 300
+        // 3 300
+        // 4 310
+        // 5 320
+
+        // input = 0 
+        // 只要進來 不玩遊樂設施還是要收錢
+        let input = 0;
+        let i = 1;
+        let sum = 0;
+        let one = 0;
+        do {
+            if (i < 4) {
+                sum = 300;
+            } else {
+                sum = sum + 10;
+            }
+
+            if (i == 1) {
+                one = 300;
+            } else if (i == 2 || i == 3){
+                one = 0;
+            }
+            else {
+                one = 10;
+            }
+            document.write(`第${i}次 花${one} 目前累積金額${sum}<br>`);
+            i++;
+        } while (i <= input);
+
+
+    </script>
+</body>
+
+</html>
