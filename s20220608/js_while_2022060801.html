@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 學生1 國文=>60 英文=>70 數學=>80
+    <br>
+    學生1 總分=>210 平均=> 70 -->
+
+    <script>
+        // while
+        // 練習一 成績加總
+        // 輸入學生數量 input
+        // studnet1 國文
+        // studnet1 英文
+        // studnet1 數學
+
+        // 練習二
+        // 計算全班平均分數 (google js 小數點第二位)
+        // 全部總分 / 學生數量
+
+        // 練習三
+        // 老師的手會斷掉 input > 3 中斷while
+
+        // 最後畫面顯示
+        // 計算總分 與 平均分數
+        //
+        // 學生1 國文=>60 英文=>70 數學=>80
+        // 學生1 總分=>210 平均=> 70
+
+        // 學生2 國文=>70 英文=>80 數學=>90
+        // 學生2 總分=>240 平均=> 80
+
+        // 全班總分 => allSum
+        // 全班人數 => input
+        // 全班平均分數 => allAvg
+
+
+        // 練習一 成績加總
+        // 輸入學生數量 input
+        // let input = 1;
+        let input = Number(prompt('請輸入學生數量'));
+        // console.log('input',input);
+
+        // for (let index = 0; index < array.length; index++) {
+        //     const element = array[index];
+
+        // }
+
+        let allSum = 0; //宣告外部的總分 第一個粉紅色星星
+
+        let i = 1;
+        while (i <= input) {
+            if (input > 3) {
+                document.write('老師的手會斷掉');
+                break;
+            }
+
+            console.log(`第${i}個人`);
+            // code start
+            // studnet1 國文
+            // studnet1 英文
+            // studnet1 數學
+
+            let chinese = Number(prompt(`學生${i}請輸入國文分數`));
+            let english = Number(prompt(`學生${i}請輸入英文分數`));
+            let math = Number(prompt(`學生${i}請輸入數學分數`));
+
+            // string => number
+
+            // chinese 20
+            // english 30
+            // 2030 string字串相加
+
+            // number
+
+            // chinese = prompt(`學生${i}請輸入國文分數`);
+            // let newChinese = Number(chinese);
+            // let newChinese = parseInt(chinese);
+
+            let sum = chinese + english + math;
+            let avg = (sum / 3).toFixed(2);
+
+            allSum += sum; //每次的總分加總
+            // allSum = allSum + sum;
+
+            console.log('chinese', chinese);
+            console.log('english', english);
+            console.log('math', math);
+            console.log('sum', sum);
+            console.log('avg', avg);
+
+            // 最後畫面顯示
+            // 計算總分 與 平均分數
+            //
+            // 學生1 國文=>60 英文=>70 數學=>80
+            // 學生1 總分=>210 平均=> 70
+
+            document.write(`國文=>${chinese} 英文=>${english} 數學=>${math}<br>`);
+            document.write(`學生1 總分=>${sum} 平均=> ${avg}<br><br>`);
+
+            // 學生2 國文=>70 英文=>80 數學=>90
+            // 學生2 總分=>240 平均=> 80
+
+            // code end
+            i++;
+        }
+
+        if (input < 3) {
+            // while 的外部 取得 最後的allSum
+            document.write('<hr>');
+            document.write(`全部總分為 => ${allSum}<br>`);
+            document.write(`班級人數為 => ${input}<br>`);
+            let allAvg = allSum / input;
+            newAvg = allAvg.toFixed(2);
+            document.write(`全部平均為 => ${newAvg}<br>`);
+        }
+
+    </script>
+</body>
+
+</html>
