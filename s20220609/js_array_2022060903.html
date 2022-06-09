@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    array
+</body>
+
+<script>
+    //[1,3,5,7,9] => [2,6,10,14,18] ?
+    // let arr1 = [1, 3, 5, 7, 9];
+    // let newArr1 = [];
+    // // foreach
+    // arr1.forEach(function (value, key) {
+    //     newArr1.push(value * 2)
+    // });
+
+    // console.log('arr1', arr1);
+    // console.log('newArr1', newArr1);
+
+    // // map filter reduce 
+
+    // // map 
+    // let arr2 = [1, 3, 5, 7, 9];
+    // // let mapArr = arr2.map(function (value) {
+    //     return value * 10;
+    // });
+
+    // function 改 =>
+    // 當只有一行return 可以捨去 1.{} 2.return 3.;
+    // (value) 當只有一個變數(參數) 可()
+    // (value,key) 當兩個變數(參數) 不可省()
+
+    // arrow function 箭頭函式
+    // key word
+    // 左邊參數 => 回傳結果
+
+    // let mapArr = arr2.map(value => value * 100);
+
+    // let mapArr = arr2.map( value => value * 40);
+
+
+    // console.log('arr2', arr2);
+    // console.log('mapArr', mapArr);
+
+
+
+
+    // console.log(mapArr);
+
+
+
+    // 練習一
+    // 長榮40個月
+    // 薪水array[1, 2, 3, 9, 8, 7, 1, 2, 4, 5];
+    // [1-3] 20個月 
+    // [ >= 4] 40個月 4萬以上 40
+    // let moneyArr = [1, 2, 3, 9, 8, 7, 1, 2, 4, 5];
+    // let mapMoneyArr = moneyArr.map(function (value) {
+    //     if (value >= 4) {
+    //         return value * 40;
+    //     } else {
+    //         return value * 20;
+    //     }
+    // });
+
+    // console.log('moneyArr', moneyArr);
+    // console.log('mapMoneyArr', mapMoneyArr);
+
+    // array filter
+    // [1,2,3,4,5,6,7,8,9,10] => [2 4 6 8 10]
+    // foreach  
+    // let filterArr = [1,2,3,4,5,6,7,8,9,10];
+    // let newFilterArr = [];
+    // filterArr.forEach(value => {
+    //     if(value % 2 == 0){
+    //         newFilterArr.push(value);
+    //     }
+    // });
+
+    // console.log('filterArr',filterArr);
+    // console.log('newFilterArr',newFilterArr);
+
+    //filter reutrn 條件 vs map return value運算
+    // let filterArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // let newFilterArr = filterArr.filter(function (value) {
+    //     // return (value % 2 == 0);
+    //     // return (value % 2 == 1);
+    //     return (value >= 4);
+    // });
+
+    // console.log('filterArr', filterArr);
+    // console.log('newFilterArr', newFilterArr);
+
+
+    // array 加總 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // foreach 111
+    // reduce
+
+    // foreach
+    let reduceArr = [1, 2, 3];
+    // let newReduceArr = [];
+    // let sum = 0;
+    // reduceArr.forEach(value => {
+    //     sum += value;
+    // });
+    // console.log(sum);
+
+    // w3schools js reduce
+    // total 加總累積
+    // value 現在的值
+    let sum = reduceArr.reduce(function (total, value) {
+        console.log('hello reduce');
+        console.log(total);
+        console.log(value);
+        return total + value;
+    });
+    console.log(sum);
+
+
+
+
+
+
+</script>
+
+</html>

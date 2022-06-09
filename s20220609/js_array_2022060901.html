@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    array
+</body>
+
+<script>
+    // 變數 很多地方重複使用
+    // array 很多變數
+    // 1.php vs js array ?
+    let myArr = [1, 2, 3, 4, 5];
+    // 2.index array
+    // array 都有 key value
+    // key 數字
+    let carsArr = ["vovlo", "bmw", "tsla"];
+    console.log(carsArr);
+    console.log('carsArr', carsArr);
+
+    //for
+    for (let i = 0; i < carsArr.length; i++) {
+        // console.log(i);
+        console.log(carsArr[i]);
+        //Q key ? value ?
+        // key => i
+        // value => carsArr[i]
+    }
+
+    // function
+
+    function myFun(value, key) {
+        // js => arrow function 箭頭函式
+        // function 簡化而來
+    }
+
+
+
+    //foreach
+    carsArr.forEach((value, key, array) => {
+        console.log('hello js foreach ');
+        console.log(key);
+        console.log(value);
+        console.log(array);
+        // e = v 
+    });
+
+    carsArr.forEach(element => {
+
+    });
+
+
+    const numbers = [45, 4, 9, 16, 25];
+    let txt = "";
+    numbers.forEach(myFunction);
+
+    function myFunction(value, index, array) {
+        txt += value + "<br>";
+    }
+
+    // 3.Associative array 關聯陣列
+    // js 沒有字串 關聯式array
+    // type object
+
+
+</script>
+
+</html>
