@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    object<br><br>
+    <script>
+
+        let x = 0;
+        let y = 1;
+        console.log(x);
+        console.log(y);
+
+        let [a, b] = [3, 5];
+        console.log(a);
+        console.log(b);
+
+        // // Object.keys
+        const obj = {
+            a: 'amy',
+            b: 'bob',
+            c: 'cat',
+        }
+        // console.log(Object.keys(obj)); // get object key => ['a','b','c']
+        // console.log(Object.values(obj)); // get object value => ['amy','bob','cat']
+        // console.log(Object.entries(obj));
+        let entriesArr = Object.entries(obj);
+        // // get object value => [['a','amy']['b','bob']['c','cat']]
+
+        // map
+        // array map
+        // console.log('entriesArr',entriesArr);
+        const mapArr = entriesArr.map(value => {
+            console.log(value);
+            let [k, v] = value; //['a','amy']
+            // return k; // mapArr = ['a','b','c']
+            const resultString = `${k}=>${v}`;
+            console.log(resultString);
+            document.write(resultString+"<br>");
+            // return v; // mapArr = ['amy','bob','cat']
+            return resultString; // mapArr = ['amy','bob','cat']
+
+        });
+        console.log('mapArr', mapArr);
+
+        // 小練習
+        // 我要顯示map array ['a=>amy','b=>bob','c=>cat']
+
+        // foreach
+        // entriesArr.forEach(value => {
+        //     console.log('hello foreach');
+        //     console.log(value); // [key,value]
+        //     console.log(value[0]); //0 key
+        //     console.log(value[1]); //1 value
+
+        // });
+
+      
+
+
+    </script>
+</body>
+
+</html>

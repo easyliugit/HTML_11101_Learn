@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //把陣列縮減為單一個值 預設參數是total 0 也可帶入其他參數計算 我覺得這樣我比較好理解
+
+
+        // 用結果來推
+        // 全部的array的加總 total + value
+        // 我可以使用reduce方法
+        // 我也可以給他totol預設值0 -> 100 
+
+        // reduce 我要算這個array 100 - 全部array
+        let num = [0, 1, 2, 3, 5, 7].reduce(function (total, value) {
+            console.log('reduce');
+            console.log(total);
+            console.log(value); D
+            return total - value;
+        }, 100);
+        // 100 total 初始直
+        // reduce - 
+        // total 減少 跟 增加
+
+        console.log(num); // 18
+    </script>
+</body>
+
+</html>

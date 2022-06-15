@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     object
     <script>
         // index arr
-        const myArr = [1,2,3];
+        const myArr = ['amy','bob','cat'];
         console.log(myArr);
+
+        //for in => get key
+        for (const key in myArr) {
+            console.log('hello for in');
+            console.log(key);
+            console.log(myArr[key]);
+        }
+
+        //for of => get value
+        for (const value of myArr) {
+            console.log('hello for of');
+            console.log(value);
+        }        
+
 
         // 關聯式array
         const myObj = {
-            'a' : 'amy',
-            'b' : 'bob',
-            'c' : 'cat',
+            'a': 'amy',
+            'b': 'bob',
+            'c': 'cat'
         };
+
+        // const myObj2 = {
+        //     a: 'amy',
+        //     b: 'bob',
+        //     c: 'cat'
+        // }
         console.log(myObj);
+
+        // for in object
+        // 
+        for (const key in myObj) {
+            console.log('hello obj for in');
+            console.log(key);
+            console.log(myObj[key]);
+            // console.log(myObj['key']);
+        }
+        
+        // for of object
+        // object 轉iterable 轉array
+        let keysObjs = Object.keys(myObj);
+        let valueObjs = Object.values(myObj);
+        console.log('keysObjs',keysObjs);
+        console.log('valueObjs',valueObjs);
+
+        for (const value of valueObjs) {
+            console.log('hello obj for of');
+            console.log(value);
+            // console.log(myObj['key']);
+        }
+
         // const myArr2 = [
         //     'key' : 'value',
         //     'key' : 'value',
@@ -27,8 +72,9 @@
         //     'key' : 'value',
         //     'key' : 'value',
         // ];
-        
-    
+
+
     </script>
 </body>
+
 </html>

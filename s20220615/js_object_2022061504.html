@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    object<br><br><hr>
+    <script>
+        // 複雜的地方
+        // let student1 = {
+
+        // };
+
+        // let student2 = {
+        //     'id': 2,
+        //     'name': 'bob',
+        //     'tel': '0922-222-222'
+        // };
+
+        // [{},{}]
+        let students = [
+            {
+                'id': 1,
+                'name': 'amy',
+                'tel': '0911-111-111'
+            },
+            {
+                'id': 2,
+                'name': 'bob',
+                'tel': '0922-222-222'
+            },
+        ];
+
+        // 
+        // console.log(student1);
+        // console.log(student2);
+        console.log(students);
+        console.log(students[0]);
+        console.log(students[1]);
+
+        // 練習foreach 顯示 每個obj資料
+        // obj.id or obj['id'] 兩種表達都可以
+        students.forEach(value => {
+            console.log(value);
+            document.write(value.id);
+            document.write("<br>");
+            document.write(value['name']);
+            document.write("<br>");
+            document.write(value['tel']);
+            document.write("<hr>");
+        });
+
+        // 練習二
+        // 建立table 
+        // ID 姓名 電話
+
+        //[] + {} => [ {} , {}]
+        //我要全班每位學生的資料
+        // let students(全班) = [{學生0},{學生1},{學生2},{學生3},{學生4}]
+
+
+    </script>
+</body>
+
+</html>
