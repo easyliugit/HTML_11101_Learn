@@ -10,6 +10,9 @@ foreach ($colors as $value) {
     echo "$value <br>";
 }
 
+foreach ($variable as $key => $value) {
+    # code...
+}
 
 $studentsArr = [
     "key" => "value",

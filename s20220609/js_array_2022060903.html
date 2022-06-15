@@ -61,17 +61,17 @@
     // 薪水array[1, 2, 3, 9, 8, 7, 1, 2, 4, 5];
     // [1-3] 20個月 
     // [ >= 4] 40個月 4萬以上 40
-    // let moneyArr = [1, 2, 3, 9, 8, 7, 1, 2, 4, 5];
-    // let mapMoneyArr = moneyArr.map(function (value) {
-    //     if (value >= 4) {
-    //         return value * 40;
-    //     } else {
-    //         return value * 20;
-    //     }
-    // });
+    let moneyArr = [1, 2, 3, 9, 8, 7, 1, 2, 4, 5];
+    let mapMoneyArr = moneyArr.map(function (value) {
+        if (value >= 4) {
+            return value * 40;
+        } else {
+            return value * 20;
+        }
+    });
 
-    // console.log('moneyArr', moneyArr);
-    // console.log('mapMoneyArr', mapMoneyArr);
+    console.log('moneyArr', moneyArr);
+    console.log('mapMoneyArr', mapMoneyArr);
 
     // array filter
     // [1,2,3,4,5,6,7,8,9,10] => [2 4 6 8 10]
