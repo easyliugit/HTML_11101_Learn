@@ -1,35 +1,90 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-    //index array
-    $myArr = [1,2,3];
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    //關聯式array Associative Array
-    $myArr = [
-        "a" => "amy",
-        "b" => "bob",
-        "c" => "cat",
-        "d" => "dog"
-    ];
+</head>
 
-    
+<body>
+    function<br><br>
+    <hr>
+    <!--  -->
 
-    // foreach
-    foreach ($myArr as $key => $value) {
-        print_r($key);
-        print_r($value);
+    <script>
+        // function 沒有變數
+        // 宣告
+        function sayHello() {
+            document.write('hello<br>');
+        }
 
-        // php 多維陣列
+        // 呼叫
+        sayHello();
+        sayHello();
+        sayHello();
+        sayHello();
+        sayHello();
 
-        $students = [
-            [
-                'id' => 1,
-                'name' => 'amy',
-                'tel' => '0911-111-111'
-            ],
-            [
-                'id' => 2,
-                'name' => 'bob',
-                'tel' => '0922-222-222'
-            ],
-        ];
-    }
+        // function 丟在變數
+        let myFunction = function () {
+            document.write('hi<br>');
+        };
+        console.log(myFunction);
+        myFunction();
+        myFunction();
+        myFunction();
+
+        // function (name)
+        function sayHelloByName(name = 'kai') {
+            document.write(`hello ${name} <br>`)
+        }
+
+        sayHelloByName('Amy');
+        sayHelloByName('Bob');
+        sayHelloByName('Cat');
+        sayHelloByName();
+
+        // 練習 let myFunction2 = 有參數的function
+        let myFunction2 = function (name = 'kai') {
+            document.write(`hi ${name} <br>`)
+        }
+        myFunction2('dog');
+        myFunction2('dog');
+        myFunction2();
+
+
+        // return value function
+        function sum(num1, num2) {
+            return num1 + num2; //只要碰到return 這個回去了 下面程式不會執行
+            return num1 - num2;
+            return num1 * num2;
+            return num1 / num2;
+        }
+        let result = sum(5, 8);
+        console.log(result);
+
+         // 練習 let myFunction3 = 有參數的function return
+        let myFunction3 = function (num1, num2) {
+            return num1 * num2; //只要碰到return 這個回去了 下面程式不會執行
+        }
+
+        let myFun3Result = myFunction3(5,4);
+        console.log(myFun3Result);
+
+        // arrow function 箭頭函式
+        // function 改成 =>
+        // 當只有一行return 可以省略{} 與 return
+        // 當只有一個參數 如 (num) 可以省()
+        let arrowFun =  (num1, num2) => num1 * num2;
+        let result1 = arrowFun(10,20);
+        let result2 = arrowFun(10,30);
+        console.log(result1);
+        console.log(result2);
+
+    </script>
+</body>
+
+</html>

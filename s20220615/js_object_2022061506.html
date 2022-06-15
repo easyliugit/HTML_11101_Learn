@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    object function
+    <hr>
+
+    <script>
+        // object + function => this =>object 90%
+        // this => global this => window
+
+
+        console.log('this',this); //global
+        let student = {
+            id : 1,
+            name : 'amy',
+            fn1 : function(){
+                console.log('this',this);
+                document.write(`hello ${this.name}<br>`); //object
+            },
+            fnArrow : value => {
+                console.log('fnArrow this',this);
+            }
+
+        }
+
+        // js this 最難理解的地方
+
+        student.fn1();
+        student.fnArrow();
+
+        function exFunction (){
+            console.log('exFunction this',this); //global
+        }
+        exFunction()
+
+
+    </script>
+
+</body>
+
+</html>

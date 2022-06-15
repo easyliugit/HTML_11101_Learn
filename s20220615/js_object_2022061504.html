@@ -6,10 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    object<br><br><hr>
+    object<br><br>
+    <hr>
+    <!--  -->
+
+
     <script>
         // 複雜的地方
         // let student1 = {
@@ -27,37 +38,70 @@
             {
                 'id': 1,
                 'name': 'amy',
-                'tel': '0911-111-111'
+                'tel': '0911-111-111',
+                'bonus': '1000',
+                'myArr': [1, 2, 3, 4, 5],
+                'myObj': { 'a': 'aaa', 'b': 'bbb' },
+                'greet': function () {
+                    console.log('hello');
+                },
             },
             {
                 'id': 2,
                 'name': 'bob',
-                'tel': '0922-222-222'
+                'tel': '0922-222-222',
+                'bonus': '2000',
             },
         ];
 
         // 
         // console.log(student1);
         // console.log(student2);
-        console.log(students);
+        console.log('students',students);
         console.log(students[0]);
         console.log(students[1]);
+
+        document.write(`
+        <table style="width:80%">
+        <tr>
+          <th style="width:10%">ID</th>
+          <th style="width:10%">NAME</th>
+          <th>TEL</th>
+        </tr>
+        `);
 
         // 練習foreach 顯示 每個obj資料
         // obj.id or obj['id'] 兩種表達都可以
         students.forEach(value => {
             console.log(value);
-            document.write(value.id);
-            document.write("<br>");
-            document.write(value['name']);
-            document.write("<br>");
-            document.write(value['tel']);
-            document.write("<hr>");
+            document.write(`
+            <tr>
+               <td>${value.id}</td>
+               <td>${value.name}</td>
+               <td>${value.tel}</td>
+            </tr>
+            `);
         });
 
+        document.write(`</table>`);
+
         // 練習二
-        // 建立table 
+        // 建立table
         // ID 姓名 電話
+
+        // 練習三 發獎金 全部人的bonus 發多少 reduce
+        // console.log 顯示total sum
+
+        let sum = students.reduce((total, value) => {
+            console.log('reduce');
+            console.log(total);
+            console.log(value.bonus);
+            const bonusNum = Number(value.bonus);
+            return total + bonusNum;
+        }, 100);
+
+        console.log('sum', sum);
+
 
         //[] + {} => [ {} , {}]
         //我要全班每位學生的資料
