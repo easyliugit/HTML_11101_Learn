@@ -20,14 +20,15 @@
         function sayHello() {
             document.write('hello<br>');
         }
-        
+
         // 呼叫
+        sayHello; //變數
+        sayHello(); //呼叫function
         sayHello();
         sayHello();
         sayHello();
         sayHello();
-        sayHello();
-        
+
         // function 丟在變數
         let myFunction = function () {
             document.write('hi<br>');
@@ -38,23 +39,51 @@
         myFunction();
 
         // function (name)
-        function sayHelloByName (name='kai'){
+        function sayHelloByName(name = 'kai') {
             document.write(`hello ${name} <br>`)
         }
-        
+
         sayHelloByName('Amy');
         sayHelloByName('Bob');
         sayHelloByName('Cat');
         sayHelloByName();
 
-        function sum(num1 ,num2){
-            return num1 + num2;
+        // 練習 let myFunction2 = 有參數的function
+        let myFunction2 = function (name = 'kai') {
+            document.write(`hi ${name} <br>`)
+        }
+        myFunction2('dog');
+        myFunction2('dog');
+        myFunction2();
+
+
+        // return value function
+        function sum(num1, num2) {
+            return num1 + num2; //只要碰到return 這個回去了 下面程式不會執行
             return num1 - num2;
             return num1 * num2;
             return num1 / num2;
         }
-        let result = sum(5 ,8);
-        console.log('result='+result);
+        let result = sum(5, 8);
+        console.log(result);
+
+         // 練習 let myFunction3 = 有參數的function return
+        let myFunction3 = function (num1, num2) {
+            return num1 * num2; //只要碰到return 這個回去了 下面程式不會執行
+        }
+
+        let myFun3Result = myFunction3(5,4);
+        console.log(myFun3Result);
+
+        // arrow function 箭頭函式
+        // function 改成 =>
+        // 當只有一行return 可以省略{} 與 return
+        // 當只有一個參數 如 (num) 可以省()
+        let arrowFun =  (num1, num2) => num1 * num2;
+        let result1 = arrowFun(10,20);
+        let result2 = arrowFun(10,30);
+        console.log(result1);
+        console.log(result2);
 
     </script>
 </body>
