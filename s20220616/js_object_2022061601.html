@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    object this
+    <script>
+        obj = {
+            'id': 1, //變數
+            'name': 'amy', //變數
+            'num1': 5,
+            'num2': 10,
+            'fun1': function () {
+                console.log('this', this);
+                console.log(this.id);
+                console.log(this.name);
+
+            },
+            fun2() {
+                console.log('fun2');
+                console.log('fun2 this',this);
+
+            },
+            'sum': function () {
+                return this.num1 + this.num2;
+            },
+            'sum2': function (n1 = this.num1, n2 = this.num2) {
+                return n1 + n2;
+            },
+            'arrowFun1': () => {
+                console.log('arrowFun1');
+                console.log('arrow this', this);
+            },
+
+        };
+
+        // 練習一 原本的obj
+        // 新增兩個變數
+        // num1 , num2 
+        // function => sum num1+num2
+
+        // 在obj this => obj
+        obj.fun1();
+        let mySum = obj.sum();
+        console.log(mySum);
+        let sum2 = obj.sum2(20, 30);
+        console.log(sum2);
+
+        let sum222 = obj.sum2();
+        console.log(sum222);
+
+
+        // obj['fun1']();//很少人這樣呼叫
+
+        //外部this => window
+        console.log('外部this', this);
+
+
+        // 箭頭 this / arrow function
+        // arrow this window
+        obj.arrowFun1();
+
+        obj.fun2();
+        obj.fun2();
+        obj.fun2();// function 簡化而來 記得不是箭頭函式
+
+
+
+        function outFun(){
+            console.log('outFun this',this); //window global
+        }
+        outFun();
+
+
+        // Q. 老師 :所以要做變數相加的function 都要宣告變數才能呈現嗎?(let mysum=obj.sum())
+        // A. return 回傳值 => 我們要知道的結果 存在變數
+        let result = obj.sum2(100,200);
+        console.log(result);
+
+        
+
+
+    </script>
+</body>
+
+</html>
