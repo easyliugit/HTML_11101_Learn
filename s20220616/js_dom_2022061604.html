@@ -11,7 +11,9 @@
             color: red;
         }
 
-        .green {}
+        .green {
+            color: green;
+        }
     </style>
 </head>
 
@@ -41,7 +43,7 @@
         const allP = document.querySelectorAll('p');
         allP.forEach(value => {
             console.log(value);
-            value.setAttribute('class', 'red');
+            value.setAttribute('class', 'green');
         });
 
 
