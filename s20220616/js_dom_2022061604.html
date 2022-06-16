@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {}
+    </style>
+</head>
+
+<body>
+    <a href="http://w3schools.com">link</a>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        // attribute get set
+        const myA = document.querySelector('a');
+        console.log(myA);
+        console.log(myA.getAttribute('href'));
+        myA.setAttribute('href', 'http://www.google.com');
+        console.log(myA.getAttribute('href'));
+
+        // attribute get set class 
+        const myP = document.querySelector('p');
+        myP.setAttribute('class', 'red');
+
+        // 練習一
+        // 全部的p green setAttribute方式 querySelectAll
+        const allP = document.querySelectorAll('p');
+        allP.forEach(value => {
+            console.log(value);
+            value.setAttribute('class', 'red');
+        });
+
+
+    </script>
+</body>
+
+</html>
