@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     dom
-    <p>
+    <p data-test="100">
+        ppppppp
+    </p>
+    <p data-test="200">
+        ppppppp
+    </p>
+    <p data-test="300">
+        ppppppp
+    </p>
+    <p data-test="400">
+        ppppppp
+    </p>
+    <p data-test="500">
+        ppppppp
+    </p>
+    <p data-test="600">
         ppppppp
     </p>
 
-    <p id="idP">
+    <p id="idP" data-test="700">
         p2p2p2p2
     </p>
 
@@ -22,6 +39,12 @@
 
     <div class="myDivClass">
         55688
+    </div>
+
+    <div>
+        <p data-test="800">
+            div + p
+        </p>
     </div>
 
     <script>
@@ -34,10 +57,13 @@
         const myP3 = document.querySelector('#myDiv');
         const myP4 = document.querySelector('.myDivClass');
 
+        const myP5 = document.querySelector('div > p');
+
         console.log(myP1);
         console.log(myP2);
         console.log(myP3);
         console.log(myP4);
+        console.log('myP5', myP5);
 
         // 更改文字
         // textContent innerText innerHTML
@@ -46,8 +72,54 @@
         // myP2.innerText = '<b>text p2 ok</b>'; //純文字
         myP2.innerHTML = '<b>text p2 ok</b>'; //html
 
+        // 練習一 myP5 color 變成紅色 inner style
+        myP5.style.color = 'red';
+        myP5.style.fontSize = "48px";
+
+        // 練習二 querySeletorAll 
+        // 把畫面上的 全部的p 都改成藍色
+        const allP = document.querySelectorAll('p');
+        console.log('allP', allP);
+        // 一個一個換
+        // 換文字
+        allP[0].textContent = 'ppp000';
+        allP[1].textContent = 'ppp111';
+        allP[2].textContent = 'ppp222';
+        // css style change
+        allP[0].style.color = 'blue';
+        allP[1].style.color = 'blue';
+        allP[2].style.color = 'blue';
+
+        // 練習三 foreach 換querySelectorAll
+        // 練習四 偶數p green
+        // green
+        allP.forEach(function (value, index) {
+            console.log('foreach');
+            // HTML Global data-* Attributes - W3Schools
+            console.log(value.dataset.test);
+            console.log(index);
+
+            if (index % 2 == 0) {
+                value.style.color = 'green';
+            }
+            value.textContent = `hello p[${index}]`;
+        });
+
+        // 練習五 reduce data-test 全部的value
+        // [...allP] => nodeList  array
+
+        let allPArr = [...allP];
+        let sumAllP =allPArr.reduce(function (total, value) {
+            console.log(total);
+            const testNum = Number(value.dataset.test);
+            return total + testNum;
+        }, 0);
+
+        console.log('sumAllP',sumAllP);
+
 
 
     </script>
 </body>
+
 </html>
