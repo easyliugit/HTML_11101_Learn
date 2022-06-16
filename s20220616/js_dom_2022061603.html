@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    dom
+    <p>
+        ppppppp
+    </p>
+
+    <p id="idP">
+        p2p2p2p2
+    </p>
+
+    <div id="myDiv">
+        55688
+    </div>
+
+    <div class="myDivClass">
+        55688
+    </div>
+
+    <script>
+        // 抓資料
+        // querySelector 抓第一筆
+        const myP1 = document.querySelector('p');
+        // getElementById 透過id抓 ID單一
+        const myP2 = document.getElementById('idP');
+
+        const myP3 = document.querySelector('#myDiv');
+        const myP4 = document.querySelector('.myDivClass');
+
+        console.log(myP1);
+        console.log(myP2);
+        console.log(myP3);
+        console.log(myP4);
+
+        // 更改文字
+        // textContent innerText innerHTML
+        myP1.textContent = 'text p1 ok'; //純文字
+        // myP2.innerText = 'text p2 ok';
+        // myP2.innerText = '<b>text p2 ok</b>'; //純文字
+        myP2.innerHTML = '<b>text p2 ok</b>'; //html
+
+
+
+    </script>
+</body>
+</html>

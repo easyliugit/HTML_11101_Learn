@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Title</title>
+</head>
+
+<body>
+    dom
+    <!-- h1 a element -->
+    <!-- href attribute -->
+    <!-- text -->
+    <h1>A heading</h1>
+    <a href="">Link Text</a>
+    <button type="button">myBtn</button>
+    <p>pppppppp</p>
+    <div>divdivdiv</div>
+
+    <script>
+        const myH1 = document.querySelector('h1');
+        console.log(myH1);
+        myH1.textContent = 'hello';
+
+        //練習一 a tag 文字
+        // text Link Text => linkA
+        const myA = document.querySelector('a');
+        console.log(myA);
+        myA.textContent = 'linkA';
+
+        //練習二 button 文字
+        // text => myBtnOK
+        const myBtn = document.querySelector('button');
+        let string = myBtn.textContent; // get dom text
+        console.log('string',string);
+        console.log(myBtn);
+        myBtn.textContent = 'myBtnOk'; //set dom text
+
+        //練習三 p 文字
+        // text => pOK
+        const myP = document.querySelector('p');
+        console.log(myP); //變數
+        console.log('myP'); //字串
+        myP.textContent = 'pOK';
+
+        //練習四 div 文字
+        // text => divOK
+        const myDiv = document.querySelector('div');
+        console.log(myDiv); //變數
+        myDiv.textContent = 'divOK';
+    </script>
+</body>
+
+</html>
