@@ -19,7 +19,8 @@
 <body>
     event
     <p>
-        <button type="button" onclick="btnFun1()">btn1</button>
+        <!-- <button type="button" onclick="btnFun1()">btn1</button> -->
+        <button type="button" onclick="alert('123')">btn1</button>
     </p>
     <p>
         <button type="button" id="btn2">btn2</button>
@@ -53,6 +54,7 @@
 
         // 方法三 addEventListener
         const btn3 = document.getElementById('btn3');
+        // btn3.onclick
         console.log('btn3', btn3);
         // btn3.addEventListener('click',function(event){
         //     console.log('btnFun3 ok');

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <!-- <button type="button" id="btn">button</button> -->
+        <button type="button" id="myBtn">myBtn</button>
+        <button type="button" class="myBtn2">myBtn2</button>
+    </p>
+    <div id="div1">
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+
+<script>
+    
+    function add() {
+        console.log('add ok');
+        // const pElement = document.createElement('p');
+        
+        // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');        
+        
+        // pElement.appendChild(textTextNode);
+        // console.log('pElement',pElement);
+        
+        
+        // const div1 = document.getElementById('div1');
+        // div1.appendChild(pElement);
+
+        // console.log(div1);
+        
+    }
+    // btn.addEventListener('click', add())
+    let myBtn = document.getElementById('myBtn');
+    // console.log('btn', btn);
+    // btn.addEventListener('click',add());
+
+    // myBtn.addEventListener('click',add);
+    // myBtn.addEventListener('click',hello());
+    // myBtn.addEventListener('click','123');
+
+    // function(變數);
+    // addEventListener(變數1 ,變數2);
+    // 變數1 = 'click';
+    // 變數2 = function(){};
+    // 變數2();
+
+    // define
+    function hello(){
+        // alert('hello');
+        return '123';
+    }
+
+    // call function
+    hello();
+    let getHello = hello(); //變數 = 呼叫function結果
+    console.log('getHello',getHello);
+
+    // 變數 = 一整個function
+    let arrowFun = function (){
+        console.log('123');
+    };
+    console.log('arrowFun',arrowFun);
+    
+</script>
+
+</body>
+</html>

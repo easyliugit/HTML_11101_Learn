@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <!-- <p id="p1" onclick="delP1()"> -->
+        <p id="p1" onclick="delP(this);">
+            P1 Lorem ipsum dolor sit amet.
+        </p>
+        <p id="p2" onclick="delP(this);">
+        <!-- <p id="p2" onclick="delP2()"> -->
+            P2 Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+    <p>
+        <button type="button">addBtn</button>
+    </p>
+    <p>
+        <button type="button" onclick="JS">delBtn</button>
+        <!-- <button type="button" onclick="alert('hello')">delBtn</button> -->
+    </p>
+  
+    <script>
+        // delBtnFun
+        function delBtnFun(){
+            // 刪除節點
+            console.log('delBtnFun ok');
+            p2.remove();
+        };
+
+        function delP(element){
+            console.log('delP ok');
+            console.log(this);
+            console.log('element',element);
+            element.remove();
+        }
+
+        // function delP1(){
+        //     p1.remove();
+        // };
+
+        // function delP2(){
+        //     p2.remove();
+        // };
+        
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+
+        // 練習一
+        // p tag onclick=""
+        // p1 刪除p1
+        // p2 刪除p2
+
+        // 2.1 建立P元素
+        // 2.2 建立text
+        // 2.3 建立關聯
+
+        // 2.1 建立P元素
+        const pElement = document.createElement('p');
+        // 2.2 建立text
+        const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');        
+        // 2.3 建立關聯
+        pElement.appendChild(textTextNode);
+        console.log('pElement',pElement);
+        
+
+        // 2.4 放到div內
+        const div1 = document.getElementById('div1');
+        div1.append(pElement);
+        // div1.append(pElement);//無法加入已經加入的節點
+        console.log(div1);
+        // document.write('<p>write p<p>');
+
+        // 2.5
+        // 建立一組p text 
+        // div
+        // const pElement2 = document.createElement('p');
+        // const textTextNode2 = document.createTextNode('hello 您好嗎 衷心感謝');        
+        // pElement2.appendChild(textTextNode2);
+        // div1.append(pElement2);
+       
+
+        // 練習一 建立好的pElement
+        // 如何塞進去google w3schools js createElement
+
+        // 練習二 
+        // button
+        // 建立一組新的hello 你好嗎
+        // click -> function -> 每次都會見新的p 新的text appendChild
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

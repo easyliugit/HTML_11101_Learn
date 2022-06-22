@@ -111,6 +111,7 @@
         let allPArr = [...allP];
         let sumAllP =allPArr.reduce(function (total, value) {
             console.log(total);
+            console.log(value.dataset);
             const testNum = Number(value.dataset.test);
             return total + testNum;
         }, 0);

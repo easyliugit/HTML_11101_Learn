@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button type="button" id="myBtn">myBtn</button>  -->
+    <button type="button" onclick="add();">myBtnOnclick</button> 
+    <!-- <button type="button" onclick="alert('123');">myBtnOnclick</button>  -->
+
+    <script>
+        // function 
+        // 1.不綁定 
+        function add() {
+            alert('add');
+        }
+
+        // 2.綁定 addEventLister        
+        // const myBtn = document.getElementById('myBtn');
+        // // addEventListener() function;
+        // // addEventListener(變數1,變數2) function;
+        // // 變數1 event click submit dbclick keyUp mouseOver....
+        // // 變數2 一整個funciton
+
+        // // 2-1 原本的 基本的
+        
+        // myBtn.addEventListener('click', function () {
+        //     // alert('hello');
+        //     add();
+        // });
+
+
+        // // 2-2
+        // myBtn.addEventListener('click', add);
+        // console.log(add); //一整個function
+        // console.log(add()); //呼叫function
+
+
+    </script>
+</body>
+
+</html>
