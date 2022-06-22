@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+    <p>
+        <button type="button" onclick="addBtnFun()">addBtn</button>
+    </p>
+
+    <script>
+        // function 
+        function addBtnFun() {
+
+
+            console.log('addBtnFun ok');
+            // 2.1 建立P元素
+            const pElement = document.createElement('p');
+            // 2.2 建立text
+            const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');
+            // 2.3 建立關聯
+            pElement.appendChild(textTextNode);
+            // console.log('pElement', pElement);
+
+            pElement.setAttribute('onclick','delP(this)');
+            console.log('setAttribute pElement', pElement);
+
+            // 2.4 放到div內
+            const div1 = document.getElementById('div1');
+            div1.append(pElement);
+            // div1.append(pElement);//無法加入已經加入的節點
+            console.log(div1);
+        }
+
+        function delP(element){
+            element.remove();
+        }
+
+
+        
+
+
+        // 練習一 建立好的pElement
+        // 如何塞進去google w3schools js createElement
+
+        // 練習二
+        // 1.button
+        // 建立一組新的hello 你好嗎
+        // 2.建立function click -> function -> 每次都會見新的p 新的text appendChild
+        
+
+        // 練習四
+        // 新增<p>  onclick remove()
+        // pElemetn -> setAttribute
+
+        // 練習五
+        // 新增的第幾個p     
+        // querySelectorAll('p') 
+        // allP.length
+    </script>
+</body>
+
+</html>
