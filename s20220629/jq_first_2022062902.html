@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+
+    <hr>
+
+    <ul>
+        <li>111 Lorem ipsum dolor sit amet.</li>
+        <li>222 Lorem ipsum dolor sit amet.</li>
+        <li>333 Lorem ipsum dolor sit amet.</li>
+        <li>444 Lorem ipsum dolor sit amet.</li>
+        <li>555 Lorem ipsum dolor sit amet.</li>
+    </ul>
+
+
+    <!-- 1. jquery -->
+    <!-- 2. 開始寫jquery -->
+
+    <!-- 1. jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 2. 開始寫jquery -->
+
+    <!-- append vs after 後面-->   
+    <!-- prepend vs before 前面-->
+    <script>
+        // jquery
+        // $(function(){
+        $(document).ready(function(){
+            // append
+            const appendP = $('<li>appendP Lorem ipsum dolor sit amet.</li>');
+            appendP.addClass('red');
+            const ul = $('ul').first();
+            ul.append(appendP);
+
+            //after
+            const afterP = $('<p>afterP Lorem ipsum dolor sit amet.</p>');
+            afterP.addClass('blue');
+            ul.after(afterP);
+
+            //prependP
+            const prependP = $('<li>prependP Lorem ipsum dolor sit amet.</li>');
+            prependP.addClass('red');
+            ul.prepend(prependP);
+
+            //before
+            const beforeP = $('<p>beforeP Lorem ipsum dolor sit amet.</p>');
+            beforeP.addClass('blue');
+            ul.before(beforeP);
+
+            // ctrl + h => 取代
+
+            // addClass 增加class
+            // removeClass 減少class
+
+            // 練習一
+            // before after => blue
+            // append prepend => red
+
+
+
+        });
+        // jquery end
+    </script>
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

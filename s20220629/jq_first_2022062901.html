@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="addBtn">addBtn</button>
+    <hr>
+
+    <div id="div1">
+        
+        <p id="myP">old Lorem ipsum dolor sit amet.</p>
+
+    </div>
+
+
+    <!-- 1. jquery -->
+    <!-- 2. 開始寫jquery -->
+
+    <!-- 1. jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 2. 開始寫jquery -->
+    <script>
+        // 方法一
+        // $(document).ready(function(){
+        //     alert('hello jquery');
+        // });
+
+        // 方法二
+        // $().ready(function(){
+        //     alert('hello jquery');
+        // });
+
+        // function addBtnFun(num) {
+        //     console.log('num', num);
+        //     console.log('addBtnFun ok');
+        //     // 2.1 建立P元素
+        //     const pElement = document.createElement('p');
+        //     // 2.2 建立text
+        //     const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝' + num);
+        //     // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝2');
+        //     // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝3');
+
+        //     // 2.3 建立關聯
+        //     pElement.appendChild(textTextNode);
+        //     console.log('pElement', pElement);
+        //     // 2.4 放到div內
+        //     const div11 = document.getElementById('div1');
+        //     div11.append(pElement);
+        //     // div1.append(pElement);//無法加入已經加入的節點
+        //     console.log(div1);
+        // }
+
+        // 方法三
+        $(function () {
+
+            // js
+            // const myID = document.getElementById('myBtn');
+            const myPByJs = document.getElementById('myP');
+
+            // jquery
+            $('#myP').text('hello jquery ppp');
+            let myP = $('#myP');
+            console.log('myPByJs', myPByJs);
+            console.log('myP', myP);
+
+            //myBtn
+            let countNum = 0;
+            $('#myBtn').click(function () {
+                console.log('mybtn ok');
+                countNum += 1;
+                // $('#myP').text('myP text change text ok');
+                $('#myP').text(`myP text change text ok => ${countNum}`);
+
+            });
+
+            let addCountNum = 0;
+            $('#addBtn').click(function () {
+                addCountNum += 1;
+                // 練習四 addCountNum
+                console.log('addBtn ok');
+                // js
+                // addBtnFun(addCountNum);//傳變數
+                // addBtnFun('addCountNum'); //傳字串
+
+                // jquery
+                const div1 = $('#div1'); //div1
+                console.log('div1', div1);
+
+                const addP = $('<p>hello addP jquery</p>'); //jQuery objects
+                // const addP = '<p>hello addP jquery</p>'; //HTML elements
+                
+                // addP.text('change addP text => ' + addCountNum); // jQuery Obj 可以使用  HTML elements不可用
+                // append
+                // HTML elements
+                // jQuery objects
+                // DOM elements
+                div1.append(addP); //把節點放進來                           。                                              
+                // after vs append
+                const addH3 = $('<h3>hello h3 55688</h3>');
+                div1.after(addH3);
+            });
+
+
+
+            // $('#myBtn').on('click',function(){
+            //     console.log('mybtn ok');
+            //     $('#myP').text('on click event myP text change text ok');
+            // });
+
+            // 練習一
+            // myBtn click
+            // myP text change text ok
+
+            // 練習二
+            // myBtn click
+            // myP text change text ok => 1
+            // myP text change text ok => 2
+            // myP text change text ok => 3
+
+            // 練習三
+            // addBtn click
+            // addP ok countAdd => 1
+            // addP ok countAdd => 2
+            // addP ok countAdd => 3
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

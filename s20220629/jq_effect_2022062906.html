@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- effect -->
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+
+    <div class="hide">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ad natus ducimus eaque repellat
+        exercitationem consectetur laboriosam sunt fuga maxime laborum suscipit, enim dolorum eius, amet, accusamus
+        dignissimos quas distinctio autem fugit. Reprehenderit ab atque corrupti nihil ducimus fugit tenetur quam non
+        sapiente laborum excepturi voluptatem obcaecati, repellendus libero? Esse quaerat similique deleniti obcaecati
+        ullam nesciunt, consequuntur optio sit voluptates nam. Reprehenderit voluptatem odio maiores rerum minus! Non
+        hic beatae, autem repellat quos et aspernatur minus voluptate impedit dolorem velit dolorum soluta optio! Qui
+        libero blanditiis molestiae, voluptatum ipsam soluta perspiciatis? Qui sapiente in neque delectus itaque
+        recusandae veritatis eaque cum ducimus est repellat, ipsam modi sequi, natus laudantium excepturi. Veritatis,
+        architecto fuga modi dolore dolor provident. Quo commodi consequuntur tempora. Sit, fugit sunt eos vitae
+        distinctio error vel illo, animi libero sequi blanditiis nemo iusto doloribus ipsum et aperiam quidem eum, alias
+        ab architecto veniam! Praesentium tempore alias voluptatem neque aliquam hic, illum placeat, vitae a ex, quod
+        provident possimus numquam eius. Deserunt quod molestiae ea optio quasi assumenda ipsa atque sapiente rem ut.
+        Voluptate voluptatum repellendus similique dignissimos error quos, numquam minima modi laboriosam. Commodi, quod
+        fuga dolores ipsa quaerat provident ratione aut sapiente corporis. Architecto, magnam repellat.
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jq
+        $(document).ready(function () {
+            $("p").click(function () {
+                // hide, show ,toggle 隱藏
+                // $(this).hide(); 
+                // $(this).remove();
+
+                // slideUp,slideDown,slideTogle
+                $('div').slideToggle('1500',function(){alert('hello')});
+
+
+            });
+
+
+        });
+    // jq end
+    </script>
+</body>
+
+</html>
