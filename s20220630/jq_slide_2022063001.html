@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divBtn,
+        .divContent {
+            text-align: center;
+            padding: 20px;
+            border: solid 1px black;
+            background-color: lightskyblue;
+        }
+
+        .divContent {
+            background-color: whitesmoke;
+            display: none;
+        }
+
+        #myBtn {
+            position: fixed;
+            right: 10px;
+            top: 0;
+            text-align: right;
+            color: red;
+            border: solid 1px black;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="myBtn" type="button">open all</button>
+    <div class="divBtn">
+        景點一 取得優惠價
+    </div>
+    <div class="divContent" data-money="1000">
+        <h3>迪士尼樂園</h3>
+        <img src="https://picsum.photos/id/1001/400/300">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
+            aperiam, quaerat quod consequatur nostrum. Dolores omnis quam doloribus ea! Assumenda a harum quisquam
+            possimus exercitationem!</p>
+        <button type="">折扣報名</button>
+    </div>
+    <div class="divBtn">
+        景點二
+    </div>
+    <div class="divContent" data-money="2000">
+        <h3>迪士尼樂園</h3>
+        <img src="https://picsum.photos/id/1002/400/300">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
+            aperiam, quaerat quod consequatur nostrum. Dolores omnis quam doloribus ea! Assumenda a harum quisquam
+            possimus exercitationem!</p>
+        <button type="">折扣報名</button>
+    </div>
+
+    <div class="divBtn">
+        景點三
+    </div>
+    <div class="divContent" data-money="3000">
+        <h3>迪士尼樂園</h3>
+        <img src="https://picsum.photos/id/1003/400/300">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
+            aperiam, quaerat quod consequatur nostrum. Dolores omnis quam doloribus ea! Assumenda a harum quisquam
+            possimus exercitationem!</p>
+        <button type="">折扣報名</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 2. 開始寫jquery -->
+    <script>
+        $(document).ready(function () {
+            // $('#divBtn').click(function(){
+            //     console.log(this);
+            //     $('#divContent').slideToggle();
+
+            // });
+            let divFlag = 0;
+
+            function changeText() {
+                let checkDiv = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('checkDiv', checkDiv);
+                if (!checkDiv) {
+                    $('#myBtn').text('open all');
+                } else {
+                    $('#myBtn').text('close all');
+                }
+            }
+            // changeText();
+
+            // jquery 剛進來時
+            // h3 tag data-money 1000-> 800
+            const discount = 0.8;
+
+            $('.divContent').each(function(){
+                const h3Tag = $(this).find('h3');
+                // console.log('h3Tag',h3Tag.text());
+                const oldText = h3Tag.text();
+                const dataText = $(this).first().data('money'); //int                            
+                h3Tag.text(`${oldText} 原價 => ${dataText} 限時特價 ${dataText * discount}`);
+            });
+
+            // let oldText = $('.divContent > h3').first().text();
+            // console.log('oldText', oldText);
+            // // jquery data-set
+            // let dataText = $('.divContent').first().data('money'); //int            
+            // // let dataText = $('.divContent').first().attr('data-money'); //抓string
+            // console.log('dataText', dataText);
+            // $('.divContent > h3').first().text(`${oldText} 原價 => ${dataText} 限時特價 ${dataText * discount}`);
+
+            
+
+
+            // 練習一
+            $('.divBtn').click(function () {
+                console.log(this);
+                let checkDivBefore = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('checkDivBefore', checkDivBefore);
+                // $(this).next().slideDown();
+                // $(this).next().slideToggle();
+                $(this).next().slideToggle(changeText);
+                // setTimeout(changeText,1000);
+                // changeText();
+                // let checkDivAfter = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                // console.log('checkDivAfter',checkDivAfter);
+                // 第二個無法使用
+
+            });
+
+            // 練習二
+            // 最上方增加一個div全部都縮起來
+
+
+            $('#myBtn').click(function () {
+                console.log('myBtn click');
+                // 方法一
+                let allContent = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('allContent', allContent);
+                if (!allContent) {
+                    $('.divContent').slideDown();
+                    $('#myBtn').text('close all');
+                } else {
+                    $('.divContent').slideUp();
+                    $('#myBtn').text('open all');
+                }
+
+                // $('.divContent').slideUp();
+                // $('#myBtn').text('open all');
+
+                // 方法二 flag
+                // divFlag = 0; close//
+                // divFlag = 1; open
+
+            });
+
+
+            // 練習三
+            // 原本open all -> 點過div -> close all        
+
+            // 練習四
+            // div data-money = 1000
+            // h3換過去 原本 迪士尼樂園 原價1000 => 特價800  
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>

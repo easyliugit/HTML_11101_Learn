@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- jQuery Traversing -->
+    <div>
+        <ul>
+            <li id="li111">
+                <b>b ==></b> Lorem ipsum dolor sit amet.
+            </li>
+            <li id="li222">
+                <span>span ==></span> Lorem ipsum dolor sit amet.
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // div > ul > li > b
+            // div > ul > li > span
+            const myDiv = $('div');
+            // jquery html() => js innerHtml
+            // jquery text() => js innerText
+            // jquery text() => js textContent
+
+            // 往內找
+            // children , find
+
+            console.log('div',myDiv.html());
+            console.log('div ul',myDiv.children().html());
+            console.log('div ul first',myDiv.children().first().html()); //first 第一個
+            console.log('div ul first',myDiv.children().eq(0).html()); //eq(0) index 0 第一個
+            console.log('div ul first',myDiv.children().eq(1).html()); //eq(1) 沒有第二個ul 所以不存在
+            
+            console.log('ul li',$('ul').find('li').eq(0).html());
+            console.log('ul li',$('ul').find('li').eq(1).html());
+
+            // 平行對稱找
+            // next prev
+            console.log('li next',$('#li111').next().html());
+
+            // 往上一層找
+            // parent
+            console.log('li parent',$('#li111').parent().html());
+
+        });
+
+    </script>
+</body>
+
+</html>
