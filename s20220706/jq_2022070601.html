@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- jQuery Traversing -->
+    <div>
+        <ul>
+            <li>hello li 111</li>
+            <li>hello li 111</li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 往上找 往外找 parent 往父層找
+            const myUl = $('ul').first();
+            const myLi = $('li').first();
+
+            console.log('myUl', myUl);
+            console.log('myLi', myLi);
+
+            const myParentBYmyUl = myUl.parent();
+            const myParentBYmyLi = myLi.parent();
+            console.log('myParentBYmyUl', myParentBYmyUl);
+            console.log('myParentBYmyLi', myParentBYmyLi);
+
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            border: 1px black solid;
+            text-align: center;
+            padding: 30px;
+            margin: 50px auto;
+        }
+
+        p {
+            color: red;
+            font-size: larger;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+
+        }
+
+        #myTime {
+            color: blue;
+        }
+
+        h1,
+        h2 {
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 投籃機大賽 -->
+
+    <h1>投籃大賽</h1>
+
+    <div>
+        <h3 id="title">分數</h3>
+        <h2>歷史最高分數 <span>55688</span></h2>
+        <p id="myP">0</p>
+        <hr>
+        <p id="myTime">0</p>
+    </div>
+
+    <div>
+        <button type="button" id="myBtn">進球</button>
+
+        <button type="button" id="resetBtn">重置</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 1.html建立
+        // 2.css
+        // 3.分數　click +2 +3
+        // 4.timer 倒數計時
+        // 5.分數 + 倒數計時
+        // 6.重置button
+        // 7.timer = 0 ----> click -> off 進球->時間到
+        // 8.resetBtn -> on click
+        // 9.timer -> timerGoFun 放到click event
+
+
+
+
+        $(document).ready(function () {
+
+
+            function clickFun() {
+                console.log('clickFun ok');
+                console.log('isStart',isStart);
+                // let getMyBtnText = myBtn.text();
+                if (isStart == false) {
+                    myBtn.text('進球');
+                    isStart = true;
+                    timerGo();
+                    return false;
+                }
+                console.log('clickFun ok2');
+
+                console.log('isStart',isStart);
+                // sum = count;                
+                if (count < 30) {
+                    sum += 3;
+                } else {
+                    sum += 2;
+                }
+                myP.text(`${sum}`);
+            }
+
+            function timerGo() {
+                // myBtn.off('click');
+                console.log('click ok');
+                timer = setInterval(function () {
+                    if (count <= 30) {
+                        title.text('三分球時間');
+                        title.css('color', 'green');
+                    }
+
+                    if (count > 0) {
+                        count = count - 1;
+                        myTime.text(`${count}`);
+                    }
+                    else {
+                        title.text('最終分數');
+                        title.css('color', 'brown');
+                        let nowScore = Number(myP.text());
+
+                        if (nowScore > highScore) {
+                            localStorage.setItem("highScore", nowScore);
+                            $('span').text(`${nowScore}`)
+                        }
+                        isReset = true;
+
+                        clearInterval(timer);
+                    }
+
+                    if (count <= 0) {
+                        myBtn.text('時間到');
+                        myBtn.off("click");
+                    }
+                }, 1000);
+            }
+
+            // 起始0分 兩分球
+            // 當超過100分 變三分球
+
+            // 往上找 往外找 parent 往父層找
+            const myP = $('#myP');
+            const myTime = $('#myTime');
+            const myBtn = $('#myBtn');
+            const resetBtn = $('#resetBtn');
+            const title = $('#title');
+
+
+            let highScore = Number(localStorage.getItem("highScore"));
+            console.log('highScore', highScore);
+
+            // 使用者第一次進這個網頁
+            if (!highScore) {
+                localStorage.setItem("highScore", 0);
+            }
+            // Retrieve
+
+            // let highScore = localStorage.getItem('highScore');
+            $('span').text(`${highScore}`)
+
+
+            myBtn.text('開始');
+            let initTime = 60;
+            let count = initTime;
+            myTime.text(`${count}`);
+            let timer = null;
+
+            let isStart = false;
+            let isReset = false;
+
+
+
+
+
+            let sum = 0; //初始分數
+            myBtn.click(clickFun);
+
+            resetBtn.click(function () {
+                clearInterval(timer);
+                sum = 0 ;
+                if (isReset) {
+                    isReset = false;
+                    console.log('resetBtn ok');
+                    console.log('isReset', isReset);
+                    return false;
+                } else {
+
+                    console.log('isReset', isReset);
+
+                    console.log('end');
+
+                    sum = 0;
+                    myP.text(`${sum}`);
+
+                    title.text('分數');
+                    title.css('color', 'black');
+                    count = initTime;
+                    myBtn.on("click", clickFun);
+                    isStart = false;
+                    myP.text('0');
+
+                    myTime.text(`${count}`);
+                    myBtn.text('開始');
+
+                    // timerGo();
+
+                }
+
+
+            });
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

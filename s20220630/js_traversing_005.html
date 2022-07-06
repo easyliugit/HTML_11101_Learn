@@ -38,25 +38,26 @@
             // 往內找
             // children , find
 
-            console.log('div',myDiv.html());
-            console.log('div ul',myDiv.children().html());
-            console.log('div ul first',myDiv.children().first().html()); //first 第一個
-            console.log('div ul first',myDiv.children().eq(0).html()); //eq(0) index 0 第一個
-            console.log('div ul first',myDiv.children().eq(1).html()); //eq(1) 沒有第二個ul 所以不存在
-            
-            console.log('ul li',$('ul').find('li').eq(0).html());
-            console.log('ul li',$('ul').find('li').eq(1).html());
+            console.log('div', myDiv.html());
+            console.log('div ul', myDiv.children().html());
+            console.log('div ul first', myDiv.children().first().html()); //first 第一個
+            console.log('div ul first', myDiv.children().eq(0).html()); //eq(0) index 0 第一個
+            console.log('div ul first', myDiv.children().eq(1).html()); //eq(1) 沒有第二個ul 所以不存在
+
+            console.log('ul li', $('ul').find('li').eq(0).html());
+            console.log('ul li', $('ul').find('li').eq(1).html());
 
             // 平行對稱找
             // next prev
-            console.log('li next',$('#li111').next().html());
+            console.log('li next', $('#li111').next().html());
 
             // 往上一層找
             // parent
-            console.log('li parent',$('#li111').parent().html());
+            console.log('li parent', $('#li111').parent().html());
 
         });
 
+     
     </script>
 </body>
 
