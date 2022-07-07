@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        ul,
+        li {
+            border: 1px black solid;
+            width: 80%;
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        div {
+            margin-top: 10px;
+        }
+
+        .top {
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- jQuery Traversing -->
+
+    <h3>Traversing</h3>
+
+    <div class="div1 top">
+        div1
+        <div class="div2">
+            div2
+            <ul>
+                ul
+                <li>hello li 111</li>
+                <li class="red">hello li 222</li>
+                <li id="li333">hello li 333</li>
+                <li>hello li 444</li>
+                <li class="red">hello li 555</li>
+                <li id="li666">hello li 666</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 往上找 往外找 parent 往父層找
+            // const myUl = $('ul').first();
+            // const myLi = $('li').first();
+
+            // console.log('myUl', myUl);
+            // console.log('myLi', myLi);
+
+            // const myParentBYmyUl = myUl.parent();
+            // const myParentBYmyLi = myLi.parent();
+            // console.log('myParentBYmyUl', myParentBYmyUl);
+            // console.log('myParentBYmyLi', myParentBYmyLi);
+
+            //parents
+            // $('li').css('color','red'); //我自己這層
+            // $('li').parent().css('color','green'); //上一層
+            // $('li').parent().parent().css('color','blue'); //上上一層
+
+            //parents
+            // $('li').parents().css('color','brown'); //上面的每一層
+
+            //parentsUntil
+            // obj = $('li').parentsUntil('.div1');
+            // obj = $('li').parentsUntil('.div2');
+            // obj.css('color', 'skyblue'); //上面的每一層
+            // console.log(obj);
+
+            //往下找
+            // children 往下一層
+            // children 往下一層
+            // let obj = $('.div1').children();
+            // let obj2 = $('.div1').children().children() ;
+            // let obj3 = $('.div1').children().children().children() ;
+            // obj.css('color','blue');
+            // obj2.css('color','red');
+            // obj3.css('color','green');
+            // console.log('obj',obj);
+            // console.log('obj2',obj2);
+            // console.log('obj3',obj3);
+
+            // find
+            // let obj = $('.div1').find('.div2');
+            // let obj = $('.div1').find('li'); //全部li變色
+            // let obj = $('.div1').find('li').first(); //第一個
+            // let obj = $('.div1').find('li').odd(); //基數 0 1 2 3 4
+            // let obj2 = $('.div1').find('li').even(); //偶數 0 1 2 3 4 => 
+            // let obj3 = $('.div1').find('li').first(); //偶數 0 1 2 3 4 => 
+            // let obj4 = $('.div1').find('li').last(); //偶數 0 1 2 3 4 => 
+        
+            // obj.css('color','red');
+            // obj2.css('color','blue');
+            // obj3.css('color','skyblue');
+            // obj4.css('color','pink');
+
+
+            // 往同一層找
+            // next /prev / first  / index eq(0) 
+            // const obj1 = $('li').first();
+            // const obj2 = $('li').first().next();
+            // const obj3 = $('li').first().next().next();
+            // const obj4 = $('li').eq(3);
+            // const obj5 = $('li').last().prev();
+            // const obj6 = $('li').last();
+
+            // obj1.css('color','blue');
+            // obj2.css('color','red');
+            // obj3.css('color','green');
+            // obj4.css('color','brown');
+            // obj5.css('color','skyblue');
+            // obj6.css('color','pink');
+
+            // siblings
+            // const obj = $('#li333').siblings().css('color','pink');
+
+            // nextUntil
+            // between 該元件 與 找到元件之間
+            // const obj = $('#li333').nextUntil('#li666').css('color','pink');
+
+            // nextAll
+            // const obj = $('#li333').nextAll().css('color','pink');
+
+            // filter
+            // first / last / index eq() /filter
+            $('li').first().css('color','red');
+            $('li').last().css('color','green');
+            $('li').eq(1).css('color','blue');
+
+            // filter 搭配 class使用
+            $('li').filter('.red').css('color','pink');
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

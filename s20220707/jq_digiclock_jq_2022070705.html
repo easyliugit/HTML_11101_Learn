@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/digi.css">
+
+
+</head>
+
+<body>
+    <!-- jQuery Traversing -->
+    <div class="digiImg">
+        <!-- 時 -->
+        <div id="ck1" class="mg1"></div>
+        <div id="ck2" class="mg2"></div>
+        <!-- 冒號 mgd-->
+        <div class="mgd"></div>
+        <!-- 分 -->
+        <div id="ck3" class="mg3"></div>
+        <div id="ck4" class="mg4"></div>
+        <!-- 冒號 mgd -->
+        <div class="mgd"></div>
+        <!-- 秒 -->
+        <div id="ck5" class="mg5"></div>
+        <div id="ck6" class="mg6"></div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            function update() {
+                // 1.抓時間
+                const nt = new Date();
+                const nh = nt.getHours();
+                const nm = nt.getMinutes();
+                const ns = nt.getSeconds();
+                console.log('nt', nt);
+                console.log('nh', nh);
+                console.log('nm', nm);
+                console.log('ns', ns);
+
+                // 2.時間轉換
+                // ex. 15:50:30 => 1 5 5 0 3 0
+                // 抓這幾個數字對應圖片
+                const nk1 = Math.floor(nh / 10); // 1
+                const nk2 = nh % 10; // 5
+                const nk3 = Math.floor(nm / 10); // 5
+                const nk4 = nm % 10; // 0
+                const nk5 = Math.floor(ns / 10); // 3
+                const nk6 = ns % 10; // 0
+
+                // 原生JS 時間class放div                
+                ck1Obj.attr('class', `mg${nk1}`);
+                ck2Obj.attr('class', `mg${nk2}`);
+                ck3Obj.attr('class', `mg${nk3}`);
+                ck4Obj.attr('class', `mg${nk4}`);
+                ck5Obj.attr('class', `mg${nk5}`);
+                ck6Obj.attr('class', `mg${nk6}`);
+
+                // mgdObj.fadeTo(0,1);
+                // mgdObj.fadeTo(1000,0.8);
+
+                mgdObj.eq(0).css('opacity', 1);
+                mgdObj.eq(1).css('opacity', 1);
+                // 閃爍效果
+                setTimeout(() => {
+                    mgdObj.eq(0).css('opacity', 0);
+                    mgdObj.eq(1).css('opacity', 0);
+                }, 500);
+            }
+
+            const ck1Obj = $('#ck1');
+            const ck2Obj = $('#ck2');
+            const ck3Obj = $('#ck3');
+            const ck4Obj = $('#ck4');
+            const ck5Obj = $('#ck5');
+            const ck6Obj = $('#ck6');
+            const mgdObj = $('.mgd');
+
+            update();
+            setInterval(update, 1000);
+
+        });
+
+
+    </script>
+</body>
+
+</html>
