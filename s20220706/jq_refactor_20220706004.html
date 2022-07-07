@@ -49,8 +49,8 @@
     <h1>投籃大賽</h1>
 
     <div>
-        <h3 id="title">分數</h3>
         <h2>歷史最高分數 <span>55688</span></h2>
+        <h3 id="title">分數</h3>
         <p id="myP">0</p>
         <hr>
         <p id="myTime">0</p>
@@ -81,34 +81,64 @@
 
         $(document).ready(function () {
 
+            // 初始化
+            function init() {
+                myBtn.text('開始');
+                myTime.text(`${count}`);
+            }
 
-            function clickFun() {
-                console.log('clickFun ok');
+            // 全部初始化 resetBtn 
+            function backInit() {
+                clearInterval(timer); //timer 關掉
+                timer = null;
+                console.log('timer',timer);
+                score = 0;
+                isReset = false;
+                isStart = false;
+                myP.text(`${score}`);
+                title.text('分數');
+                title.css('color', 'black');
+                mySpan.css('color','green')
+                count = initTime;                
+                myBtn.off('click').on("click", myBtnClickFun);
+                myP.text('0');
+                myTime.text(`${count}`);
+                myBtn.text('開始');
+
+            }
+
+            // myBtn ClickFun
+            // 1-1 開始 -> start
+            // 1-2 得分 -> 得分路線
+            function myBtnClickFun() {
+                // 1-1 條件開始 -> 動作得分
+                console.log('myBtnClick 444');
                 console.log('isStart',isStart);
-                // let getMyBtnText = myBtn.text();
                 if (isStart == false) {
                     myBtn.text('進球');
                     isStart = true;
                     timerGo();
                     return false;
                 }
-                console.log('clickFun ok2');
 
-                console.log('isStart',isStart);
-                // sum = count;                
-                if (count < 30) {
-                    sum += 3;
+                // 1-2 條件得分 -> 動作得分
+                // console.log('clickFun ok2');
+                // console.log('isStart', isStart);
+                // score = count;                
+                console.log(score);
+                if (count < point3Time) {
+                    score += 3;
                 } else {
-                    sum += 2;
+                    score += 2;
                 }
-                myP.text(`${sum}`);
+                myP.text(`${score}`);
             }
 
+            // 時間計數器
             function timerGo() {
-                // myBtn.off('click');
-                console.log('click ok');
+                // console.log('click ok');
                 timer = setInterval(function () {
-                    if (count <= 30) {
+                    if (count <= point3Time) {
                         title.text('三分球時間');
                         title.css('color', 'green');
                     }
@@ -116,24 +146,25 @@
                     if (count > 0) {
                         count = count - 1;
                         myTime.text(`${count}`);
-                    }
-                    else {
+                    } else {
                         title.text('最終分數');
                         title.css('color', 'brown');
                         let nowScore = Number(myP.text());
 
                         if (nowScore > highScore) {
                             localStorage.setItem("highScore", nowScore);
-                            $('span').text(`${nowScore}`)
+                            mySpan.text(`${nowScore}`)
+                            mySpan.css('color',`red`)
                         }
-                        isReset = true;
+                        // localStorage.setItem("highScore", nowScore);
+                        // mySpan.text(`${nowScore}`)
 
-                        clearInterval(timer);
-                    }
-
-                    if (count <= 0) {
+                        isStart = false;
+                        console.log('isStart',isStart);
+                        console.log('time stop');
                         myBtn.text('時間到');
-                        myBtn.off("click");
+                        myBtn.off("click"); //不可以在投籃了                        
+                        clearInterval(timer);
                     }
                 }, 1000);
             }
@@ -142,77 +173,51 @@
             // 當超過100分 變三分球
 
             // 往上找 往外找 parent 往父層找
+            const title = $('#title');
+            const mySpan = $('span');
             const myP = $('#myP');
             const myTime = $('#myTime');
             const myBtn = $('#myBtn');
             const resetBtn = $('#resetBtn');
-            const title = $('#title');
 
 
+            // 最高分數
             let highScore = Number(localStorage.getItem("highScore"));
-            console.log('highScore', highScore);
-
+            // console.log('highScore', highScore);
             // 使用者第一次進這個網頁
             if (!highScore) {
                 localStorage.setItem("highScore", 0);
             }
-            // Retrieve
+            mySpan.text(`${highScore}`)
 
-            // let highScore = localStorage.getItem('highScore');
-            $('span').text(`${highScore}`)
+            //初始分數
+            let score = 0;
 
+            //初始秒數
+            let initTime = 6;
 
-            myBtn.text('開始');
-            let initTime = 60;
-            let count = initTime;
-            myTime.text(`${count}`);
-            let timer = null;
+            //三分球秒數
+            let point3Time = 3;
 
+            //myBtn goBtn 初始狀態flag
             let isStart = false;
+            // resetBtn 初始狀態flag
             let isReset = false;
 
+            // 計數器 計算
+            let timer = null;
+            let count = initTime;
 
+            //畫面初始化
+            init();
 
+            // myBtn myBtnClickFun
+            // 1-1 開始 -> start
+            // 1-2 得分 -> 得分路線
+            myBtn.click(myBtnClickFun);
 
-
-            let sum = 0; //初始分數
-            myBtn.click(clickFun);
-
-            resetBtn.click(function () {
-                clearInterval(timer);
-                sum = 0 ;
-                if (isReset) {
-                    isReset = false;
-                    console.log('resetBtn ok');
-                    console.log('isReset', isReset);
-                    return false;
-                } else {
-
-                    console.log('isReset', isReset);
-
-                    console.log('end');
-
-                    sum = 0;
-                    myP.text(`${sum}`);
-
-                    title.text('分數');
-                    title.css('color', 'black');
-                    count = initTime;
-                    myBtn.on("click", clickFun);
-  
-                    isStart = false;
-                    myP.text('0');
-
-                    myTime.text(`${count}`);
-                    myBtn.text('開始');
-
-                    // timerGo();
-
-                }
-
-
-            });
-
+            // resetBtn backInit
+            resetBtn.click(backInit);
 
         });
 
