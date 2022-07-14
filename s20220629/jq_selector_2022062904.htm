@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>111 Lorem ipsum dolor sit amet.</li>
+        <li>222 Lorem ipsum dolor sit amet.</li>
+        <li>333 Lorem ipsum dolor sit amet.</li>
+        <li>444 Lorem ipsum dolor sit amet.</li>
+    </ul>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jq
+        $(document).ready(function () {
+            // li:first
+            // li:last
+            // let obj = $("ul > li:last");
+            // console.log('obj', obj);
+            // obj.addClass('red');
+
+            // // ul > li:odd基數 or even偶數
+            // let liObj = $("ul > li:even");
+            // liObj.addClass('blue');
+
+            // 建議方式
+            let objOK = $("ul > li").first();
+            console.log(objOK);
+
+
+        });
+    // jq end
+    </script>
+</body>
+
+</html>

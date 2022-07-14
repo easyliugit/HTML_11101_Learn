@@ -92,7 +92,6 @@
         // while (i <= 6) {
             // min 1 - max 49
             let num = Math.floor(Math.random() * (49 - 1 + 1)) + 1;
-            // let num = Math.floor(Math.random() * (99 - 51 + 1)) + 51;
 
             // 判斷是否存array
             let flag = lottery.indexOf(num);
@@ -110,7 +109,11 @@
             i++;
         }
 
+        lottery.sort(function(a, b){return a - b});
+
         console.log(lottery);
+
+        // array [1 , 2]
 
         // 3.防呆
         // 3-1 增加lottery array

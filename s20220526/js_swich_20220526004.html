@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // switch 多個條件 
+        // if(key == value){
+
+        // }
+
+        // 練習Ｃ　７折
+
+        // let idReslut = "C";
+
+        // switch (idReslut) {
+        //     case "A":
+        //         console.log("恭喜你得到 一折 ");
+        //         break;
+        //     case "B":
+        //         console.log("恭喜你得到 五折 ");
+        //         break;
+        //     case "C":
+        //         console.log("恭喜你得到 七折 ");
+        //         // break;
+        //     default:
+        //         console.log("恭喜你得到 九五折 ");
+        //         break;
+        // }
+
+        // 練習一
+        // case number 1 - 7
+        // 星期一 星期日
+        // 1-7 選一個你最喜愛的幸運數字
+        // 1 => 可以考慮 星期一 去買樂透
+        // 2 => 可以考慮 星期二 去買樂透
+        // let loveNum = 7;
+        // switch (loveNum) {
+        //     case 1:
+        //         console.log("星期一");
+        //         break;
+        //     case 2:
+        //         console.log("星期二");
+        //         break;
+        //     case 3:
+        //         console.log("星期三");
+        //         break;
+        //     case 4:
+        //         console.log("星期四");
+        //         break;
+        //     case 5:
+        //         console.log("星期五");
+        //         break;
+        //     case 6:
+        //         console.log("星期六");
+        //         break;
+        //     case 7:
+        //         console.log("星期日");
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        // 練習二變形題目
+        // 基數日去買
+        // 偶數日去買 break;
+        // let loveNum = 1;
+        // switch (loveNum) {
+        //     // 基數
+        //     case 1:
+        //     case 3:
+        //     case 5:
+        //     case 7:
+        //         console.log("基數星期都可以去")
+        //         break;
+
+        //     // 偶數
+        //     case 2:
+        //     case 4:
+        //     case 6:
+        //         console.log("偶數星期都可以去")
+        //         break;
+
+        //     default:
+        //         break;
+        // }
+
+
+        // 作業20220526 switch case
+        // 發號牌的動作 總共發90個
+        // 取餘數
+        // 早上圖書館讀書 1 4 7
+        // 下午圖書館讀書 2 5 8
+        // 晚上圖書館讀書 3 6 9
+
+        // let loveNum = 1;
+        // let loveNum = 2;
+        let loveNum = 3;
+        console.log('loveNum => ' + loveNum );
+        switch (loveNum % 3) {
+            // 早上
+            case 1:
+                //餘數1
+                console.log("1 4 7 圖書館A時段");
+                break;
+
+            // 下午
+            case 2:
+                //餘數1
+                console.log("2 5 8 圖書館B時段");
+                break;
+
+            // 晚上
+            case 0:
+                //餘數1
+                console.log("3 6 9 圖書館C時段");
+                break;
+
+            default:
+                break;
+        }
+
+
+    </script>
+</body>
+
+</html>
