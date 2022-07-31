@@ -1,0 +1,18 @@
+body {
+    font-family: Microsoft JhengHei;
+}
+
+#banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url(../img/banner.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 50vh;
+    margin-top: 3.5rem;
+}
+
+#banner>.row {
+    height: 50vh;
+}
