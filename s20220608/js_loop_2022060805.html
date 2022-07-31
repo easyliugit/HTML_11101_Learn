@@ -12,7 +12,6 @@
     <script>
         // hw060801
         // 0-100 奇數
-
         //for
         // for (let i = 0; i <= 100; i++) {
         //     if(i % 2 == 1){
@@ -35,36 +34,21 @@
         //         document.write(`${i}<br>`);
         //     }
         //     i++
-        // } while (i <= 100);
-        // } while (i <= -1);
+        // } while (i <= 100); //題目要求
+        // } while (i <= -1); //至少要跑一次 可以搭配上面的hello 了解
 
         // hw060802
         // 輸入兩個數 計算0 - 1000 所有可以被3與11除的數
         // for
-        // while
-        // do while
+        let min = 1000;
+        let max = 0;
 
-        let min = Number(Math.floor(Math.random() * (1000 - 0 + 1)) + 0);
-        let max;
-        do {
-            max = Number(Math.floor(Math.random() * (1000 - 0 + 1)) + 0);
-        } while (min == max);
-        if (min > max) {
-            let tmp = min;
-            min = max;
-            max = tmp;
+        // 交換大小 
+        if (max < min) {
+            let tmp = max;
+            max = min;
+            min = tmp;
         }
-        // console.log(`num1=${num1} num2=${num2}`);
-
-        // let min = 1000;
-        // let max = 0;
-
-        // // 交換大小 
-        // if (max < min) {
-        //     let tmp = max;
-        //     max = min;
-        //     min = tmp;
-        // }
 
         // for
         // for (let i = min; i <= max; i++) {
@@ -87,8 +71,8 @@
                 document.write(`${i}<br>`);
             }
             i++;
-
         } while (i <= max);
+
     </script>
 </body>
 

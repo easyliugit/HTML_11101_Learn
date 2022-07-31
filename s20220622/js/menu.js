@@ -1,3 +1,4 @@
+
 function getTotal() {
     console.log('onchange ok');
     calResult1 = parseInt(itemPrice1.value) * parseInt(itemCount1.value);

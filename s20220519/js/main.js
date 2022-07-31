@@ -15,3 +15,4 @@ myForm.addEventListener('submit',function(e){
     item1Price.value = item1Result;
     // console.log('item1Val',item1Val);
 })
+
