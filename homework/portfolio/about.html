@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alpha 編織一個網站的夢</title>
+    <!-- Bootstrap’s CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Bootstrap’s icon -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+        integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <i class="bi bi-person-video3"></i>
+            Alpha 編織一個網站的夢
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">主選單</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./index.html">回首頁</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-lg-4" id="about">
+          <div class="row justify-content-center align-items-center" id="people">
+              <div class="text-center">
+                  <img src="https://fakeimg.pl/208x213/" class="rounded-circle my-3" id="photo">
+                  <p class="text-light">我是Penny，我喜歡用攝影紀錄生活的每一刻。</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-8 bg-light offset-lg-4">
+        <div class="col-lg-10 mx-auto py-5">
+          <h4>關於我</h4>
+          <p>我熱愛生活也享受生活，所以我拿著相機走遍世界各地，試圖拍攝每個場景、每個故事，每個相遇的朋友，好留住美好的時光給以後念想⋯⋯</p>
+          <div class="row">
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+              <div class="w-100"></div>
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+              <div class="w-100"></div>
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+              <div class="col-sm my-2">
+                  <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+              </div>
+          </div>
+      </div> 
+      </div>
+      </div>
+    </div>
+
+    <div style="height: 50vh;">
+        <h1>Hello, world!</h1>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center bg-light text-dark p-3 my-4 border-top">
+        <div class="col-md-9 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-muted">&copy; 2022 版權所有，PHP資料庫網頁設計(泰山)第11101期 01-AlphaLiu</span>
+        </div>
+
+        <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://wdaweb.github.io/" target="_blank"><i
+                        class="bi bi-github"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://youtu.be/DzN1czwBaK4" target="_blank"><i
+                        class="bi bi-youtube"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://zh-tw.facebook.com/tsvts" target="_blank"><i
+                        class="bi bi-facebook"></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- Bootstrap’s JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
