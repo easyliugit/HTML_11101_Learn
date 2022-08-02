@@ -73,6 +73,28 @@
   <div class="container pt-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
+      <!-- Modal for Youtube-->
+      <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="youtubeModalLabel">第0週</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Youtube -->
+              <div class="ratio ratio-16x9">
+                <iframe class="embed-responsive-item" src="" id="youtubeVideo" allowscriptaccess="always"
+                  allow="autoplay"></iframe>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col">
         <div class="card shadow-sm">
           <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
@@ -81,7 +103,9 @@
             <h6 class="card-subtitle mb-2 text-muted">2022/9/12~2022/9/15</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <!-- Button trigger modal -->
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第25週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -105,7 +129,8 @@
             <h6 class="card-subtitle mb-2 text-muted">2022/9/5~2022/9/9</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第24週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -695,6 +720,39 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      // Modal for Youtube - start
+      let $youtubeSrc;
+      let $youtubeTitle;
+      $('.youtubeVideo-btn').click(function () {
+        $youtubeSrc = $(this).data("src");
+        $youtubeTitle = $(this).data("title");
+        $("#youtubeModalLabel").text($youtubeTitle)
+      });
+      console.log($youtubeSrc+","+$youtubeTitle);
+
+      // when the modal is opened autoplay it  
+      $('#youtubeModal').on('shown.bs.modal', function (e) {
+        // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+        $("#youtubeVideo").attr('src', $youtubeSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+      })
+
+      // stop playing the youtube video when I close the modal
+      $('#youtubeModal').on('hide.bs.modal', function (e) {
+        // a poor man's stop video
+        $("#youtubeVideo").attr('src', $youtubeSrc);
+      })
+      // Modal for Youtube - End
+
+      // document ready  
+    });
+  </script>
+
 </body>
 
 </html>
