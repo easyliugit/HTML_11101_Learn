@@ -13,12 +13,13 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
     integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/vttube.css">
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
+
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">
           <i class="bi bi-person-video3"></i>
@@ -66,12 +67,22 @@
             </form>
           </div>
         </div>
+
       </div>
     </nav>
   </header>
 
-  <div class="container pt-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  <div id="banner">
+    <div class="row justify-content-center align-items-center text" id="people">
+      <div class="col-lg text-center text-white pt-3">
+        <h1>職訓影音日記</h1>
+        <p>記錄學習進度、心得與感想。</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-3">
 
       <!-- Modal for Youtube-->
       <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,15 +100,19 @@
               </div>
             </div>
             <div class="modal-footer">
+              <button class="btn btn-danger" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                <span class="visually-hidden">Loading...</span>
+              </button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col">
+      <div class="col" id="card-title25">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="./img/vtdemo.jpg" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第25週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/9/12~2022/9/15</h6>
@@ -123,7 +138,7 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="./img/vtdemo.jpg" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第24週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/9/5~2022/9/9</h6>
@@ -148,13 +163,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="./img/vtdemo.jpg" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第23週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/8/29~2022/9/2</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第23週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -172,13 +188,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第22週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/8/22~2022/8/26</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第22週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -196,13 +213,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第21週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/8/15~2022/8/19</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第21週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -220,13 +238,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第20週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/8/8~2022/8/12</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第20週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -244,13 +263,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第19週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/8/1~2022/8/5</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第19週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -268,13 +288,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第18週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/7/25~2022/7/29</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第18週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -292,13 +313,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第17週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/7/18~2022/7/22</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第17週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -316,13 +338,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第16週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/7/11~2022/7/15</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第16週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -340,13 +363,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第15週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/7/4~2022/7/8</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第15週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -364,13 +388,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第14週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/6/27~2022/7/1</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第14週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -388,13 +413,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第13週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/6/20~2022/6/24</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第13週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -412,13 +438,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第12週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/6/13~2022/6/17</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第12週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -436,13 +463,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第11週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/6/6~2022/6/10</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第11週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -460,13 +488,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第10週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/5/30~2022/6/3</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第10週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -484,13 +513,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第9週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/5/23~2022/5/27</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第9週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -508,13 +538,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第8週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/5/16~2022/5/20</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第8週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -532,13 +563,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第7週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/5/9~2022/5/13</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第7週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -556,13 +588,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第6週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/5/2~2022/5/6</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第6週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -580,13 +613,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第5週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/4/25~2022/4/29</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第5週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -604,13 +638,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第4週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/4/18~2022/4/22</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第4週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -628,13 +663,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第3週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/4/11~2022/4/15</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第3週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -652,13 +688,14 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第2週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/4/4~2022/4/8</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第2週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -674,15 +711,16 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="col" id="card-title1">
         <div class="card shadow-sm">
-          <img src="https://fakeimg.pl/1024x768/" class="d-block w-100" alt="...">
+          <img src="https://fakeimg.pl/1280x720/" class="d-block w-100" alt="...">
           <div class="card-body">
             <h5 class="card-title">第1週</h5>
             <h6 class="card-subtitle mb-2 text-muted">2022/3/28~2022/4/1</h6>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="第1週"
+                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -700,6 +738,13 @@
 
     </div>
   </div>
+  
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">回到頁首</a>
+    </p>
+    <p>-</p>
+  </div>
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center bg-light text-dark p-3 my-4 border-top">
     <div class="col-md-9 d-flex align-items-center">
@@ -713,7 +758,7 @@
             class="bi bi-youtube"></i></a></li>
       <li class="ms-3"><a class="text-muted" href="https://zh-tw.facebook.com/tsvts" target="_blank"><i
             class="bi bi-facebook"></i></a></li>
-    </ul>
+    </ul>    
   </footer>
 
   <!-- Bootstrap’s JS -->

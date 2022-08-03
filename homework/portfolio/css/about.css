@@ -3,6 +3,10 @@ body {
 }
 
 #about {
+    margin: 3.5rem 0;
+}
+
+#banner {
     position: fixed;
     background-image: url(../img/about.jpg);
     background-repeat: no-repeat;
@@ -23,7 +27,7 @@ body {
 }
 
 @media (max-width: 991.5px) {
-    #about {
+    #banner {
         position: static;
         height: 30vh;
     }
