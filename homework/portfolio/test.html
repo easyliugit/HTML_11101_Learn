@@ -17,6 +17,15 @@
 
 <body>
   <header>
+
+    <nav class="navbar sticky-top bg-light">
+      <div class="container-fluid">
+        <a class="btn btn-primary active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          週記選單
+        </a>
+      </div>
+    </nav>
+
     <!-- 不隱藏選單 -->
     <nav class="navbar navbar-expand bg-light">
       <div class="container-fluid">
@@ -196,14 +205,42 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <!-- <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
     </nav>
+
+
+    <nav>
+      <div class="nav nav-pills flex-column flex-sm-row">
+      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Longer nav link</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+      <a class="flex-sm-fill text-sm-center nav-link disabled">Disabled</a>
+      </div>
+    </nav>
+      
+
+    <nav>
+      <div class="nav nav-tabs flex-column flex-sm-row" id="nav-tab" role="tablist">
+        <a class="flex-sm-fill text-sm-center nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+        <a class="flex-sm-fill text-sm-center nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Disabled</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+    </div>
+    
+
   </header>
 
   <!-- Button trigger modal -->

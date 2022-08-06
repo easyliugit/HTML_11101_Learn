@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpha 編織一個網站的夢</title>
+  <!-- Bootstrap’s CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- Bootstrap’s icon -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+    integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/portfolio.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <i class="bi bi-person-video3"></i>
+          Alpha 編織一個網站的夢
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">主選單</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">關於我</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">作品集</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./vttube.html">職訓影音日記</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  更多內容
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./blog.html">隨手筆記</a></li>
+                  <li><a class="dropdown-item disabled" href="#">網頁設計教學</a></li>
+                  <li><a class="dropdown-item" href="#">追蹤我</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">登入管理</a></li>
+                </ul>
+              </li>
+            </ul>
+            <hr>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary disabled" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="banner">
+    <div class="row justify-content-center align-items-center text" id="people">
+      <div class="col-lg text-center text-white pt-3">
+        <h1>作品集</h1>
+        <p>在泰山職訓PHP資料庫網頁設計的學習成果。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <nav class="card-header mt-3">
+        <div class="nav nav-tabs card-header-tabs flex-column flex-sm-row" id="nav-tab" role="tablist">
+          <a class="flex-sm-fill text-sm-center nav-link active" id="nav-php1-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-php1" type="button" role="tab" aria-controls="nav-php1"
+            aria-selected="true">資料庫程式設計(PHP+MySQL)</a>
+          <a class="flex-sm-fill text-sm-center nav-link" id="nav-php2-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-php2" type="button" role="tab" aria-controls="nav-php2"
+            aria-selected="false">網頁設計實務(網頁設計乙級)</a>
+          <!-- <a class="flex-sm-fill text-sm-center nav-link" id="nav-php3-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-php3" type="button" role="tab" aria-controls="nav-php3"
+                    aria-selected="false">視覺影像設計</a> -->
+          <!-- <a class="flex-sm-fill text-sm-center nav-link disabled" id="nav-disabled-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled"
+                    aria-selected="false">Disabled</a> -->
+        </div>
+      </nav>
+      <div class="card-body tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-php1" role="tabpanel" aria-labelledby="nav-php1-tab"
+          tabindex="0">
+          <!-- 這是「資料庫程式設計(PHP+MySQL)」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav -->
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">PHP萬年曆</h5>
+                  <p class="card-text">提供連結可以切換不同的月份</p>
+                  <a href="#" class="btn btn-primary">看成品</a>
+                </div>
+                <img src="./img/portfolio.jpg" class="card-img-bottom" alt="...">
+              </div>              
+            </div>
+
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">PHP投票系統</h5>
+                  <p class="card-text">可以提供投票功能，並能查看結果</p>
+                  <a href="#" class="btn btn-primary">看成品</a>
+                </div>
+                <img src="./img/portfolio.jpg" class="card-img-bottom" alt="...">
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-php2" role="tabpanel" aria-labelledby="nav-php2-tab" tabindex="0">
+          這是「網頁設計實務(網頁設計乙級)」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-php3" role="tabpanel" aria-labelledby="nav-php3-tab" tabindex="0">
+                這是「數位媒體應用」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+            </div> -->
+        <!-- <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                tabindex="0">
+                這是「主頁」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+            </div> -->
+      </div>
+      <nav class="card-header mt-3">
+        <div class="nav nav-tabs card-header-tabs flex-column flex-sm-row" id="nav-tab" role="tablist">
+          <a class="flex-sm-fill text-sm-center nav-link active" id="nav-js1-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-js1" type="button" role="tab" aria-controls="nav-js1"
+            aria-selected="true">網頁排版編輯(網頁設計丙級)</a>
+          <a class="flex-sm-fill text-sm-center nav-link" id="nav-js2-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-js2" type="button" role="tab" aria-controls="nav-js2"
+            aria-selected="false">網頁動態技術(JavaScript)</a>
+          <a class="flex-sm-fill text-sm-center nav-link" id="nav-js3-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-js3" type="button" role="tab" aria-controls="nav-js3"
+            aria-selected="false">數位媒體應用(Bootstrap4)</a>
+          <!-- <a class="flex-sm-fill text-sm-center nav-link disabled" id="nav-disabled-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled"
+                    aria-selected="false">Disabled</a> -->
+        </div>
+      </nav>
+      <div class="card-body tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-js1" role="tabpanel" aria-labelledby="nav-js1-tab" tabindex="0">
+          這是「網頁排版編輯(網頁設計丙級)」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <div class="tab-pane fade" id="nav-js2" role="tabpanel" aria-labelledby="nav-js2-tab" tabindex="0">
+          這是「網頁動態技術(JavaScript+JQuery)」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <div class="tab-pane fade" id="nav-js3" role="tabpanel" aria-labelledby="nav-js3-tab" tabindex="0">
+          這是「數位媒體應用(Bootstrap4)」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                tabindex="0">
+                這是「主頁」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+            </div> -->
+      </div>
+      <nav class="card-header mt-3">
+        <div class="nav nav-tabs card-header-tabs flex-column flex-sm-row" id="nav-tab" role="tablist">
+          <a class="flex-sm-fill text-sm-center nav-link active" id="nav-ds1-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-ds1" type="button" role="tab" aria-controls="nav-ds1"
+            aria-selected="true">視覺影像設計Photoshop</a>
+          <a class="flex-sm-fill text-sm-center nav-link" id="nav-ds2-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-ds2" type="button" role="tab" aria-controls="nav-ds2"
+            aria-selected="false">視覺影像設計Illustrator</a>
+          <!-- <a class="flex-sm-fill text-sm-center nav-link" id="nav-ds4-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-ds4" type="button" role="tab" aria-controls="nav-ds4"
+                      aria-selected="false">視覺影像設計</a> -->
+          <!-- <a class="flex-sm-fill text-sm-center nav-link disabled" id="nav-disabled-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled"
+                      aria-selected="false">Disabled</a> -->
+        </div>
+      </nav>
+      <div class="card-body tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-ds1" role="tabpanel" aria-labelledby="nav-ds1-tab" tabindex="0">
+          這是「視覺影像設計Photoshop」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <div class="tab-pane fade" id="nav-ds2" role="tabpanel" aria-labelledby="nav-ds2-tab" tabindex="0">
+          這是「視覺影像設計Illustrator」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+          交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-ds4" role="tabpanel" aria-labelledby="nav-ds4-tab" tabindex="0">
+                  這是「視覺影像設計」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                  交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+              </div> -->
+        <!-- <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                  tabindex="0">
+                  這是「主頁」選項卡的一些佔位元內容的關聯內容。按兩下另一個選項卡將切換下一個選項卡的可見性。選項卡 JavaScript
+                  交換類以控制內容可見性和樣式。您可以將其與選項卡，藥丸和任何其他驅動的導航一起使用。.nav
+              </div> -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center bg-light text-dark p-3 my-4 border-top">
+    <div class="col-md-9 d-flex align-items-center">
+      <span class="mb-9 mb-md-0 text-muted">&copy; 2022 PHP資料庫網頁設計(泰山)第11101期 01-AlphaLiu</span>
+    </div>
+
+    <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="https://wdaweb.github.io/" target="_blank"><i
+            class="bi bi-github"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://youtu.be/DzN1czwBaK4" target="_blank"><i
+            class="bi bi-youtube"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://zh-tw.facebook.com/tsvts" target="_blank"><i
+            class="bi bi-facebook"></i></a></li>
+    </ul>
+  </footer>
+
+  <!-- Bootstrap’s JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
