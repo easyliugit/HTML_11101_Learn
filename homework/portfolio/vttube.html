@@ -54,18 +54,36 @@
                   <li><a class="dropdown-item" href="./blog.html">隨手筆記</a></li>
                   <li><a class="dropdown-item disabled" href="#">網頁設計教學</a></li>
                   <li><a class="dropdown-item" href="./followme.html">追蹤我</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">登入管理</a></li>
                 </ul>
               </li>
             </ul>
             <hr>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-primary disabled" type="submit">Search</button>
-            </form>
+            <div class="dropdown">
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" data-bs-auto-close="outside">
+                登入管理
+              </button>
+              <form class="dropdown-menu dropdown-menu-lg-end p-4">
+                <div class="mb-3">
+                  <label for="exampleDropdownFormEmail2" class="form-label">電子信箱</label>
+                  <input type="email" class="form-control" id="exampleDropdownFormEmail2"
+                    placeholder="email@example.com">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleDropdownFormPassword2" class="form-label">密碼</label>
+                  <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                    <label class="form-check-label" for="dropdownCheck2">
+                      記住我
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">登入</button>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -84,7 +102,8 @@
 
   <nav class="navbar sticky-top bg-light" style="top: 3.5rem;">
     <div class="container-fluid">
-      <a class="btn btn-primary active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <a class="btn btn-primary active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample"
+        role="button" aria-controls="offcanvasExample">
         週記選單
       </a>
     </div>
@@ -126,9 +145,11 @@
       </ul>
     </div>
   </div>
-  
-  <div class="container">    
-    <div data-bs-target="#navbar-example3" data-bs-spy="scroll" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 p-3">
+
+  <div class="container">
+    <div data-bs-target="#navbar-example3" data-bs-spy="scroll" data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true" tabindex="0"
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 p-3">
 
       <!-- Modal for Youtube-->
       <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,7 +166,9 @@
                   allow="autoplay"></iframe>
               </div>
               <div class="progress mt-1">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar"
+                  aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                  style="width: 100%"></div>
               </div>
             </div>
             <div class="modal-footer">
@@ -168,8 +191,9 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <!-- Button trigger modal -->
-                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal" data-title="PHP資料庫網頁設計(泰山)"
-                  data-src="https://www.youtube.com/embed/DzN1czwBaK4" data-bs-target="#youtubeModal">檢視</a>
+                <a href="#" class="btn btn-primary btn-sm youtubeVideo-btn" data-bs-toggle="modal"
+                  data-title="PHP資料庫網頁設計(泰山)" data-src="https://www.youtube.com/embed/DzN1czwBaK4"
+                  data-bs-target="#youtubeModal">檢視</a>
                 <a href="#" class="btn btn-danger btn-sm">編輯</a>
               </div>
               <small class="text-muted">更新時間</small>
@@ -810,11 +834,11 @@
           </ul>
         </div>
       </div>
-      
+
 
     </div>
   </div>
-  
+
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">回到頁首</a>
@@ -834,7 +858,7 @@
             class="bi bi-youtube"></i></a></li>
       <li class="ms-3"><a class="text-muted" href="https://zh-tw.facebook.com/tsvts" target="_blank"><i
             class="bi bi-facebook"></i></a></li>
-    </ul>    
+    </ul>
   </footer>
 
   <!-- Bootstrap’s JS -->
@@ -855,7 +879,7 @@
         $youtubeTitle = $(this).data("title");
         $("#youtubeModalLabel").text($youtubeTitle)
       });
-      console.log($youtubeSrc+","+$youtubeTitle);
+      console.log($youtubeSrc + "," + $youtubeTitle);
 
       // when the modal is opened autoplay it  
       $('#youtubeModal').on('shown.bs.modal', function (e) {
