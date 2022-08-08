@@ -1,21 +1,44 @@
+body {
+    font-family: Microsoft JhengHei;
+}
+
+#followme {
+    margin: 3.5rem 0;
+}
+
 #banner {
+    position: fixed;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
         url(../img/followme.jpg);
+    background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 300px;
-    margin-top: 3.5rem;
+    height: 100vh;
 }
+
+#people {
+    /* height: 40vh; */
+}
+
 
 .col-lg {
     /* background-color: rgba(50, 50, 50, 0.62); */
 }
-
-#people {
-    height: 40vh;
+.text {
+    height: 100vh;
 }
-
 /* iframe */
 iframe {
     width: 100%;
+}
+
+@media (max-width: 991.5px) {
+    #banner {
+        position: static;
+        height: 40vh;
+    }
+
+    #people {
+        height: 40vh;
+    }
 }

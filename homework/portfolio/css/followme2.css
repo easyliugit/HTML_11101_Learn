@@ -1,0 +1,21 @@
+#banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url(../img/followme.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+    margin-top: 3.5rem;
+}
+
+.col-lg {
+    /* background-color: rgba(50, 50, 50, 0.62); */
+}
+
+#people {
+    height: 40vh;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
