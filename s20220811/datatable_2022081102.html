@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatable</title>
+    <!-- datatable css cdn.js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+
+    <!-- datatable 適合用在資料不多的情況 -->
+    <!-- 如果資料多筆 建議自己寫 select db / pagination分頁-->
+    <!-- SELECT * FROM table 實際工作少用 當資料多幾萬筆 幾十萬筆時 會很慢 會當掉 -->
+    <!-- https://datatables.net/manual/installation#CDN -->
+    <!-- 第11車廂-table界的神器!DataTables介紹篇(1) -->
+    <!-- https://ithelp.ithome.com.tw/articles/10272439 -->
+
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 4 Data 1</td>
+                <td>Row 4 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- jquery cdn.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- datatable js cdn.js -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+</body>
+
+</html>
