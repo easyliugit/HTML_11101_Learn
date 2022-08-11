@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'.$title.'</title>
+    <link rel="stylesheet" href="./css/share.css">
+</head>
+<body>
+    <div class="vote_body">
+        <header>
+            <a href="'.$_SERVER['PHP_SELF'].'"><h1>'.$title.'</h1></a>
+            <ul>
+                <li>'.$_SESSION["l_u_name"].'，您好！</li>
+                <li> <a href="'.$_SERVER['PHP_SELF'].'?action=login_out">登出</a></li>
+                <li><a href="'.$_SERVER['PHP_SELF'].'?action=login_users_form">登入</a></li>
+                <li><a href="'.$_SERVER['PHP_SELF'].'?action=users_add_form">註冊</a></li>
+            </ul>
+        </header>
+        <div class="box">
+            <nav>
+                <ul>
+                    <!-- <li><a href="#">全部 ()</a></li> -->
+                    <li class="li_hover"><a href="#">生活 ()</a></li>
+                </ul>
+            </nav>
+            <article>
+                <nav>
+                    <ul>
+                        <li><a href="#">綜合排行</a></li>
+                        <li class="li_hover"><a href="#">人氣排行</a></li>
+                        <li><a href="#">新發起的</a></li>
+                        <li><a href="#">即將結束</a></li>
+                    </ul>
+                </nav>
+                <nav class="user_nav">
+                    <ul>
+                        <li><a href="'.$_SERVER['PHP_SELF'].'?action=votes_add_form">新增投票</a></li>
+                        <li><a href="'.$_SERVER['PHP_SELF'].'?action=votes_my_list">我的主題</a></li>
+                        <li><a href="'.$_SERVER['PHP_SELF'].'?action=users_update_form">修改個人資料</a></li>
+                    </ul>
+                    <ul class="admin_nav">
+                        <li><a href="'.$_SERVER['PHP_SELF'].'?action=users_list">使用者清單</a></li>
+                    </ul>
+                </nav>
+                <section>
+                    <!-- $content 開始 -->
+                    '.$content.'
+                    <!-- $content 結束 -->
+                </section>
+            </article>
+        </div>
+        <footer>
+            <h3>版權所有© 泰山職訓PHP網頁設計11101 01劉峻誌</h3>
+        </footer>
+    </div>    
+</body>
+</html>

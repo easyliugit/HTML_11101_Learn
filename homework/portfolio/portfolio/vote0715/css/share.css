@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #e5e5f7 1px);
+    background-size: 20px 20px;
+}
+.vote_body{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+}
+/* 頁首 */
+header {
+    background: #000;
+    color: white;
+    overflow: hidden;
+    padding: 20px;
+}
+header>a{
+    font-size: 40px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+header>a h1{
+}
+header ul {
+    float: right;
+}
+header ul li {
+    float: left;
+    list-style: none;
+}
+header ul li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+header ul li a:hover {
+    color: goldenrod;
+    text-decoration: underline;
+}
+/* 二欄版型 */
+.box{
+    display: flex;
+}
+/* 分類選單 */
+.box>nav{
+    background-color: lightskyblue;
+    width: 160px;
+    padding: 20px;
+}
+.box>nav ul{}
+.box>nav ul li{
+    list-style: none;
+}
+.box>nav ul li a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px dashed black;
+}
+.box>nav ul li a:hover{
+    background-color: white;
+}
+.box>nav ul li.li_hover a{
+    background-color: white;
+}
+.box article{
+    background-color: lightblue;
+    width: 960px;
+    padding: 20px;
+}
+/* 排序選單 */
+.box article>nav{
+    background-color: lightskyblue;
+    overflow: hidden;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.box article>nav.user_nav{
+    background-color: orange;
+}
+.box article>nav ul{}
+.box article>nav ul li{
+    list-style: none;
+    float: left;
+}
+.box article>nav ul.admin_nav li{
+    float: right;
+}
+.box article>nav ul li a{
+    display: block;
+    width: 120px;
+    height: 40px;
+    background-color: lightcyan;
+    color: #000;
+    text-decoration: none;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+.box article>nav ul li.li_hover a{
+    background-color: white;
+}
+.box article>nav.user_nav ul li a{
+    background-color: blanchedalmond;
+}
+.box article>nav ul.admin_nav li a{
+    background-color: indianred;
+    color: white;
+}
+.box article>nav ul li a:hover{
+    background-color: white;
+}
+.box article>nav ul.admin_nav li a:hover{
+    color: black;
+}
+
+/* 版權宣告 */
+footer{
+    background: #000;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-style: 14px;;
+    font-weight: normal;
+}
+footer h3{}
+
+/* 使用者清單 */
+table.users_list
+,table.votes_list
+,table.votes_my_list{
+    background-color: lightcyan;
+    border-spacing: 6px;
+    border-top: 6px solid #000;
+}
+table.users_list
+,table.votes_my_list{
+    background-color: blanchedalmond;
+}
+table.users_list thead
+,table.votes_list thead
+,table.votes_my_list thead{
+    background-color: steelblue;
+    color: white;
+}
+table.users_list thead
+,table.votes_my_list thead{
+    background-color: orange;
+}
+table.users_list tbody
+,table.votes_list tbody
+,table.votes_my_list tbody{}
+table.users_list tfoot
+,table.votes_list tfoot
+,table.votes_my_list tfoot{
+    background-color: black;
+    color: white;
+}
+table.users_list td
+,table.votes_list td
+,table.votes_my_list td{
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+table.votes_my_list td.open a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: lightgreen;
+    color: #000;
+    text-decoration: none;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+table.votes_my_list td.close a{
+    background-color: lightcoral;
+}
+.options{
+    height: 30vh;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    grid-column-gap: 5px;
+    /* border: 1px solid black; */
+    padding: 10px;
+    color: white;
+}
+.options_name{
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    grid-column-gap: 5px;
+    padding: 10px;
+}
+.options
+,.options_name{
+    text-align: center;
+    font-weight: 600;
+    clear: both;
+}
+[class*="logs"]{
+    grid-row-start: 1;
+    grid-row-end: 101;
+    border-radius: 5px 5px 0 0;
+    background-color: #ff4136;
+}
+
+fieldset {
+    background-color: floralwhite;
+}
+
+legend {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+}
+dt {
+    float: left;
+    clear: left;
+    width: 110px;
+    font-weight: bold;
+    color: black;
+}
+
+dt::after {
+    content: ":";
+}
+
+dd {
+    margin: 0 0 0 80px;
+    padding: 0 0 0.5em 0;
+}
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: blanchedalmond;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+ol {
+    /* background: #ff9999; */
+    /* padding: 20px; */
+  }
+ol li {
+/* background: #ffe5e5; */
+/* color: darkred; */
+/* padding: 5px; */
+margin-left: 35px;
+}
