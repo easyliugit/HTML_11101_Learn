@@ -99,7 +99,7 @@
                 <div class="row justify-content-center align-items-center text" id="people">
                     <div class="col-lg text-center text-white pt-3">
                         <h1>追蹤我</h1>
-                        <p>利用留言板與我交流。</p>
+                        <p>利用留言板與我交流，泰山職業訓練場資訊。</p>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,8 @@
                                                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">編輯</a>
                                             </div>
                                         </th>
-                                        <td>請問wordpress如何在文章和頁面嵌入php程式碼<span class="badge bg-warning ms-1">最新</span></td>
+                                        <td>請問wordpress如何在文章和頁面嵌入php程式碼<span class="badge bg-warning ms-1">最新</span>
+                                        </td>
                                         <td>
                                             2022-08-07<br>
                                             Mark
@@ -575,15 +576,45 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
-                        <div class="col">
+                        <!-- <div class="col">
                             <h2>Facebook</h2>
                             <iframe
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fzh-tw.facebook.com%2Ftsvts&tabs=timeline&width=340&height=315&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                                 width="340" height="315" style="border:none;overflow:hidden" scrolling="no"
                                 frameborder="0" allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
+                        </div> -->
                     </div>
+
+                    <!-- ajax json -->
+                    <hr>
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="ajaxGovts">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">公立職訓機構自辦訓練結訓人數</h5>
+                                    <p class="card-text">勞動力發展署北基宜花金馬分署 / 職前</p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100">男 25%</div>
+                                    </div>
+                                    <p></p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger" role="progressbar"
+                                            aria-label="Example with label" style="width: 75%;" aria-valuenow="75"
+                                            aria-valuemin="0" aria-valuemax="100">女 75%</div>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">班次</li>
+                                    <li class="list-group-item">人數</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div>
             </div>
@@ -611,6 +642,58 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+                axios.get('./js/ajax_govts.json')
+                    .then(function (res) {
+                        console.log('res', res);
+                        let data = res.data;
+                        let cardText = '';
+                        data.forEach(myFunction);
+
+                        function myFunction(item, index) {
+                            // console.log(`<p>${item.id}-${item.name}-${item.web}</p><br>`);
+                            if (item.項目別.indexOf("北基宜花金馬分署 / 職前") != -1) {
+                                cardText += `
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">公立職訓機構自辦訓練結訓人數</h5>
+                                                <p class="card-text">勞動力發展署北基宜花金馬分署 / 職前</p>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-info" role="progressbar" aria-label="Example with label"
+                                                        style="width: ${carText_boy}%;" aria-valuenow="${carText_boy}" aria-valuemin="0" aria-valuemax="100">男 ${carText_boy}%</div>
+                                                </div>
+                                                <p></p>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-danger" role="progressbar" aria-label="Example with label"
+                                                        style="width: ${carText_girl}%;" aria-valuenow="${carText_girl}" aria-valuemin="0" aria-valuemax="100">女 ${carText_girl}%</div>
+                                                </div>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">${item.項目別.substr(0,4)} 班次 ${item.班次}</li>
+                                                <li class="list-group-item">人數 ${item.人數}</li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                    `;
+                            }
+                        }
+                        const ajaxGovts = $('#ajaxGovts');
+                        ajaxGovts.html("");
+                        ajaxGovts.append(cardText);
+
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {});
+        })
+    </script>
 </body>
 
 </html>
