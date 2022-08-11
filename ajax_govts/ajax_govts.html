@@ -18,7 +18,8 @@
         <!-- <h1>Bootstrap Tutorial</h1>
         <p>Bootstrap is the most popular HTML, CSS...</p> -->
         <button type="button" class="btn btn-primary" id="myBtn">GET_DATA</button>
-        <button type="button" class="btn btn-warning" id="areaBtn">北基宜花金馬分署 / 職前</button>
+        <button type="button" class="btn btn-warning" id="sexTabBtn">北基宜花金馬分署 / 職前(表格)</button>
+        <button type="button" class="btn btn-success" id="sexCardBtn">北基宜花金馬分署 / 職前(卡片)</button>
 
         <!-- <div class="alert alert-success alert-dismissible mt-5">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -56,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -94,77 +95,102 @@
     </script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    
+
     <script>
         $(document).ready(function () {
 
             const myJumbotron = $('#myJumbotron');
             const myBtn = $('#myBtn');
-            const areaBtn = $('#areaBtn');
+            const sexTabBtn = $('#sexTabBtn');
+            const sexCardBtn = $('#sexCardBtn');
 
-            // areaBtn
-            areaBtn.click(function () {
-                console.log('areaBtn');
+            // sexTabBtn
+            sexTabBtn.click(function () {
+                console.log('sexTabBtn');
                 axios.get('./js/ajax_govts.json')
                     .then(function (res) {
                         console.log('res', res);
                         let data = res.data;
                         let dataText = '';
-                        let cardText = '';
                         data.forEach(myFunction);
 
                         function myFunction(item, index) {
-                            // console.log(`<p>${item.id}-${item.name}-${item.web}</p><br>`);
                             if (item.項目別.indexOf("北基宜花金馬分署 / 職前") != -1) {
                                 dataText += `
                                     <tr>
-                                        <td>${item.項目別.substr(0,4)}</td>
+                                        <td>${item.項目別.substr(0, 4)}</td>
                                         <td>${item.班次}</td>
                                         <td>${item.人數}</td>
-                                        <td>${item.男+" "+ Math.round(parseFloat(item.男.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100) + "%"}</td>
-                                        <td>${item.女+" "+ Math.round(parseFloat(item.女.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100) + "%"}</td>
+                                        <td>${item.男}</td>
+                                        <td>${item.女}</td>
                                     </tr>              
-                                    `;
-
-                                let carText_boy=Math.round(parseFloat(item.男.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);
-                                let carText_girl=Math.round(parseFloat(item.女.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);
-
-                                cardText += `
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title">公立職訓機構自辦訓練結訓人數</h5>
-                                                <p class="card-text">勞動力發展署北基宜花金馬分署 / 職前</p>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-info" role="progressbar" aria-label="Example with label"
-                                                        style="width: ${carText_boy}%;" aria-valuenow="${carText_boy}" aria-valuemin="0" aria-valuemax="100">男 ${carText_boy}%</div>
-                                                </div>
-                                                <p></p>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger" role="progressbar" aria-label="Example with label"
-                                                        style="width: ${carText_girl}%;" aria-valuenow="${carText_girl}" aria-valuemin="0" aria-valuemax="100">女 ${carText_girl}%</div>
-                                                </div>
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${item.項目別.substr(0,4)} 班次 ${item.班次}</li>
-                                                <li class="list-group-item">人數 ${item.人數}</li>
-                                            </ul>
-                                        </div>
-                                    </div>                                    
                                     `;
                             }
                         }
                         const myTbody = $('#myTbody');
                         myTbody.html("");
                         myTbody.append(dataText);
+                        const ajaxGovts = $('#ajaxGovts');
+                        ajaxGovts.html("");
+
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () { });
+            })
+
+            // sexCardBtn
+            sexCardBtn.click(function () {
+                console.log('sexCardBtn');
+                axios.get('./js/ajax_govts.json')
+                    .then(function (res) {
+                        console.log('res', res);
+                        let data = res.data;
+                        let cardText = '';
+                        data.forEach(myFunction);
+
+                        function myFunction(item, index) {
+                            if (item.項目別.indexOf("北基宜花金馬分署 / 職前") != -1) {
+                                let carText_boy = Math.round(parseFloat(item.男.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);
+                                let carText_girl = Math.round(parseFloat(item.女.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);
+                                
+                                cardText += `
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">公立職訓機構自辦訓練結訓人數</h5>
+                                            <p class="card-text">勞動力發展署北基宜花金馬分署 / 職前</p>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-info" role="progressbar" aria-label="Example with label"
+                                                    style="width: ${carText_boy}%;" aria-valuenow="${carText_boy}" aria-valuemin="0" aria-valuemax="100">男 ${carText_boy}%</div>
+                                            </div>
+                                            <p></p>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Example with label"
+                                                    style="width: ${carText_girl}%;" aria-valuenow="${carText_girl}" aria-valuemin="0" aria-valuemax="100">女 ${carText_girl}%</div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${item.項目別.substr(0, 4)} 班次 ${item.班次}</li>
+                                            <li class="list-group-item">人數 ${item.人數}</li>
+                                        </ul>
+                                    </div>
+                                </div>                                    
+                                `;
+                            }
+                        }
+                        const myTbody = $('#myTbody');
+                        myTbody.html("");
                         const ajaxGovts = $('#ajaxGovts');
                         ajaxGovts.html("");
                         ajaxGovts.append(cardText);
@@ -174,13 +200,13 @@
                     .catch(function (error) {
                         console.log(error);
                     })
-                    .then(function () {});
+                    .then(function () { });
             })
 
             // myBtn
             myBtn.click(function () {
-                        const ajaxGovts = $('#ajaxGovts');
-                        ajaxGovts.html("");
+                const ajaxGovts = $('#ajaxGovts');
+                ajaxGovts.html("");
                 axios.get('./js/ajax_govts.json')
                     .then(function (res) {
                         console.log('res', res);
