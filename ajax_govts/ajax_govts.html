@@ -123,6 +123,7 @@
                         data.forEach(myFunction);
 
                         function myFunction(item, index) {
+                            console.log(`<p>${item.項目別}-${item.班次}-${item.人數}</p><br>`);
                             if (item.項目別.indexOf("北基宜花金馬分署 / 職前") != -1) {
                                 dataText += `
                                     <tr>
@@ -160,6 +161,7 @@
                         data.forEach(myFunction);
 
                         function myFunction(item, index) {
+                            console.log(`<p>${item.項目別}-${item.班次}-${item.人數}</p><br>`);
                             if (item.項目別.indexOf("北基宜花金馬分署 / 職前") != -1) {
                                 let carText_boy = Math.round(parseFloat(item.男.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);
                                 let carText_girl = Math.round(parseFloat(item.女.split(",").join("")) / parseFloat(item.人數.split(",").join("")) * 10000 / 100);

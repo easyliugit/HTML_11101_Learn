@@ -11,3 +11,7 @@
 #people {
     height: 40vh;
 }
+/* iframe */
+iframe {
+    width: 100%;
+}
