@@ -135,8 +135,7 @@
                     <form>
                         <legend>新增筆記</legend>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInputTitle"
-                                placeholder="標題">
+                            <input type="text" class="form-control" id="floatingInputTitle" placeholder="標題">
                             <label for="floatingInputTitle">標題</label>
                         </div>
                         <div class="form-floating mb-3">
@@ -150,10 +149,57 @@
                             </select>
                             <label for="specificSizeSelect">分類</label>
                         </div>
+                        <div class="mb-3">
+                            <label for="editor_po">留言內容</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="editor_po"
+                                style="height: 50vh">
+                            <p>輸入筆記</p>
+                            </textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">送出</button>
+                            <button type="reset" class="btn btn-primary">重設</button>
+                        </div>
+
+                    </form>
+                </article>
+
+                <!-- 編輯筆記 -->
+                <article class="blog-post">
+                    <form>
+                        <legend>編輯筆記</legend>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" placeholder="Leave a comment here"
-                                id="floatingTextarea2" style="height: 50vh"></textarea>
-                            <label for="floatingTextarea2">留言內容</label>
+                            <input type="text" class="form-control" id="floatingInputTitle" placeholder="標題"
+                                value="Bootstrap 初體驗">
+                            <label for="floatingInputTitle">標題</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>全部</option>
+                                <option value="1">網頁設計乙級</option>
+                                <option value="2">Javascript</option>
+                                <option value="3">PHP</option>
+                                <option value="3">資料庫</option>
+                                <option value="3" selected>環境設定</option>
+                            </select>
+                            <label for="specificSizeSelect">分類</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor_re">留言內容</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="editor_re"
+                                style="height: 50vh">
+                            <!-- 第一張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+                            <p>Bootstrap 雖然說被稱之為網頁框架，但在我實際去了解後，如果擺在10年前，它就會被稱之為完整網站樣式範例，</p>
+                            <hr>
+                            <!-- 第二張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
+                            <p>也就難怪為什麼現在的書本，已經看不到所謂"馬上套用"的網站範例。過去這類書籍由於不同作者有不同寫法，</p>
+                            <hr>
+                            <!-- 第三張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
+                            <p>不同作者的範例組合在一起，容易發生相容性的問題，現在Bootstrap 已開源的方式分享，無疑是靜態網頁設計的一大福音</p>
+                            </textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">送出</button>
@@ -190,7 +236,7 @@
                     <div class="card text-dark bg-light mb-4">
                         <!-- <div class="card-header">關於我們</div> -->
                         <div class="card-body">
-                            
+
                             <ol class="list-unstyled">
                                 <li><a href="#" class="btn btn-outline-primary btn-sm mt-1 active">新增筆記</a></li>
                                 <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">全部筆記</a></li>
@@ -248,6 +294,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+    <!-- CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor_po'))
+            .then(editor_po => {
+                console.log("editor_po "+editor_po);
+                myEditor_po = editor_po;
+            })
+            .catch(error => {
+                console.log("editor_po_error" + error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#editor_re'))
+            .then(editor_re => {
+                console.log("editor_re "+editor_re);
+                myEditor_re = editor_re;
+            })
+            .catch(error => {
+                console.log("editor_re_error" + error);
+            });
+    </script>
 </body>
 
 </html>
