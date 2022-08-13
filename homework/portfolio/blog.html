@@ -103,12 +103,11 @@
     </div>
 
     <!-- 內容區 -->
-    <hr>
     <main class="container">
-        <div class="row g-5">
+        <div class="row mt-1 g-5">
             <div class="col-md-8">
 
-                <!-- 文章1 -->
+                <!-- 筆記 -->
                 <article class="blog-post">
                     <h2 class="blog-post-title mb-1">Bootstrap 初體驗</h2>
                     <p class="blog-post-meta">
@@ -129,7 +128,39 @@
                     <!-- 第三張照片 -->
                     <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
                     <p>不同作者的範例組合在一起，容易發生相容性的問題，現在Bootstrap 已開源的方式分享，無疑是靜態網頁設計的一大福音</p>
-                    <hr>
+                </article>
+
+                <!-- 新增筆記 -->
+                <article class="blog-post">
+                    <form>
+                        <legend>新增筆記</legend>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInputTitle"
+                                placeholder="標題">
+                            <label for="floatingInputTitle">標題</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>全部</option>
+                                <option value="1">網頁設計乙級</option>
+                                <option value="2">Javascript</option>
+                                <option value="3">PHP</option>
+                                <option value="3">資料庫</option>
+                                <option value="3">環境設定</option>
+                            </select>
+                            <label for="specificSizeSelect">分類</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                id="floatingTextarea2" style="height: 50vh"></textarea>
+                            <label for="floatingTextarea2">留言內容</label>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">送出</button>
+                            <button type="reset" class="btn btn-primary">重設</button>
+                        </div>
+
+                    </form>
                 </article>
 
                 <!-- 上一篇、下一篇按鈕 -->
