@@ -54,7 +54,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item active" aria-current="page" href="#">隨手筆記</a></li>
                                     <li><a class="dropdown-item disabled" href="#">網頁設計教學</a></li>
-                                    <li><a class="dropdown-item" href="./followme.html">追蹤我</a></li>
+                                    <li><a class="dropdown-item" href="./followme.html">留言板</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -66,9 +66,9 @@
                             </button>
                             <form class="dropdown-menu dropdown-menu-lg-end p-4">
                                 <div class="mb-3">
-                                    <label for="exampleDropdownFormEmail2" class="form-label">電子信箱</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2"
-                                        placeholder="email@example.com">
+                                    <label for="exampleDropdownFormEmail2" class="form-label">帳號</label>
+                                    <input type="text" class="form-control" id="exampleDropdownFormEmail2"
+                                        placeholder="username">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleDropdownFormPassword2" class="form-label">密碼</label>
@@ -103,14 +103,13 @@
     </div>
 
     <!-- 內容區 -->
-    <hr>
     <main class="container">
-        <div class="row g-5">
+        <div class="row mt-1 g-5">
             <div class="col-md-8">
 
-                <!-- 文章1 -->
+                <!-- 筆記 -->
                 <article class="blog-post">
-                    <h2 class="blog-post-title mb-1">Visual Studio Code安裝與設定</h2>
+                    <h2 class="blog-post-title mb-1">Bootstrap 初體驗</h2>
                     <p class="blog-post-meta">
                         分類：<a href="#" class="btn btn-success btn-sm me-1">環境設定</a> 2022年8月 by <a href="#">Alpha</a>
                     <div class="btn-group">
@@ -120,49 +119,94 @@
                     </p>
                     <!-- 第一張照片 -->
                     <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
-                    <p>VS Code為微軟推出的一個免費文字編輯器，因其內建多項對前端開發友善的功能加上內建套件市集，因此在短時間內普及，目前為許多網頁開發者首選的程式碼編輯器。</p>
+                    <p>Bootstrap 雖然說被稱之為網頁框架，但在我實際去了解後，如果擺在10年前，它就會被稱之為完整網站樣式範例，</p>
                     <hr>
                     <!-- 第二張照片 -->
                     <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
-                    <p>Visual Studio Code本身已經內建了一些網頁程式設計常用的語法檢測及格式設定等內容，因此需要做的基本設定並不多，再加上VS
-                        Code內建軟體市集，有需要任何額外的功能都可以透過市集來完成。</p>
+                    <p>也就難怪為什麼現在的書本，已經看不到所謂"馬上套用"的網站範例。過去這類書籍由於不同作者有不同寫法，</p>
                     <hr>
                     <!-- 第三張照片 -->
                     <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
-                    <p>VS Code已有內建PHP的除錯程式，但除錯工具需要搭配PHP的執行程式才能運作，因此接下來我們需要告知VS Code去那裏找到PHP的執行程式，讓除錯功能可以運作。</p>
-                    <hr>
+                    <p>不同作者的範例組合在一起，容易發生相容性的問題，現在Bootstrap 已開源的方式分享，無疑是靜態網頁設計的一大福音</p>
                 </article>
 
-                <!-- 文章2 -->
+                <!-- 新增筆記 -->
                 <article class="blog-post">
-                    <h2 class="blog-post-title mb-1">網頁乙級檢定-證照現況及考照注意事項</h2>
-                    <p class="blog-post-meta">分類：<a href="#" class="btn btn-danger btn-sm me-1">網頁設計乙級</a> 2022年8月 by <a
-                            href="#">Alpha</a>
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-primary active" aria-current="page">編輯</a>
-                        <a href="#" class="btn btn-danger">刪除</a>
-                    </div>
-                    </p>
-                    <!-- 第一張照片 -->
-                    <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
-                    <p>全名為 國家技術士-網頁設計乙級 顧名思義為一國家級的認證檢定，相當於是國家考試的位階，網頁設計有分丙級和乙級兩個級別，難度和代表意義也完全不同。</p>
-                    <hr>
-                    <!-- 第二張照片 -->
-                    <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
-                    <p>乙級檢定會分兩天進行，第一天會先進行學科考試，大約半天就可以完成。
+                    <form>
+                        <legend>新增筆記</legend>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInputTitle" placeholder="標題">
+                            <label for="floatingInputTitle">標題</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>全部</option>
+                                <option value="1">網頁設計乙級</option>
+                                <option value="2">Javascript</option>
+                                <option value="3">PHP</option>
+                                <option value="3">資料庫</option>
+                                <option value="3">環境設定</option>
+                            </select>
+                            <label for="specificSizeSelect">分類</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor_po">留言內容</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="editor_po"
+                                style="height: 50vh">
+                            <p>輸入筆記</p>
+                            </textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">送出</button>
+                            <button type="reset" class="btn btn-primary">重設</button>
+                        </div>
 
-                        術科實作檢定從早上八點報到開始，會持續到下午最晚約四點半，其中分幾個階段時間進行相關作業，檢定進行中有任何問題，一律在座位上先舉手示意，隨後由工作人員安排(試題疑問、喝水、上廁所、請求評分、放棄離場…等等事項)。
-                    </p>
-                    <hr>
-                    <!-- 第三張照片 -->
-                    <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
-                    <p>網頁乙級檢定的試題為預先公告模式，不定時會有小規模的內容更新，目前公告的題目有四題：
+                    </form>
+                </article>
 
-                        題組一 - 「卓越科技大學校園資訊系統」網站
-                        題組二 - 「健康促進網社群平台」網站
-                        題組三 - 「ABC影城」網站
-                        題組四 - 「精品電子商務」網站</p>
-                    <hr>
+                <!-- 編輯筆記 -->
+                <article class="blog-post">
+                    <form>
+                        <legend>編輯筆記</legend>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInputTitle" placeholder="標題"
+                                value="Bootstrap 初體驗">
+                            <label for="floatingInputTitle">標題</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>全部</option>
+                                <option value="1">網頁設計乙級</option>
+                                <option value="2">Javascript</option>
+                                <option value="3">PHP</option>
+                                <option value="3">資料庫</option>
+                                <option value="3" selected>環境設定</option>
+                            </select>
+                            <label for="specificSizeSelect">分類</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor_re">留言內容</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="editor_re"
+                                style="height: 50vh">
+                            <!-- 第一張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid">
+                            <p>Bootstrap 雖然說被稱之為網頁框架，但在我實際去了解後，如果擺在10年前，它就會被稱之為完整網站樣式範例，</p>
+                            <hr>
+                            <!-- 第二張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
+                            <p>也就難怪為什麼現在的書本，已經看不到所謂"馬上套用"的網站範例。過去這類書籍由於不同作者有不同寫法，</p>
+                            <hr>
+                            <!-- 第三張照片 -->
+                            <img src="https://fakeimg.pl/1024x768/" class="img-fluid mb-2">
+                            <p>不同作者的範例組合在一起，容易發生相容性的問題，現在Bootstrap 已開源的方式分享，無疑是靜態網頁設計的一大福音</p>
+                            </textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">送出</button>
+                            <button type="reset" class="btn btn-primary">重設</button>
+                        </div>
+
+                    </form>
                 </article>
 
                 <!-- 上一篇、下一篇按鈕 -->
@@ -186,26 +230,25 @@
 
             <!-- 側邊欄 -->
             <div class="col-md-4">
-                <div class="position-sticky" style="top: 3.5rem;">
+                <div class="position-sticky" style="top: 4rem;">
 
                     <!-- 第一個卡片 -->
                     <div class="card text-dark bg-light mb-4">
                         <!-- <div class="card-header">關於我們</div> -->
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary btn-sm mt-1">新增筆記</a>
+
+                            <ol class="list-unstyled">
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1 active">新增筆記</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">全部筆記</a></li>
+                                <!-- <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">2022年7月</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">2022年6月</a></li> -->
+                            </ol>
                         </div>
                     </div>
                     <!-- 第二個卡片 -->
                     <div class="card text-dark bg-light mb-4">
                         <div class="card-header">分類</div>
                         <div class="card-body">
-                            <!-- <ol class="list-unstyled">
-                                <li><a href="#" class="btn btn-danger btn-sm mt-1">網頁設計乙級</a></li>
-                                <li><a href="#" class="btn btn-warning btn-sm mt-1">Javascript</a></li>
-                                <li><a href="#" class="btn btn-warning btn-sm mt-1">PHP</a></li>
-                                <li><a href="#" class="btn btn-warning btn-sm mt-1">資料庫</a></li>
-                                <li><a href="#" class="btn btn-success btn-sm mt-1">環境設定</a></li>
-                            </ol> -->
                             <a href="#" class="btn btn-danger btn-sm mt-1">網頁設計乙級</a>
                             <a href="#" class="btn btn-warning btn-sm mt-1">Javascript</a>
                             <a href="#" class="btn btn-warning btn-sm mt-1">PHP</a>
@@ -214,17 +257,17 @@
                         </div>
                     </div>
                     <!-- 第三個卡片 -->
-                    <div class="card text-dark bg-light mb-4">
-                        <div class="card-header">月份</div>
+                    <!-- <div class="card text-dark bg-light mb-4">
+                        <div class="card-header">歷史文章</div>
                         <div class="card-body">
                             <ol class="list-unstyled">
-                                <li><a href="#">2022年8月</a></li>
-                                <li><a href="#">2022年7月</a></li>
-                                <li><a href="#">2022年6月</a></li>
-                                <li><a href="#">2022年5月</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1 active">2022年8月</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">2022年7月</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">2022年6月</a></li>
+                                <li><a href="#" class="btn btn-outline-primary btn-sm mt-1">2022年5月</a></li>
                             </ol>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -251,6 +294,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+    <!-- CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor_po'))
+            .then(editor_po => {
+                console.log("editor_po "+editor_po);
+                myEditor_po = editor_po;
+            })
+            .catch(error => {
+                console.log("editor_po_error" + error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#editor_re'))
+            .then(editor_re => {
+                console.log("editor_re "+editor_re);
+                myEditor_re = editor_re;
+            })
+            .catch(error => {
+                console.log("editor_re_error" + error);
+            });
+    </script>
 </body>
 
 </html>

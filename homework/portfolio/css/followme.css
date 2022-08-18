@@ -27,10 +27,19 @@ body {
 .text {
     height: 100vh;
 }
-/* iframe */
-iframe {
-    width: 100%;
-}
+/*
+ * Followme posts
+ */
+ .followme-post {
+    margin-bottom: 4rem;
+  }
+  .followme-post-title {
+    font-size: 2.5rem;
+  }
+  .followme-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+  }
 
 @media (max-width: 991.5px) {
     #banner {
