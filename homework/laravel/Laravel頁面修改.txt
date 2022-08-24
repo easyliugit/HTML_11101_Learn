@@ -1,0 +1,10 @@
+vscode
+
+public 網址首頁位置
+
+Ctrl+p
+welcome.blade.php 路由前端頁面 預設顯示welcome
+web.php 路由帶位修改面
+
+路由 帶位
+練習建立f1.blade.php f2.blade.php

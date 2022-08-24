@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//路由頁面 帶位
+
+Route::get('/f1', function () {
+    return view('f1');
+});
+
+Route::get('/f2', function () {
+    return view('f2');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
