@@ -15,6 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 //路由頁面 帶位
 
+Route::get('/f3_url', function () {
+    return view('f3_view');
+});
+
+Route::get('/f55688', function () {
+    $myArr = [1,2,3,4,5];
+    $myName = 'kai';
+    foreach ($myArr as $key => $value) {
+        # code...
+        echo $value."<br>";
+    }
+    echo $myName;
+    dd($myArr);
+    // return view('f1');
+});
+
 Route::get('/f1', function () {
     return view('f1');
 });
