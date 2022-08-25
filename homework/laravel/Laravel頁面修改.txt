@@ -14,3 +14,8 @@ web.php 路由帶位修改面
 
 8/25==========
 OOP 練習
+
+在view設子資料夾admin 檔案index.blade.php
+web.php 路由設定 路徑/admin_index 檔案admin.index
+
+在view子資料夾設立網頁路徑

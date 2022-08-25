@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 //路由頁面 帶位
 
+Route::get('/admin_index', function () {
+    return view('admin.index');
+});
+
 Route::get('/oop', function () {
     return view('oop');
 });
