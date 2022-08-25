@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test page</title>
+    <title>Document</title>
 </head>
 <body>
-    test blade page
-    {{$price}}
+    car index blade page
 </body>
 </html>

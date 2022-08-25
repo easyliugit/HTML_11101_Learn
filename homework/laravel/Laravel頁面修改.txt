@@ -62,3 +62,6 @@ Route::get('/test', [TestController::class, 'testFun']);
 在view 建立test.blade.php
 
 到瀏覽器輸入/test
+
+
+建立C(Controller) 練習

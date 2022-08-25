@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,21 @@ use App\Http\Controllers\TestController;
 |
 */
 
+// 練習三
+// 建立CarController
+// index function
+// car.index.blade.php
+
+//php artisan make:controller CarController
+
+Route::get('/car', [CarController::class, 'index']);
+
+// single controller
 Route::get('/test', [TestController::class, 'testFun']);
+Route::get('/dis7', [TestController::class, 'dis7']);
+
+// /admin/student
+// /admin/product
 
 //admin prefix
 Route::prefix('admin')->group(function () {
@@ -48,7 +63,8 @@ Route::get('/eat/{name}/{num}', function ($name,$num) {
 
     $data = [
         'name' => $name,
-        'num' => $num
+        'num' => $num,
+        'str' => "$name+$num &nbsp;&nbsp; =>&nbsp;&nbsp; Hello"
     ];
 
     // return view('f1', ['name' => $name ,'num' => $num]);
