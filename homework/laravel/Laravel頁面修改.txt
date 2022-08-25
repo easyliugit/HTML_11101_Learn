@@ -35,3 +35,8 @@ function Route($name,$num) {
 }
 
 原生php傳遞值
+
+安裝Laravel Blade Snippets外掛
+
+
+在eat.blade.php 示範laravel 與原生 資料傳遞

@@ -13,20 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 練習二
+// /eat/name/4
+// view
+// 訂位者大名 : name
+// 訂位者人數 : num
+
+Route::get('/eat/{name}/{num}', function ($name,$num) {
+
+    $data = [
+        'name' => $name,
+        'num' => $num
+    ];
+
+    // return view('f1', ['name' => $name ,'num' => $num]);
+    return view('eat', ['data' => $data]);
+
+});
+
 Route::get('/f1/{name}/{num}', function ($name,$num) {
     $str="Hello World {$name} , {$num}";
     return view('f1',['str123'=>$str]);
 });
 
 // php artisan route:list
+// 兩個變數
 Route::get('/greeting/{name}/{num}', function ($name,$num) {
     return "Hello World {$name} , {$num}";
 });
-
+// 一個變數
 Route::get('/greeting/{name}', function ($name) {
     return "Hello World {$name}";
 });
-
+// 沒有變數
 Route::get('/greeting', function () {
     return 'Hello World';
 });
