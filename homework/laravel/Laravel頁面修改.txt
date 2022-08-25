@@ -19,3 +19,19 @@ OOP 練習
 web.php 路由設定 路徑/admin_index 檔案admin.index
 
 在view子資料夾設立網頁路徑
+
+Laravel
+Route::get('/greeting/{name}/{num}', function ($name,$num) {
+    return "Hello World {$name} , {$num}";
+});
+
+原生
+/greeting?name= &num= <=網址列
+
+echo Route($_GET['name'],$_GET['num']);
+
+function Route($name,$num) {
+    return "Hello World {$name} , {$num}";
+}
+
+原生php傳遞值

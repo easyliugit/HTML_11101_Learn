@@ -13,7 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//路由頁面 帶位
+Route::get('/f1/{name}/{num}', function ($name,$num) {
+    $str="Hello World {$name} , {$num}";
+    return view('f1',['str123'=>$str]);
+});
+
+// php artisan route:list
+Route::get('/greeting/{name}/{num}', function ($name,$num) {
+    return "Hello World {$name} , {$num}";
+});
+
+Route::get('/greeting/{name}', function ($name) {
+    return "Hello World {$name}";
+});
+
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
 
 Route::get('/admin_index', function () {
     return view('admin.index');
@@ -22,6 +38,8 @@ Route::get('/admin_index', function () {
 Route::get('/oop', function () {
     return view('oop');
 });
+
+//路由頁面 帶位
 
 Route::get('/f3_url', function () {
     return view('f3_view');

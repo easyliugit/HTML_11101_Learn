@@ -9,6 +9,9 @@
 <body>
     hello f1 page<br>
     <br>
+    <?php
+        echo "$str123 <br>";
+    ?>
     <a href="./f2">f2</a>
 </body>
 </html>
