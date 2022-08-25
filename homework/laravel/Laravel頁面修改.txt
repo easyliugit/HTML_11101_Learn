@@ -1,3 +1,4 @@
+8/24===============
 vscode
 
 public 網址首頁位置
@@ -8,3 +9,8 @@ web.php 路由帶位修改面
 
 路由 帶位
 練習建立f1.blade.php f2.blade.php
+
+可以在web.php 中寫入php 語法
+
+8/25==========
+OOP 練習

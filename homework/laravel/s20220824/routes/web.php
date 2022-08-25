@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 //路由頁面 帶位
 
+Route::get('/oop', function () {
+    return view('oop');
+});
+
 Route::get('/f3_url', function () {
     return view('f3_view');
 });

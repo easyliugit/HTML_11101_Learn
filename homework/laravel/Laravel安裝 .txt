@@ -6,12 +6,13 @@ Installation Via Composer(使用 Composer 安裝)
 
 https://laravel.com/docs/8.x/installation#installation-via-composer
 
+步驟(提示命令字元)
 1. composer create-project laravel/laravel:^8.0 資料表 
 2. cd 資料表
-3. php artisan serve
+3. php artisan serve (php artisan 是Laravel 指令包)
 
 
-安裝 Composer===
+安裝 Composer===需要連線網路
 https://getcomposer.org/download/
 Windows Installer
 Composer-Setup.exe
@@ -19,12 +20,13 @@ Composer-Setup.exe
 
 使用github 現有專案===
 還原Laravel 環境
+步驟(提示命令字元)
 1. clone pull github html
 2. composer install (如果發生錯誤 接續3. 否則4.)
 3. .env.example 修改檔名(刪除.example) .env 
 4. php artisan serve
 
-linux指令===
+linux指令(提示命令字元)===
 ls 當前目錄內容
 pwd 當前目錄位置
 cd 進入子目錄
