@@ -13,6 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//admin prefix
+Route::prefix('admin')->group(function () {
+    Route::get('/studnet', function () {
+        return view('admin.studnet');
+    });    
+    Route::get('/product', function () {
+        return view('admin.product');
+    });
+});
+
+
+// Route::get('/admin/studnet', function () {
+//     return view('admin.studnet');
+// });
+
+// Route::get('/admin/product', function () {
+//     return view('admin.product');
+// });
+
+
+
+// url/{變數}
 // 練習二
 // /eat/name/4
 // view
@@ -50,7 +72,7 @@ Route::get('/greeting', function () {
     return 'Hello World';
 });
 
-Route::get('/admin_index', function () {
+Route::get('/admin', function () {
     return view('admin.index');
 });
 
