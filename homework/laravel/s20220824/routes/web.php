@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,15 @@ use App\Http\Controllers\StudentController;
 |
 */
 
+Route::resource('/bikes', BikeController::class);
+
 // 8/31練習
 // route
 // student -> StudentController
 // StudentController/index
 
 Route::get('/student', [StudentController::class, 'index']);
+Route::get('/student/{name}/{num}', [StudentController::class, 'getByUrl']);
 
 // 練習三
 // 建立CarController

@@ -12,4 +12,13 @@ class StudentController extends Controller
         // ...
         return view('StudentController.index');
     }
+    public function getByUrl(Request $request,$user, $num)
+    {
+        dd($request);
+        // ...
+        echo "User= $user ;Num= $num";
+
+        $data=[$user, $num];
+        dd($data);
+    }
 }

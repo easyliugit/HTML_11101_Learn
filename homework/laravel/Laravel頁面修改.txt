@@ -65,3 +65,18 @@ Route::get('/test', [TestController::class, 'testFun']);
 
 
 建立C(Controller) StudentController 練習
+
+
+建立resource-controllers ==========================
+https://laravel.com/docs/8.x/controllers#resource-controllers
+提示命令字元
+1.php artisan make:controller BikeController --resource
+BikeController.php -> function index()
+2.dd("bike index");
+web.php
+3.use App\Http\Controllers\BikeController;
+4.Route::resource('/bikes', BikeController::class);
+BikeController.php -> function create()
+5.dd("photos create");
+
+使用Resource Controller方法呼叫函式
