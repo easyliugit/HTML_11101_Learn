@@ -24,8 +24,9 @@ Route::resource('/bikes', BikeController::class);
 // student -> StudentController
 // StudentController/index
 
-Route::get('/student', [StudentController::class, 'index']);
+// Route::get('/student', [StudentController::class, 'index']);
 Route::get('/student/{name}/{num}', [StudentController::class, 'getByUrl']);
+Route::get('/student', [StudentController::class, 'index'])->name('student123');
 
 // 練習三
 // 建立CarController

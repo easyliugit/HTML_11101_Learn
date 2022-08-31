@@ -84,8 +84,8 @@ BikeController.php -> function create()
 提示命令字元
 php artisan route:list
 
+套用連結========================================
 https://laravel.com/docs/8.x/controllers#shallow-nesting
-使用鬍鬚誇弧套用a 連結
 絕對路徑 <a href="/laravel/public/bikes/create">create btn</a>
 相對路徑 <a href="{{route('bikes.create')}}">create btn2</a>
 
@@ -95,4 +95,39 @@ https://laravel.com/docs/8.x/helpers#method-route
 index.php
 2.
 絕對路徑 <a href="/laravel/public/bikes/123/edit">edit btn</a><br>
-絕對路徑 <a href="{{route('bikes.edit',['bike' => 123])}}">edit btn2</a><br>
+相對路徑 <a href="{{route('bikes.edit',['bike' => 123])}}">edit btn2</a><br>
+
+使用絕對路徑與相對路徑(雙大誇弧)套用連結
+
+
+route函式為連結建立別名===================================
+https://laravel.com/docs/8.x/routing#named-routes
+web.php
+1.Route::get('/student', [StudentController::class, 'index'])->name('student123');
+2.index.php
+<a href="{{route('student123')}}">student btn</a>
+
+Controller使用view帶陣列資料 使用@php @foreach印出資料=================================
+BikeControlle r -> function index()
+1.
+$data = [1,2,3];
+return view("bike123.index",["data"=>$data]);
+bike123/index.php
+2.
+@php
+dd($data);
+@endphp
+
+BikeControlle r -> function index()
+1.
+$myArr = [1,2,3];
+$data = [
+    'myArr' => $myArr
+    ,'v1' => 11
+    ,'v2' => 12
+];
+return view("bike123.index",["data"=>$data]);
+2.
+@foreach ($data["myArr"] as $item)
+    <a href="#">{{$item}}</a>
+@endforeach

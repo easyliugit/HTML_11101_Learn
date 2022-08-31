@@ -14,5 +14,7 @@
     <br>
     <a href="/laravel/public/bikes/123/edit">edit btn</a><br>
     <a href="{{route('bikes.edit',['bike' => 123])}}">edit btn2</a><br>
+    <br>
+    <a href="{{route('student123')}}">student btn</a><br>
 </body>
 </html>
