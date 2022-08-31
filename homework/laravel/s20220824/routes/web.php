@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,13 @@ use App\Http\Controllers\CarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// 8/31練習
+// route
+// student -> StudentController
+// StudentController/index
+
+Route::get('/student', [StudentController::class, 'index']);
 
 // 練習三
 // 建立CarController

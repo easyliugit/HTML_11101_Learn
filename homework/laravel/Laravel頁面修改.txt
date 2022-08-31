@@ -45,7 +45,7 @@ web.php prefix view 資料夾分組
 
 
 
-MVC架構 建立其中的C(Controller)
+MVC架構 建立其中的C(Controller)===============
 範例
 https://laravel.com/docs/8.x/controllers#basic-controllers
 
@@ -64,4 +64,4 @@ Route::get('/test', [TestController::class, 'testFun']);
 到瀏覽器輸入/test
 
 
-建立C(Controller) 練習
+建立C(Controller) StudentController 練習
