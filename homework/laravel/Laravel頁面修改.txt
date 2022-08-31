@@ -80,3 +80,19 @@ BikeController.php -> function create()
 5.dd("photos create");
 
 使用Resource Controller方法呼叫函式
+
+提示命令字元
+php artisan route:list
+
+https://laravel.com/docs/8.x/controllers#shallow-nesting
+使用鬍鬚誇弧套用a 連結
+絕對路徑 <a href="/laravel/public/bikes/create">create btn</a>
+相對路徑 <a href="{{route('bikes.create')}}">create btn2</a>
+
+BikeController.php -> function edit()
+1.dd($id);
+https://laravel.com/docs/8.x/helpers#method-route
+index.php
+2.
+絕對路徑 <a href="/laravel/public/bikes/123/edit">edit btn</a><br>
+絕對路徑 <a href="{{route('bikes.edit',['bike' => 123])}}">edit btn2</a><br>

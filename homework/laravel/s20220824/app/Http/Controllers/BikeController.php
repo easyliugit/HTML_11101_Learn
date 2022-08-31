@@ -60,6 +60,7 @@ class BikeController extends Controller
     public function edit($id)
     {
         //
+        dd($id);
     }
 
     /**
