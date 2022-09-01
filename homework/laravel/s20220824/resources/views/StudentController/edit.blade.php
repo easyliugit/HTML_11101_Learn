@@ -15,9 +15,9 @@
 <body>
         
 <div class="container mt-3">
-    <h2>student_index page</h2>
+    <h2>新增資料</h2>
     <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
-    <a href="{{route("students.create")}}" class="btn btn-success">新增</a>
+    {{-- <a href="#" class="btn btn-success">新增</a> --}}
     <table class="table">
       <thead>
         <tr>
@@ -26,9 +26,33 @@
           <th>chinese</th>
           <th>english</th>
           <th>math</th>
-          <th></th>
         </tr>
       </thead>
+      <form action="{{route("students.store")}}" method="post">
+        @csrf
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input type="text" name="name" id="name" value="132">
+          </td>
+          <td>
+            <input type="number" name="chinese" id="chinese" value="456">
+          </td>
+          <td>
+            <input type="number" name="english" id="english" value="789">
+          </td>
+          <td>
+            <input type="number" name="math" id="math" value="012">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <input type="submit" value="新增送出">
+          </td>
+        </tr>
+      </tbody>
+      </form>
       <tbody>
         @foreach ($data as $item)
         <tr>
@@ -37,10 +61,6 @@
           <td>{{$item["chinese"]}}</td>
           <td>{{$item["english"]}}</td>
           <td>{{$item["math"]}}</td>
-          <td>
-            <a href="{{route('students.edit', ['student' => $item->id])}}" class="mb-3 btn btn-warning" role="button">編輯</a>
-            <a href="{{route('students.create')}}" class="mb-3 btn btn-danger" role="button">刪除</a>
-          </td>
         </tr>
         @endforeach
       </tbody>

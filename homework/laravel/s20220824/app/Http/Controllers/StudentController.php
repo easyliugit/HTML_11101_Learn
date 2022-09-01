@@ -50,4 +50,22 @@ class StudentController extends Controller
 
         return redirect()->route("students.index");
     }
+    public function edit($id)
+    {
+        //
+        // dd('edit ok');
+        dd($id);
+
+       //select one data
+       //retunr view data
+    }
+    public function update(Request $request, $id)
+    {
+        //
+       // $flight = Flight::find(1);
+
+        // $flight->name = 'Paris to London';
+
+        // $flight->save();
+    }
 }

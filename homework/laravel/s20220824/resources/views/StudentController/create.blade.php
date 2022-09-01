@@ -15,7 +15,7 @@
 <body>
         
 <div class="container mt-3">
-    <h2>新增資料</h2>
+    <h2>更新資料</h2>
     <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
     {{-- <a href="#" class="btn btn-success">新增</a> --}}
     <table class="table">
