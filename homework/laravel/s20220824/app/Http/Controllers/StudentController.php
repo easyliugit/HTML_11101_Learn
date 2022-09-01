@@ -30,4 +30,24 @@ class StudentController extends Controller
         $data=[$user, $num];
         dd($data);
     }
+    public function create()
+    {
+        $data=Student::all();
+        return view('StudentController.create',["data"=>$data]);
+    }
+    public function store(Request $request)
+    {
+        // dd($request->all());
+
+        $student = new Student();
+ 
+        $student->name = $request->name;
+        $student->chinese = $request->chinese;
+        $student->english = $request->english;
+        $student->math = $request->math;
+ 
+        $student->save();
+
+        return redirect()->route("students.index");
+    }
 }

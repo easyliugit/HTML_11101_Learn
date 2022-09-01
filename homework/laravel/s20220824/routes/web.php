@@ -16,6 +16,7 @@ use App\Http\Controllers\BikeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('/students', StudentController::class);
 
 Route::resource('/bikes', BikeController::class);
 

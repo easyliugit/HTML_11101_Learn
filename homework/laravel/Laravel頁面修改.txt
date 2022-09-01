@@ -247,3 +247,11 @@ resources\views\StudentController\index.blade.php
         @endforeach
 
 ORM 使用物件導向連接資料庫 取得資料表資料 顯示在View上
+
+
+新增資料 =====================================
+建立view create.php
+form 表單內加入@csrf
+https://laravel.com/docs/8.x/eloquent#inserts
+
+完成新增資料
