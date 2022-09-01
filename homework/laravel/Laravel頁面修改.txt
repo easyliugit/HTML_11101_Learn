@@ -131,3 +131,12 @@ return view("bike123.index",["data"=>$data]);
 @foreach ($data["myArr"] as $item)
     <a href="#">{{$item}}</a>
 @endforeach
+
+連結css方法 <style標籤、絕對路徑、相對路徑>=======================
+1.在public資料夾下建立css資料夾與css檔
+在要顯示頁面的檔案加入css 以student為例
+resources\views\StudentController\index.blade.php
+2.在<head>內寫<style>
+3.決對路徑 <link rel="stylesheet" href="/laravel/public/css/style.css">
+4.相對路徑 {{asset('css/style.css')}}
+
