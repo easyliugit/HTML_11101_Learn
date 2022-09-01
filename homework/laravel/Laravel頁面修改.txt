@@ -132,6 +132,9 @@ return view("bike123.index",["data"=>$data]);
     <a href="#">{{$item}}</a>
 @endforeach
 
+
+
+2022/09/01
 連結css方法 <style標籤、絕對路徑、相對路徑>=======================
 1.在public資料夾下建立css資料夾與css檔
 在要顯示頁面的檔案加入css 以student為例
@@ -199,3 +202,48 @@ $table->integer('english');
 $table->integer('math');
 提示命令字元 推至Myadmin
 3.php artisan migrate
+
+資料表 students 建立 修改 migrate:rollback
+
+ORM 使用物件導向連接資料庫 ====================================
+https://laravel.com/docs/8.x/eloquent#generating-model-classes
+提示命令字元 建立Model
+1.php artisan make:model Student
+指向資料表名稱
+https://laravel.com/docs/8.x/eloquent#table-names
+app\Models\Student.php extends Model
+2.protected $table = 'students';
+https://laravel.com/docs/8.x/eloquent#retrieving-models
+app\Http\Controllers\StudentController.php 最上面
+3.use App\Models\Student;
+app\Http\Controllers\StudentController.php function index()
+4.
+foreach (Student::all() as $student) {
+    echo $student->name;
+}
+測試是否取得資料表資料
+5.
+$data=Student::all();
+dd($data);
+// foreach (Student::all() as $student) {
+//    echo $student->name;
+// }
+
+將取得資料表資料 顯示在View上
+app\Http\Controllers\StudentController.php function index()
+1.
+// dd($data);
+return view('StudentController.index',["data"=>$data]);
+
+resources\views\StudentController\index.blade.php
+2.
+        @foreach ($data as $item)
+        <tr>
+          <td>{{$item["id"]}}</td>
+          <td>{{$item["name"]}}</td>
+          <td>{{$item["chinese"]}}</td>
+          <td>{{$item["english"]}}</td>
+        </tr>
+        @endforeach
+
+ORM 使用物件導向連接資料庫 取得資料表資料 顯示在View上

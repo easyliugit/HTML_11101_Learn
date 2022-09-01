@@ -21,6 +21,7 @@
       <thead>
         <tr>
           <th>Firstname</th>
+          <th>Firstname</th>
           <th>Lastname</th>
           <th>Email</th>
         </tr>
@@ -28,19 +29,30 @@
       <tbody>
         <tr>
           <td>John</td>
+          <td>John</td>
           <td>Doe</td>
           <td>john@example.com</td>
         </tr>
         <tr>
+          <td>Mary</td>
           <td>Mary</td>
           <td>Moe</td>
           <td>mary@example.com</td>
         </tr>
         <tr>
           <td>July</td>
+          <td>July</td>
           <td>Dooley</td>
           <td>july@example.com</td>
         </tr>
+        @foreach ($data as $item)
+        <tr>
+          <td>{{$item["id"]}}</td>
+          <td>{{$item["name"]}}</td>
+          <td>{{$item["chinese"]}}</td>
+          <td>{{$item["english"]}}</td>
+        </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
