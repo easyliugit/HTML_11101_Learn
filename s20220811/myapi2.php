@@ -25,4 +25,47 @@ curl_close($ch);
 
 echo $output;
 // var_dump($output);
+
+// 多維array
+    // data[0]['id'] => 1
+    // data[0]['name'] => amy
+    // data[0]['address'] => taipei
+
+    // data[1]['id'] => 1
+    // data[1]['name'] => bob
+    // data[1]['address'] => taipei
+
+    // data[2]['id'] => 1
+    // data[2]['name'] => cat
+    // data[3]['address'] => taipei
+//-----------------------------------------------
+    // data[amy]['id'] => 1
+    // data[amy]['name'] => amy
+    // data[amy]['address'] => taipei
+
+    // data[1]['id'] => 1
+    // data[1]['name'] => amy
+    // data[1]['address'] => taipei
+
+    // data[2]['id'] => 1
+    // data[2]['name'] => amy
+    // data[3]['address'] => taipei
+
+
+
+
+    // let data = [
+    //     ['id' => 1,
+    //       'name' => 'amy',
+    //       'address' => 'taipei'
+    //     ],
+    //     ['id' => 2,
+    //       'name' => 'bob',
+    //       'address' => 'taipei'
+    //     ],
+    //     ['id' => 3,
+    //       'name' => 'cat',
+    //       'address' => 'taipei'
+    //     ],
+    // ]
 ?>

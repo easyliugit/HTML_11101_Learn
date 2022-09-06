@@ -1,0 +1,257 @@
+8/24===============
+vscode
+
+public 網址首頁位置
+
+Ctrl+p
+welcome.blade.php 路由前端頁面 預設顯示welcome
+web.php 路由帶位修改面
+
+路由 帶位
+練習建立f1.blade.php f2.blade.php
+
+可以在web.php 中寫入php 語法
+
+8/25==========
+OOP 練習
+
+在view設子資料夾admin 檔案index.blade.php
+web.php 路由設定 路徑/admin_index 檔案admin.index
+
+在view子資料夾設立網頁路徑
+
+Laravel
+Route::get('/greeting/{name}/{num}', function ($name,$num) {
+    return "Hello World {$name} , {$num}";
+});
+
+原生
+/greeting?name= &num= <=網址列
+
+echo Route($_GET['name'],$_GET['num']);
+
+function Route($name,$num) {
+    return "Hello World {$name} , {$num}";
+}
+
+原生php傳遞值
+
+安裝Laravel Blade Snippets外掛
+
+
+在eat.blade.php 示範laravel 與原生 資料傳遞
+
+web.php prefix view 資料夾分組
+
+
+
+MVC架構 建立其中的C(Controller)===============
+範例
+https://laravel.com/docs/8.x/controllers#basic-controllers
+
+使用命令提示字元建立Controller
+php artisan make:controller TestController資料夾名稱
+
+寫一個方法testFun()
+
+再到web.php 引入Controller
+use App\Http\Controllers\TestController;
+將 路由指向Controller 方法testFun()
+Route::get('/test', [TestController::class, 'testFun']);
+
+在view 建立test.blade.php
+
+到瀏覽器輸入/test
+
+
+建立C(Controller) StudentController 練習
+
+
+建立resource-controllers ==========================
+https://laravel.com/docs/8.x/controllers#resource-controllers
+提示命令字元
+1.php artisan make:controller BikeController --resource
+BikeController.php -> function index()
+2.dd("bike index");
+web.php
+3.use App\Http\Controllers\BikeController;
+4.Route::resource('/bikes', BikeController::class);
+BikeController.php -> function create()
+5.dd("photos create");
+
+使用Resource Controller方法呼叫函式
+
+提示命令字元
+php artisan route:list
+
+套用連結========================================
+https://laravel.com/docs/8.x/controllers#shallow-nesting
+絕對路徑 <a href="/laravel/public/bikes/create">create btn</a>
+相對路徑 <a href="{{route('bikes.create')}}">create btn2</a>
+
+BikeController.php -> function edit()
+1.dd($id);
+https://laravel.com/docs/8.x/helpers#method-route
+index.php
+2.
+絕對路徑 <a href="/laravel/public/bikes/123/edit">edit btn</a><br>
+相對路徑 <a href="{{route('bikes.edit',['bike' => 123])}}">edit btn2</a><br>
+
+使用絕對路徑與相對路徑(雙大誇弧)套用連結
+
+
+route函式為連結建立別名===================================
+https://laravel.com/docs/8.x/routing#named-routes
+web.php
+1.Route::get('/student', [StudentController::class, 'index'])->name('student123');
+2.index.php
+<a href="{{route('student123')}}">student btn</a>
+
+Controller使用view帶陣列資料 使用@php @foreach印出資料=================================
+BikeControlle r -> function index()
+1.
+$data = [1,2,3];
+return view("bike123.index",["data"=>$data]);
+bike123/index.php
+2.
+@php
+dd($data);
+@endphp
+
+BikeControlle r -> function index()
+1.
+$myArr = [1,2,3];
+$data = [
+    'myArr' => $myArr
+    ,'v1' => 11
+    ,'v2' => 12
+];
+return view("bike123.index",["data"=>$data]);
+2.
+@foreach ($data["myArr"] as $item)
+    <a href="#">{{$item}}</a>
+@endforeach
+
+
+
+2022/09/01
+連結css方法 <style標籤、絕對路徑、相對路徑>=======================
+1.在public資料夾下建立css資料夾與css檔
+在要顯示頁面的檔案加入css 以student為例
+resources\views\StudentController\index.blade.php
+2.在<head>內寫<style>
+3.決對路徑 <link rel="stylesheet" href="/laravel/public/css/style.css">
+4.相對路徑 {{asset('css/style.css')}}
+
+建立資料庫 以laravel_20220901 為例 ===========================================
+1. 在.env 目錄下做與DB連線設定
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_20220901
+DB_USERNAME=root
+DB_PASSWORD=
+2.在Myadmin 建立 Laravel資料庫名稱laravel_20220901
+提示命令字元 建立預設資鰾表
+3.php artisan migrate
+
+xampp mysql 障礙排除 ============================
+xampp >mysql >data
+data->data_20220901
+new date
+mysql -> backup 資料 -> copy 至 data
+data_20220901->db folder 貼到新的data
+
+查看Database: Migrations 文件=======================================
+https://laravel.com/docs/8.x/migrations
+
+提示命令字元 重建預設資料表=======================================
+1.php artisan migrate:rollback
+2.php artisan migrate
+
+建立資料表 students ==========================================
+https://laravel.com/docs/8.x/migrations#generating-migrations
+提示命令字元 建立students
+1.php artisan make:migration create_students_table
+ 查看migrations資料夾 2022_09_01_030341_create_students_table.php
+至2014_10_12_000000_create_users_table.php function up()
+2. 複製$table->string('name');
+至2022_09_01_030341_create_students_table.php function up()
+3.在$table->id(); 與$table->timestamps(); 之間
+貼上4行$table->string('name');
+4.其中3行修改 name>chinese、name>english、name>math
+$table->string('name');
+$table->string('chinese');
+$table->string('english');
+$table->string('math');
+提示命令字元 後查看Myadmin
+5.php artisan migrate
+
+修改資料表 students ==========================================
+https://laravel.com/docs/8.x/migrations#available-column-types
+收回DB中的資料表
+1.php artisan migrate:rollback
+2.將型態修改
+之前
+$table->string('chinese');
+$table->string('english');
+$table->string('math');
+之後
+$table->integer('chinese');
+$table->integer('english');
+$table->integer('math');
+提示命令字元 推至Myadmin
+3.php artisan migrate
+
+資料表 students 建立 修改 migrate:rollback
+
+ORM 使用物件導向連接資料庫 ====================================
+https://laravel.com/docs/8.x/eloquent#generating-model-classes
+提示命令字元 建立Model
+1.php artisan make:model Student
+指向資料表名稱
+https://laravel.com/docs/8.x/eloquent#table-names
+app\Models\Student.php extends Model
+2.protected $table = 'students';
+https://laravel.com/docs/8.x/eloquent#retrieving-models
+app\Http\Controllers\StudentController.php 最上面
+3.use App\Models\Student;
+app\Http\Controllers\StudentController.php function index()
+4.
+foreach (Student::all() as $student) {
+    echo $student->name;
+}
+測試是否取得資料表資料
+5.
+$data=Student::all();
+dd($data);
+// foreach (Student::all() as $student) {
+//    echo $student->name;
+// }
+
+將取得資料表資料 顯示在View上
+app\Http\Controllers\StudentController.php function index()
+1.
+// dd($data);
+return view('StudentController.index',["data"=>$data]);
+
+resources\views\StudentController\index.blade.php
+2.
+        @foreach ($data as $item)
+        <tr>
+          <td>{{$item["id"]}}</td>
+          <td>{{$item["name"]}}</td>
+          <td>{{$item["chinese"]}}</td>
+          <td>{{$item["english"]}}</td>
+        </tr>
+        @endforeach
+
+ORM 使用物件導向連接資料庫 取得資料表資料 顯示在View上
+
+
+新增資料 =====================================
+建立view create.php
+form 表單內加入@csrf
+https://laravel.com/docs/8.x/eloquent#inserts
+
+完成新增資料

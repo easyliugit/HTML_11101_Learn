@@ -1,2 +1,20 @@
 # 忽略
 /s20220725/myToken/
+
+/s20220818/myToken/
+
+/homework/laravel/s20220824/node_modules
+/homework/laravel/s20220824/public/hot
+/homework/laravel/s20220824/public/storage
+/homework/laravel/s20220824/storage/*.key
+/homework/laravel/s20220824/vendor
+/homework/laravel/s20220824/.env
+/homework/laravel/s20220824/.env.backup
+/homework/laravel/s20220824/.phpunit.result.cache
+/homework/laravel/s20220824/docker-compose.override.yml
+/homework/laravel/s20220824/Homestead.json
+/homework/laravel/s20220824/Homestead.yaml
+/homework/laravel/s20220824/npm-debug.log
+/homework/laravel/s20220824/yarn-error.log
+/homework/laravel/s20220824/.idea
+/homework/laravel/s20220824/.vscode
