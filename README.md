@@ -11,6 +11,8 @@
 
 ### 進度
 
+* [HTML]#
+* [Javascript]#
 * [多裝置配置_MediaQuery]#
 
 ### 練習
@@ -22,6 +24,8 @@
 # HTML中等課程
 ### 進度
 
+* [jQuery]#
+* [AJAX]#
 * [Bootstrap]#
 
 ### 練習
