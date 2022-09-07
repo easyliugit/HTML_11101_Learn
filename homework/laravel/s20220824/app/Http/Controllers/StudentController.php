@@ -72,12 +72,25 @@ class StudentController extends Controller
     }
     public function update(Request $request, $id)
     {
-        //
-       $data = Student::find(1);
-       dd($data);
+        $input = $request->except(['_method','_token']);
+        // dd($input);
+        // $input = Student::find(1);
+        $data = Student::where('id',$id)->first();
+        // dd($data);
 
-        $data->name = 'Paris to London';
+        $data->name = $input["name"];
+        $data->chinese = $input["chinese"];
+        $data->english = $input["english"];
+        $data->math = $input["math"];
 
         $data->save();
+        return redirect()->route("students.index");
+    }
+    public function destroy($id)
+    {
+        //
+        $data = Student::find($id);
+        $data->delete();
+        return redirect()->route('students.index');
     }
 }

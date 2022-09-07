@@ -129,6 +129,9 @@ https://laravel.com/docs/8.x/eloquent#inserts
 // first => fetch 單筆資料
 
 https://laravel.com/docs/8.x/controllers#actions-handled-by-resource-controller
+在resources\views\StudentController\edit.blade.php
+1.from action @csrf後面加入@method('PUT')
+完成更新版面帶入資料
 
 https://laravel.com/docs/8.x/eloquent#updates
 在app\Http\Controllers\StudentController.php
