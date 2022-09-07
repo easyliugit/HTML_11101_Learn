@@ -121,3 +121,21 @@ https://laravel.com/docs/8.x/eloquent#inserts
 新增:1.create 2.store
 修改:1.edit 2.update
 刪除:1.destrov
+
+排序首頁資料表
+
+
+// get => fetchAll 多筆資料
+// first => fetch 單筆資料
+
+https://laravel.com/docs/8.x/controllers#actions-handled-by-resource-controller
+
+https://laravel.com/docs/8.x/eloquent#updates
+在app\Http\Controllers\StudentController.php
+function update(Request $request, $id)
+1.
+$data = Flight::find(1);
+dd($data);
+$data->name = 'Paris to London';
+
+$data->save();

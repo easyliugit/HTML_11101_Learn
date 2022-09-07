@@ -10,20 +10,22 @@ class StudentController extends Controller
     //
     public function index()
     {
-        $data=Student::all();
         // dd($data);
-
+    
         // foreach (Student::all() as $student) {
         //     echo $student->name;
         // }
-
+    
         // ...
         // return view('StudentController.index');
-        return view('StudentController.index',["data"=>$data]);
+
+        // $data=Student::all();
+        // return view('StudentController.index',["data"=>$data]);
 
         //排序資料表方法
-        // $data2=Student::orderBy("id","desc")->get();
-        // return view('StudentController.index',["data"=>$data2]);
+        // get => fetchAll 多筆資料
+        $data2=Student::orderBy("id","desc")->get();
+        return view('StudentController.index',["data"=>$data2]);
     }
     public function getByUrl(Request $request,$user, $num)
     {
@@ -59,8 +61,11 @@ class StudentController extends Controller
         //
         // dd('edit ok');
         // dd($id);
-        // $data = Student::where('id',$id)->first();
+        // first => fetch 單筆資料
+        $data = Student::where('id',$id)->first();
+        $data2=Student::orderBy("id","desc")->get();
         // dd($data);
+        return view('StudentController.edit',["data"=>$data,"data2"=>$data2]);
 
        //select one data
        //retunr view data
@@ -68,10 +73,11 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         //
-       // $flight = Flight::find(1);
+       $data = Student::find(1);
+       dd($data);
 
-        // $flight->name = 'Paris to London';
+        $data->name = 'Paris to London';
 
-        // $flight->save();
+        $data->save();
     }
 }
