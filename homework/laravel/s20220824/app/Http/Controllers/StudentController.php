@@ -20,6 +20,10 @@ class StudentController extends Controller
         // ...
         // return view('StudentController.index');
         return view('StudentController.index',["data"=>$data]);
+
+        //排序資料表方法
+        // $data2=Student::orderBy("id","desc")->get();
+        // return view('StudentController.index',["data"=>$data2]);
     }
     public function getByUrl(Request $request,$user, $num)
     {
@@ -54,7 +58,9 @@ class StudentController extends Controller
     {
         //
         // dd('edit ok');
-        dd($id);
+        // dd($id);
+        // $data = Student::where('id',$id)->first();
+        // dd($data);
 
        //select one data
        //retunr view data
