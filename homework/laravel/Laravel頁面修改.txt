@@ -255,3 +255,5 @@ form 表單內加入@csrf
 https://laravel.com/docs/8.x/eloquent#inserts
 
 完成新增資料
+
+完成更新版面資料
