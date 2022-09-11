@@ -10,16 +10,22 @@ class StudentController extends Controller
     //
     public function index()
     {
-        $data=Student::all();
         // dd($data);
-
+    
         // foreach (Student::all() as $student) {
         //     echo $student->name;
         // }
-
+    
         // ...
         // return view('StudentController.index');
-        return view('StudentController.index',["data"=>$data]);
+
+        // $data=Student::all();
+        // return view('StudentController.index',["data"=>$data]);
+
+        //排序資料表方法
+        // get => fetchAll 多筆資料
+        $data2=Student::orderBy("id","desc")->get();
+        return view('StudentController.index',["data"=>$data2]);
     }
     public function getByUrl(Request $request,$user, $num)
     {
@@ -54,18 +60,37 @@ class StudentController extends Controller
     {
         //
         // dd('edit ok');
-        dd($id);
+        // dd($id);
+        // first => fetch 單筆資料
+        $data = Student::where('id',$id)->first();
+        $data2=Student::orderBy("id","desc")->get();
+        // dd($data);
+        return view('StudentController.edit',["data"=>$data,"data2"=>$data2]);
 
        //select one data
        //retunr view data
     }
     public function update(Request $request, $id)
     {
+        $input = $request->except(['_method','_token']);
+        // dd($input);
+        // $input = Student::find(1);
+        $data = Student::where('id',$id)->first();
+        // dd($data);
+
+        $data->name = $input["name"];
+        $data->chinese = $input["chinese"];
+        $data->english = $input["english"];
+        $data->math = $input["math"];
+
+        $data->save();
+        return redirect()->route("students.index");
+    }
+    public function destroy($id)
+    {
         //
-       // $flight = Flight::find(1);
-
-        // $flight->name = 'Paris to London';
-
-        // $flight->save();
+        $data = Student::find($id);
+        $data->delete();
+        return redirect()->route('students.index');
     }
 }
